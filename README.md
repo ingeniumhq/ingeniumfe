@@ -45,3 +45,4 @@ TypeScript enhances the JavaScript language by adding optional static typing and
 
 ### And more
 ...such as like: [Vite-SVG-Loader](https://github.com/jpkleemans/vite-svg-loader), vitest-ui, vitest/coverage-c8, storybook-dark-mode, sass-loader, postcss, storybook addon-a11y, storybook/addon-essentials, storybook/addon-postcss, storybook/builder-vite, storybook/vue3, sass-loader, pinia/nuxt# ingeniumfe
+# ingeniumfe
