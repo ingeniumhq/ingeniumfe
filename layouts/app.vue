@@ -13,7 +13,8 @@
       <Link rel="stylesheet" href="/css/style.css" />
       <Link rel="stylesheet" href="/css/color.css" />
       <Link rel="stylesheet" href="/css/responsive.css" />
-      <Link rel="stylesheet" href="~/assets/styles/css/tailwind.css" />
+      <!-- <Link rel="stylesheet" href="~assets/styles/css/tailwind.css" /> -->
+
 
      
     </Head>
@@ -31,9 +32,11 @@
                 <span class="loader-item"></span><span class="loader-item"></span>
             </div>
         </div> -->
+
         <main>
         <slot />
         </main>
+        
     </Body>
 </template>
 
@@ -41,16 +44,27 @@
 <script setup lang="ts">
   useHead({
     script: [
+    
       {
         src: '/js/main.min.js',
-        body: true
+        body: true,
+      //   defer: true,
+      //   async: false
+      },
+      {
+        src: '/js/date-time.js',
+        body: true,
+      //   async: false
       },
       {
         src: '/js/script.js',
-        body: true
+        body: true,
+      //   async: false,
+      //   defer: true,
       },
     ]
   })
+
   onMounted(() => {
     useHead({
       script: [
@@ -61,21 +75,5 @@
       ]
     })
   });
-
 </script>
 
-<script lang="ts">
-
-export default {
-  beforeRouteEnter: function (to) {
-    useHead({
-      script: [
-        {
-          src: '/js/script.js',
-          // body: true,
-        },
-      ]
-    })
-  }
-}
-</script>

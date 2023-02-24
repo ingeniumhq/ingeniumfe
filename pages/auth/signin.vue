@@ -32,14 +32,10 @@
         <div class="verticle-center">
             <div class="login-form">
                 <h4><i class="icofont-key-hole"></i> Login</h4>
-                <form method="post" class="c-form">
-                    <input type="text" placeholder="User Name @">
-                    <input type="password" placeholder="xxxxxxxxxx">
-                    <div class="checkbox">
-                        <input type="checkbox" id="checkbox" checked>
-                        <label for="checkbox"><span>Remember Me</span></label>
-                    </div>
-                    <button class="main-btn" type="submit"><i class="icofont-key"></i> Login</button>
+                <form method="post" @submit.prevent="loginUser()" class="c-form">
+                    <input required v-model="form.email" type="text" placeholder="User Name @">
+                    <input required v-model="form.password" type="password" placeholder="xxxxxxxxxx">
+                    <button class="main-btn" type="submit" ><i class="icofont-key"></i> Login</button>
                 </form>
             </div>
         </div>
@@ -48,19 +44,37 @@
 </template>
   
   
-<script setup>
-import { useSampleStore } from '~/store/sample';
+<script lang="ts">
+import { useAuthStore } from '~/store/auth';
+import { AuthService } from '~/services';
 
-const Store = useSampleStore();
+export default {
+    setup(){
+        const authStore = useAuthStore();
+        definePageMeta({
+            layout: 'landing',
+            middleware: ["guest"],
+        })
 
+        return {
+            form: {
+                email: '',
+                password: '',
+            },
+            authStore
+        }
+    },
 
-function changeSampleStoreData(testString) {
-    Store.setSampleData(testString);
+    methods:{
+        loginUser() {
+            AuthService.loginUser(this.form).then((res)=>{
+                this.authStore.setAuthUser(res.data)
+                navigateTo('/timeline')
+            })
+        }
+    }
 }
 
-definePageMeta({
-    layout: 'landing'
-})
 
 </script>
   

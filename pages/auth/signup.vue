@@ -90,7 +90,8 @@ function changeSampleStoreData(testString) {
 }
 
 definePageMeta({
-  layout: 'landing'
+  layout: 'landing',
+  middleware: ["guest"],
 })
 
 </script>

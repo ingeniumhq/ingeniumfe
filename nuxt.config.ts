@@ -10,11 +10,27 @@ export default defineNuxtConfig({
           href: '/images/fav.png',
         },
       ],
+      script: [
+        {
+          src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+          type: "text/javascript"
+        },
+      ]
     },
   },
   modules: [
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
+
+  piniaPersistedstate: {
+    cookieOptions: {
+      sameSite: 'strict',
+    },
+    // storage: 'localStorage',
+    debug: true
+  },
+    
   css: [
     // '~/assets/styles/css/tailwind.css', add in layout
     '~/assets/styles/scss/main.scss',
@@ -25,4 +41,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
 });
