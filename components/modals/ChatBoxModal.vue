@@ -19,15 +19,15 @@
 						<div class="friend">
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user1.jpg" alt="">
+									<img src="/images/resources/user1.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>Oliver</span>
-								<i class=""><img src="images/resources/user1.jpg" alt=""></i>
+								<i class=""><img src="/images/resources/user1.jpg" alt=""></i>
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user2.jpg" alt="">
+									<img src="/images/resources/user2.jpg" alt="">
 									<span class="status away"></span>
 								</figure>
 								<span>Amelia</span>
@@ -35,15 +35,15 @@
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user3.jpg" alt="">
+									<img src="/images/resources/user3.jpg" alt="">
 									<span class="status offline"></span>
 								</figure>
 								<span>George</span>
-								<i class=""><img src="images/resources/user3.jpg" alt=""></i>
+								<i class=""><img src="/images/resources/user3.jpg" alt=""></i>
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user4.jpg" alt="">
+									<img src="/images/resources/user4.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>Jacob</span>
@@ -51,7 +51,7 @@
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user5.jpg" alt="">
+									<img src="/images/resources/user5.jpg" alt="">
 									<span class="status away"></span>
 								</figure>
 								<span>Poppy</span>
@@ -59,19 +59,19 @@
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user6.jpg" alt="">
+									<img src="/images/resources/user6.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>Sophia</span>
-								<i class=""><img src="images/resources/user6.jpg" alt=""></i>
+								<i class=""><img src="/images/resources/user6.jpg" alt=""></i>
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user7.jpg" alt="">
+									<img src="/images/resources/user7.jpg" alt="">
 									<span class="status away"></span>
 								</figure>
 								<span>Leo king</span>
-								<i class=""><img src="images/resources/user7.jpg" alt=""></i>
+								<i class=""><img src="/images/resources/user7.jpg" alt=""></i>
 							</a>
 						</div>
 					</div>
@@ -79,27 +79,27 @@
 						<div class="friend">
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user1.jpg" alt="">
+									<img src="/images/resources/user1.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>Samu Jane</span>
-								<i class=""><img src="images/resources/user1.jpg" alt=""></i>
+								<i class=""><img src="/images/resources/user1.jpg" alt=""></i>
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user6.jpg" alt="">
+									<img src="/images/resources/user6.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>Tina Mark</span>
-								<i class=""><img src="images/resources/user6.jpg" alt=""></i>
+								<i class=""><img src="/images/resources/user6.jpg" alt=""></i>
 							</a>
 							<a href="#" title="">
 								<figure>
-									<img src="images/resources/user7.jpg" alt="">
+									<img src="/images/resources/user7.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>Ak William</span>
-								<i class=""><img src="images/resources/user7.jpg" alt=""></i>
+								<i class=""><img src="/images/resources/user7.jpg" alt=""></i>
 							</a>
 						</div>
 					</div>
@@ -107,8 +107,8 @@
 						<div class="friend">
 							<a href="#" title="">
 								<figure class="group-chat">
-									<img src="images/resources/user5.jpg" alt="">
-									<img class="two" src="images/resources/user3.jpg" alt="">
+									<img src="/images/resources/user5.jpg" alt="">
+									<img class="two" src="/images/resources/user3.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>Boys World</span>
@@ -116,8 +116,8 @@
 							</a>
 							<a href="#" title="">
 								<figure class="group-chat">
-									<img src="images/resources/user2.jpg" alt="">
-									<img class="two" src="images/resources/user3.jpg" alt="">
+									<img src="/images/resources/user2.jpg" alt="">
+									<img class="two" src="/images/resources/user3.jpg" alt="">
 									<span class="status online"></span>
 								</figure>
 								<span>KK university Fellows</span>
@@ -125,8 +125,8 @@
 							</a>
 							<a href="#" title="">
 								<figure class="group-chat">
-									<img src="images/resources/user3.jpg" alt="">
-									<img class="two" src="images/resources/user2.jpg" alt="">
+									<img src="/images/resources/user3.jpg" alt="">
+									<img class="two" src="/images/resources/user2.jpg" alt="">
 									<span class="status away"></span>
 								</figure>
 								<span>Education World</span>
@@ -138,7 +138,7 @@
 				</div>
 				<div class="chat-card">
 					<div class="chat-card-head">
-						<img src="images/resources/user13.jpg" alt="">
+						<img src="/images/resources/user13.jpg" alt="">
 						<h6>George Floyd</h6>
 						<div class="frnd-opt">
 							<div class="more">
@@ -171,51 +171,51 @@
 					<div class="chat-list">
 						<ul>
 							<li class="me">
-								<div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+								<div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
 								<div class="notification-event">
 									<div class="chat-message-item">
-										<figure><img src="images/resources/album5.jpg" alt=""></figure>
+										<figure><img src="/images/resources/album5.jpg" alt=""></figure>
 										<div class="caption">4.5kb <i class="icofont-download" title="Download"></i></div>
 									</div>
 									<span class="notification-date">
 										<time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time>
-										<i><img src="images/d-tick.png" alt=""></i>
+										<i><img src="/images/d-tick.png" alt=""></i>
 									</span>
 								</div>
 							</li>
 							<li class="me">
-								<div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+								<div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
 								<div class="notification-event">
 									<span class="chat-message-item">
 										Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
 									</span>
 									<span class="notification-date">
 										<time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time>
-										<i><img src="images/d-tick.png" alt=""></i>
+										<i><img src="/images/d-tick.png" alt=""></i>
 									</span>
 								</div>
 							</li>
 							<li class="you">
-								<div class="chat-thumb"><img src="images/resources/chatlist2.jpg" alt=""></div>
+								<div class="chat-thumb"><img src="/images/resources/chatlist2.jpg" alt=""></div>
 								<div class="notification-event">
 									<span class="chat-message-item">
 										Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
 									</span>
 									<span class="notification-date">
 										<time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time>
-										<i><img src="images/d-tick.png" alt=""></i>
+										<i><img src="/images/d-tick.png" alt=""></i>
 									</span>
 								</div>
 							</li>
 							<li class="me">
-								<div class="chat-thumb"><img src="images/resources/chatlist1.jpg" alt=""></div>
+								<div class="chat-thumb"><img src="/images/resources/chatlist1.jpg" alt=""></div>
 								<div class="notification-event">
 									<span class="chat-message-item">
 										Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
 									</span>
 									<span class="notification-date">
 										<time datetime="2004-07-24T18:18" class="entry-date updated">Yesterday at 8:10pm</time>
-										<i><img src="images/d-tick.png" alt=""></i>
+										<i><img src="/images/d-tick.png" alt=""></i>
 									</span>
 								</div>
 							</li>
@@ -224,23 +224,23 @@
 						<form class="text-box">
 							<textarea placeholder="Write Mesage..."></textarea>
 							<div class="add-smiles">
-								<span><img src="images/smiles/happy-3.png" alt=""></span>
+								<span><img src="/images/smiles/happy-3.png" alt=""></span>
 							</div>
 							<div class="smiles-bunch">
-								<i><img src="images/smiles/thumb.png" alt=""></i>
-								<i><img src="images/smiles/angry-1.png" alt=""></i>
-								<i><img src="images/smiles/angry.png" alt=""></i>
-								<i><img src="images/smiles/bored-1.png" alt=""></i>
-								<i><img src="images/smiles/confused-1.png" alt=""></i>
-								<i><img src="images/smiles/wink.png" alt=""></i>
-								<i><img src="images/smiles/weep.png" alt=""></i>
-								<i><img src="images/smiles/tongue-out.png" alt=""></i>
-								<i><img src="images/smiles/suspicious.png" alt=""></i>
-								<i><img src="images/smiles/crying-1.png" alt=""></i>
-								<i><img src="images/smiles/crying.png" alt=""></i>
-								<i><img src="images/smiles/embarrassed.png" alt=""></i>
-								<i><img src="images/smiles/emoticons.png" alt=""></i>
-								<i><img src="images/smiles/happy-2.png" alt=""></i>
+								<i><img src="/images/smiles/thumb.png" alt=""></i>
+								<i><img src="/images/smiles/angry-1.png" alt=""></i>
+								<i><img src="/images/smiles/angry.png" alt=""></i>
+								<i><img src="/images/smiles/bored-1.png" alt=""></i>
+								<i><img src="/images/smiles/confused-1.png" alt=""></i>
+								<i><img src="/images/smiles/wink.png" alt=""></i>
+								<i><img src="/images/smiles/weep.png" alt=""></i>
+								<i><img src="/images/smiles/tongue-out.png" alt=""></i>
+								<i><img src="/images/smiles/suspicious.png" alt=""></i>
+								<i><img src="/images/smiles/crying-1.png" alt=""></i>
+								<i><img src="/images/smiles/crying.png" alt=""></i>
+								<i><img src="/images/smiles/embarrassed.png" alt=""></i>
+								<i><img src="/images/smiles/emoticons.png" alt=""></i>
+								<i><img src="/images/smiles/happy-2.png" alt=""></i>
 							</div>
 							<button type="submit"><i class="icofont-paper-plane"></i></button>
 						</form>

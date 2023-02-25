@@ -1,8 +1,8 @@
 <template>
     	<div class="responsive-header">
-				<div class="logo res"><img src="images/logo.png" alt=""><span>Socimo</span></div>
+				<div class="logo res"><img src="/images/logo.png" alt=""><span>Socimo</span></div>
 				<div class="user-avatar mobile">
-					<a href="profile.html" title="View Profile"><img alt="" src="images/resources/user.jpg"></a>
+					<a href="profile.html" title="View Profile"><img alt="" src="/images/resources/user.jpg"></a>
 					<div class="name">
 						<h4>Danial Cardos</h4>
 						<span>Ontario, Canada</span>
@@ -29,7 +29,7 @@
 			
 			<header class="">
 				<div class="topbar stick">
-					<div class="logo"><img src="images/logo.png" alt=""><span>Socimo</span></div>
+					<div class="logo"><img src="/images/logo.png" alt=""><span>Socimo</span></div>
 					<div class="searches">
 						<form method="post">
 							<input type="text" placeholder="Search...">
@@ -40,35 +40,35 @@
 								<ul class="so-history">
 									<li>
 										<div class="searched-user">
-											<figure><img src="images/resources/user1.jpg" alt=""></figure>
+											<figure><img src="/images/resources/user1.jpg" alt=""></figure>
 											<span>Danial Carabal</span>
 										</div>
 										<span class="trash"><i class="icofont-close-circled"></i></span>
 									</li>
 									<li>
 										<div class="searched-user">
-											<figure><img src="images/resources/user2.jpg" alt=""></figure>
+											<figure><img src="/images/resources/user2.jpg" alt=""></figure>
 											<span>Maria K</span>
 										</div>
 										<span class="trash"><i class="icofont-close-circled"></i></span>
 									</li>
 									<li>
 										<div class="searched-user">
-											<figure><img src="images/resources/user3.jpg" alt=""></figure>
+											<figure><img src="/images/resources/user3.jpg" alt=""></figure>
 											<span>Fawad Khan</span>
 										</div>
 										<span class="trash"><i class="icofont-close-circled"></i></span>
 									</li>
 									<li>
 										<div class="searched-user">
-											<figure><img src="images/resources/user4.jpg" alt=""></figure>
+											<figure><img src="/images/resources/user4.jpg" alt=""></figure>
 											<span>Danial Sandos</span>
 										</div>
 										<span class="trash"><i class="icofont-close-circled"></i></span>
 									</li>
 									<li>
 										<div class="searched-user">
-											<figure><img src="images/resources/user5.jpg" alt=""></figure>
+											<figure><img src="/images/resources/user5.jpg" alt=""></figure>
 											<span>Jack Carter</span>
 										</div>
 										<span class="trash"><i class="icofont-close-circled"></i></span>
@@ -82,7 +82,7 @@
 						<li>
 							<div class="user-dp">
 								<a href="profile-page2.html" title="">
-									<img alt="" src="images/resources/user.jpg">
+									<img alt="" src="/images/resources/user.jpg">
 									<div class="name">
 										<h4>Danial Cardos</h4>
 									</div>

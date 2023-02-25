@@ -12,35 +12,35 @@
 							<a href="#" class="send-mesg" title="New Message" data-toggle="tooltip"><i class="icofont-edit"></i></a>
 							<ul class="new-messages">
 								<li>
-									<figure><img src="images/resources/user1.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user1.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Ibrahim Ahmed</span>
 										<a href="#" title="">Helo dear i wanna talk to you</a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user2.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user2.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Fatima J.</span>
 										<a href="#" title="">Helo dear i wanna talk to you</a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user3.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user3.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Fawad Ahmed</span>
 										<a href="#" title="">Helo dear i wanna talk to you</a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user4.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user4.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Saim Turan</span>
 										<a href="#" title="">Helo dear i wanna talk to you</a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user5.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user5.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Alis wells</span>
 										<a href="#" title="">Helo dear i wanna talk to you</a>
@@ -53,35 +53,35 @@
 							<h4><i class="icofont-bell-alt"></i> notifications</h4>
 							<ul class="notificationz">
 								<li>
-									<figure><img src="images/resources/user5.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user5.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Alis wells</span>
 										<a href="#" title="">recommend your post</a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user4.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user4.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Alis wells</span>
 										<a href="#" title="">share your post <strong>a good time today!</strong></a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user2.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user2.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Alis wells</span>
 										<a href="#" title="">recommend your post</a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user1.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user1.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Alis wells</span>
 										<a href="#" title="">share your post <strong>a good time today!</strong></a>
 									</div>
 								</li>
 								<li>
-									<figure><img src="images/resources/user3.jpg" alt=""></figure>
+									<figure><img src="/images/resources/user3.jpg" alt=""></figure>
 									<div class="mesg-info">
 										<span>Alis wells</span>
 										<a href="#" title="">recommend your post</a>

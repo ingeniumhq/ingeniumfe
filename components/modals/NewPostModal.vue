@@ -56,7 +56,7 @@
 										<div class="select-box__value"><input class="select-box__input" type="radio" id="4" value="5" name="Ben" checked="checked" />
 											<p class="select-box__input-text"><i class="icofont-users-alt-3"></i> Joined Groups</p>
 										</div>
-										<img class="select-box__icon" src="images/arrow-down.svg" alt="Arrow Icon" aria-hidden="true" />
+										<img class="select-box__icon" src="/images/arrow-down.svg" alt="Arrow Icon" aria-hidden="true" />
 									</div>
 									<ul class="select-box__list">
 										<li><label class="select-box__option" for="0"><i class="icofont-globe-alt"></i> Public</label></li>

@@ -1,5 +1,5 @@
 <template>
-    <figure class="bottom-mockup"><img src="images/footer.png" alt=""></figure>
+    <figure class="bottom-mockup"><img src="/images/footer.png" alt=""></figure>
 			<div class="bottombar">
 				<div class="container">
 					<div class="row">

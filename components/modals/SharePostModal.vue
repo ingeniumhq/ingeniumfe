@@ -25,7 +25,7 @@
 					</div>
 					<div style="display: none;" class="friends-to">
 						<div class="follow-men">
-							<figure><img class="mCS_img_loaded" src="images/resources/user1.jpg" alt=""></figure>
+							<figure><img class="mCS_img_loaded" src="/images/resources/user1.jpg" alt=""></figure>
 							<div class="follow-meta">
 								<h5><a href="#" title="">Jack Carter</a></h5>
 								<span>family member</span>
@@ -33,7 +33,7 @@
 							<a href="#" title="">Share</a>
 						</div>
 						<div class="follow-men">
-							<figure><img class="mCS_img_loaded" src="images/resources/user2.jpg" alt=""></figure>
+							<figure><img class="mCS_img_loaded" src="/images/resources/user2.jpg" alt=""></figure>
 							<div class="follow-meta">
 								<h5><a href="#" title="">Xang Ching</a></h5>
 								<span>Close Friend</span>
@@ -41,7 +41,7 @@
 							<a href="#" title="">Share</a>
 						</div>
 						<div class="follow-men">
-							<figure><img class="mCS_img_loaded" src="images/resources/user3.jpg" alt=""></figure>
+							<figure><img class="mCS_img_loaded" src="/images/resources/user3.jpg" alt=""></figure>
 							<div class="follow-meta">
 								<h5><a href="#" title="">Emma Watson</a></h5>
 								<span>Matul Friend</span>

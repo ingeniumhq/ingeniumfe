@@ -1,8 +1,8 @@
 <template>
     <aside class="sidebar static left">
 											<div class="widget whitish low-opacity">
-												<img src="images/time-clock.png" alt="">
-												<div class="bg-image" style="background-image: url(images/resources/time-bg.jpg)"></div>
+												<img src="/images/time-clock.png" alt="">
+												<div class="bg-image" style="background-image: url(/images/resources/time-bg.jpg)"></div>
 												<div class="date-time">
 													<div class="realtime">
 														<span id="hours">00</span>
@@ -27,7 +27,7 @@
 											<div class="advertisment-box">
 												<h4 class=""><i class="icofont-info-circle"></i> advertisment</h4>
 												<figure>
-													<a href="#" title="Advertisment"><img src="images/resources/ad-widget2.gif" alt=""></a>
+													<a href="#" title="Advertisment"><img src="/images/resources/ad-widget2.gif" alt=""></a>
 												</figure>
 											</div><!-- adversment widget -->
 											
@@ -36,7 +36,7 @@
 												<ul class="premium-course">
 													<li>
 														<figure>
-															<img src="images/resources/course-5.jpg" alt="">
+															<img src="/images/resources/course-5.jpg" alt="">
 															<span class="tag">Free</span>
 														</figure>
 														<div class="vid-course">
@@ -46,7 +46,7 @@
 													</li>
 													<li>
 														<figure>
-															<img src="images/resources/course-3.jpg" alt="">
+															<img src="/images/resources/course-3.jpg" alt="">
 															<span class="tag">Premium</span>
 														</figure>
 														<div class="vid-course">
@@ -60,21 +60,21 @@
 												<h4 class="widget-title">Recent Blogs <a class="see-all" href="#" title="">See All</a></h4>
 												<ul class="recent-links">
 													<li>
-														<figure><img alt="" src="images/resources/recentlink-1.jpg"></figure>
+														<figure><img alt="" src="/images/resources/recentlink-1.jpg"></figure>
 														<div class="re-links-meta">
 															<h6><a title="" href="#">Moira's fade reach much farther...</a></h6>
 															<span>2 weeks ago </span>
 														</div>
 													</li>
 													<li>
-														<figure><img alt="" src="images/resources/recentlink-2.jpg"></figure>
+														<figure><img alt="" src="/images/resources/recentlink-2.jpg"></figure>
 														<div class="re-links-meta">
 															<h6><a title="" href="#">Daniel asks The voice of doomfist...</a></h6>
 															<span>3 months ago </span>
 														</div>
 													</li>
 													<li>
-														<figure><img alt="" src="images/resources/recentlink-3.jpg"></figure>
+														<figure><img alt="" src="/images/resources/recentlink-3.jpg"></figure>
 														<div class="re-links-meta">
 															<h6><a title="" href="#">The socimo over watch scandals.</a></h6>
 															<span>1 day before</span>
