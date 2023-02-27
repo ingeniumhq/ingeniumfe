@@ -3846,6 +3846,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cookie@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@types/cookie@npm:0.5.1"
+  checksum: 9a8d60fc84797122bc399d6bd330fe5780dc7aab032321de705049ea925339f74658bfa418de483a625d51858770efef58df633ff2e20f1bdf7fbd74a52847e2
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.4
   resolution: "@types/eslint-scope@npm:3.7.4"
@@ -15501,6 +15508,7 @@ __metadata:
     "@storybook/addon-postcss": ^3.0.0-alpha.1
     "@storybook/builder-vite": ^0.4.2
     "@storybook/vue3": ^6.5.16
+    "@types/cookie": ^0.5.1
     "@types/js-cookie": ^3.0.3
     "@vitest/coverage-c8": ^0.28.5
     "@vitest/ui": ^0.28.5
@@ -15517,6 +15525,7 @@ __metadata:
     typescript: ^4.9.5
     vite-svg-loader: ^4.0.0
     vitest: ^0.28.5
+    vue3-toastify: ^0.1.1
   languageName: unknown
   linkType: soft
 
@@ -18160,6 +18169,18 @@ __metadata:
   peerDependencies:
     vue: ^3.2.0
   checksum: c7f0156ac03a9561d110f5ff778121eee7c8c154be6ec5064558ba22ab5237db36f29ffffc95cc16d692cc68a26df0c434f395401c0e3b48f782c7bed51391c6
+  languageName: node
+  linkType: hard
+
+"vue3-toastify@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "vue3-toastify@npm:0.1.1"
+  peerDependencies:
+    vue: ^3.2.0
+  peerDependenciesMeta:
+    vue:
+      optional: true
+  checksum: decc37d7f30ec0a820737f0e49e09d75dc0ca89516c6acd619e22e2078a8ce3331382104847c127cc47a037f4367ad6c3569789645a3c0027658454c5168d958
   languageName: node
   linkType: hard
 

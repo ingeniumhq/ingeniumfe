@@ -386,28 +386,28 @@
 <script setup lang="ts">
 import { useAuthStore } from '~/store/auth';
 
-onMounted(() => {
-	// 
-});
+	onMounted(() => {
+		// 
+	});
 
-definePageMeta({
-    layout: 'app',
-    middleware: ["auth"],
-});
+	definePageMeta({
+		layout: 'app',
+		middleware: ["auth"],
+	});
 
 </script>
 
 
 <script lang="ts">
 	export default {
-	beforeRouteEnter(to, from, next) {
-		next((vm) => {
-			const script = document.createElement('script')
-			script.onload = () => {}
-			script.src = '/js/script.js'
-			document.head.appendChild(script)
-		})
-	},
+		beforeRouteEnter(to, from, next) {
+			next((vm) => {
+				const script = document.createElement('script')
+				script.onload = () => {}
+				script.src = '/js/script.js'
+				document.head.appendChild(script)
+			})
+		},
 	}
 </script>
   

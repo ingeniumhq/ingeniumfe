@@ -37,6 +37,7 @@
                     <input required v-model="form.password" type="password" placeholder="xxxxxxxxxx">
                     <button class="main-btn" type="submit" ><i class="icofont-key"></i> Login</button>
                 </form>
+                <span>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></span>
             </div>
         </div>
         <div class="mockup right"><img src="/images/star-shape.png" alt=""></div>
@@ -48,6 +49,8 @@
 import { useAuthStore } from '~/store/auth';
 import { AuthService } from '~/services';
 
+
+
 export default {
     setup(){
         const authStore = useAuthStore();
@@ -55,26 +58,42 @@ export default {
             layout: 'landing',
             middleware: ["guest"],
         })
-
+        // nextTick(() => {
+        //     if (process.client) {
+        //         useNuxtApp().$toast.info('notify after nextTick');
+        //     }
+        // });
+        const { $toast } = useNuxtApp()
         return {
             form: {
                 email: '',
                 password: '',
             },
-            authStore
+            authStore,
+            $toast
         }
     },
 
     methods:{
-        loginUser() {
-            AuthService.loginUser(this.form).then((res)=>{
-                this.authStore.setAuthUser(res.data)
-                navigateTo('/timeline')
-            })
+        loginUser() {  
+            useState('isBusy').value = true;
+            try {
+                AuthService.loginUser(this.form).then((res)=>{
+                    this.authStore.setAuthUser(res.data)
+                    navigateTo('/timeline')
+                    this.$toast(res.message);
+                    useState('isBusy').value = false;
+                }).catch( (err) =>{
+                    this.$toast(err.data.message);
+                    useState('isBusy').value = false;
+                })  
+            } catch (error) {
+                this.$toast(error);
+                useState('isBusy').value = false;
+            }
         }
     }
 }
-
 
 </script>
   

@@ -35,6 +35,7 @@
         <slot />
         </main>
     </Body>
+    <LoadSpinner key="{{useState('isBusy').value}}"/>
 </template>
 
 
@@ -51,6 +52,8 @@
       },
     ]
   })
+
+
   onMounted(() => {
     useHead({
       script: [
@@ -62,20 +65,4 @@
     })
   });
 
-</script>
-
-<script lang="ts">
-
-export default {
-  beforeRouteEnter: function (to) {
-    useHead({
-      script: [
-        {
-          src: '/js/script.js',
-          // body: true,
-        },
-      ]
-    })
-  }
-}
 </script>
