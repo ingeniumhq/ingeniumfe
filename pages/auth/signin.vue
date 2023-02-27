@@ -4,30 +4,24 @@
         <ul class="welcome-caro">
             <li class="welcome-box">
                 <figure><img src="/images/resources/login-1.png" alt=""></figure>
-                <h4>Ask questions with seniors Researchers</h4>
+                <h4>Connect</h4>
                 <p>
-                    Ask questions and get the experienced answer by researchers and others fellows.
+                    Ingenium Academy is a customer service app that connects trained customer service professionals with HR executives.
                 </p>
             </li>
             <li class="welcome-box">
                 <figure><img src="/images/resources/login-2.png" alt=""></figure>
-                <h4>Find New Researchers or Friends</h4>
+                <h4>Network</h4>
                 <p>
-                    Join Socimo and make your network of university or college fellows.
+                    The app provides a platform for professionals to connect and network with others in the customer service industry
                 </p>
             </li>
-            <li class="welcome-box">
-                <figure><img src="/images/resources/login-3.png" alt=""></figure>
-                <h4>Sell Your Online paid Content</h4>
-                <p>
-                    Sell your online lectures, videos, books and many more with Socimo.
-                </p>
-            </li>
+           
 
         </ul>
     </div>
     <div class="auth-login">
-        <div class="logo"><img src="/images/logo.png" alt=""><span>Socimo</span></div>
+        <div class="logo"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
         <div class="mockup left-bottom"><img src="/images/mockup.png" alt=""></div>
         <div class="verticle-center">
             <div class="login-form">

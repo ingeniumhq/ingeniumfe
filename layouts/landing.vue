@@ -50,6 +50,10 @@
         src: '/js/script.js',
         body: true
       },
+      // {
+      //   src: '/js/counterup.min.js',
+      //   body: true
+      // },
     ]
   })
 
