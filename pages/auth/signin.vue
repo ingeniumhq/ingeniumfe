@@ -84,7 +84,8 @@ export default {
                     this.$toast(res.message);
                     useState('isBusy').value = false;
                 }).catch( (err) =>{
-                    this.$toast(err.data.message);
+                    this.$toast(err.data?.message ?? 'An error occured ');
+                    console.log(err)
                     useState('isBusy').value = false;
                 })  
             } catch (error) {
