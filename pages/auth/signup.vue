@@ -74,6 +74,21 @@
 							</div>
 							<button class="main-btn" type="submit"><i class="icofont-key"></i> Signup</button>
 						</div>
+
+						<div class="col-lg-12">
+							<div class="or-container">
+								<div class="line-separator"></div>
+								<div class="or-label">Signup with</div>
+								<div class="line-separator"></div>
+							</div>
+						</div>
+
+						<div class="socialbutton-container col-md-12">
+								<a class=" btn btn-lg btn-socialauth btn-block text-uppercase btn-outline" href="#"><img style="width: 30px" src="/images/google-48.png">Google</a>
+								<a class=" btn btn-lg btn-socialauth btn-block text-uppercase btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
+								<a class=" btn btn-lg btn-socialauth btn-block text-uppercase btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a>
+						</div>
+
 					</div>
 				</form>
 			</div>

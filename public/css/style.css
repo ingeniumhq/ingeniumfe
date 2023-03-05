@@ -13890,3 +13890,39 @@ a.classic-btn:hover {
 .align-center {
   text-align: center;
 }
+
+/* airon */
+
+.btn-socialauth {
+  color: #545454;
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 1px #ddd;
+}
+
+.btn-socialauth img {
+    margin-right: 4px;
+  }
+
+.socialbutton-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.or-container {
+  align-items: center;
+  color: #ccc;
+  display: flex;
+  margin: 25px 0;
+}
+
+.line-separator {
+  background-color: #ccc;
+  flex-grow: 5;
+  height: 1px;
+}
+
+.or-label {
+  flex-grow: 1;
+  margin: 0 15px;
+  text-align: center;
+}
