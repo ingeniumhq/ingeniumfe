@@ -38,7 +38,7 @@
 							<label for="hr">HR Professional</label>
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input v-model="form.account_type" type="radio" id="ngo" name="acdamic" value="2">
+							<input v-model="form.account_type" type="radio" id="ngo" name="account_type" value="2">
 							<label for="cs">Customer Service Professional</label>
 						</div>
 						<!-- <div class="col-lg-6 col-sm-6 col-md-6">
@@ -49,12 +49,12 @@
 							<input type="radio" id="other" name="acdamic" value="other">
 							<label for="other">Not a Rsearcher</label>
 						</div> -->
-						<div class="col-lg-6 col-sm-6 col-md-6">
+						<!-- <div class="col-lg-6 col-sm-6 col-md-6">
 							<input v-model="form.institute" type="text" placeholder="Institute, Company">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
 							<input v-model="form.department" type="text" placeholder="Department">
-						</div>
+						</div> -->
 						<!-- <div class="col-lg-12">
 							<input type="text" placeholder="Your Position">
 						</div> -->
