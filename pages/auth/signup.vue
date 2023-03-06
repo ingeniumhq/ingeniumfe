@@ -101,7 +101,7 @@
 	import { useAuthStore } from '~/store/auth';
 	import { AuthService } from '~/services';
 	import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
-
+	
 
 
 	export default {
@@ -119,7 +119,9 @@
 						code: response.access_token
 					}
 					console.log(payload)
-					AuthService.socialAuth(payload);
+					AuthService.socialAuth(payload).then(res =>{
+						authStore.setAuthUser(res.data)
+					});
 				})
 			}
 		
