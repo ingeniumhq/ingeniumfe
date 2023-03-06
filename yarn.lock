@@ -15525,6 +15525,7 @@ __metadata:
     typescript: ^4.9.5
     vite-svg-loader: ^4.0.0
     vitest: ^0.28.5
+    vue3-google-login: ^2.0.14
     vue3-toastify: ^0.1.1
   languageName: unknown
   linkType: soft
@@ -18169,6 +18170,15 @@ __metadata:
   peerDependencies:
     vue: ^3.2.0
   checksum: c7f0156ac03a9561d110f5ff778121eee7c8c154be6ec5064558ba22ab5237db36f29ffffc95cc16d692cc68a26df0c434f395401c0e3b48f782c7bed51391c6
+  languageName: node
+  linkType: hard
+
+"vue3-google-login@npm:^2.0.14":
+  version: 2.0.14
+  resolution: "vue3-google-login@npm:2.0.14"
+  peerDependencies:
+    vue: ^3.0.3
+  checksum: 61e302322187b3a1a8acd57540d0dc92a2f5807f13706f75384669ff511c923c99cf60b30df63e7d93a9dad56fd47f581f1ce45257b048d8910f6f8b8590fa27
   languageName: node
   linkType: hard
 

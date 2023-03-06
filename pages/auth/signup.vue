@@ -84,7 +84,7 @@
 						</div>
 
 						<div class="socialbutton-container col-md-12">
-								<a class=" btn btn-lg btn-socialauth btn-block text-uppercase btn-outline" href="#"><img style="width: 30px" src="/images/google-48.png">Google</a>
+								<a @click.prevent="googleAuth()" class=" btn btn-lg btn-socialauth btn-block text-uppercase btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
 								<a class=" btn btn-lg btn-socialauth btn-block text-uppercase btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
 								<a class=" btn btn-lg btn-socialauth btn-block text-uppercase btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a>
 						</div>
@@ -100,6 +100,7 @@
 <script lang="ts">
 	import { useAuthStore } from '~/store/auth';
 	import { AuthService } from '~/services';
+	import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
 
 
 
@@ -110,6 +111,17 @@
 				layout: 'landing',
 				middleware: ["guest"],
 			})
+
+			const googleAuth = () => {
+				googleTokenLogin().then((response) => {
+					const payload: SocialAuthPayload = {
+						provider: 'google',
+						code: response.access_token
+					}
+					console.log(payload)
+					AuthService.socialAuth(payload);
+				})
+			}
 		
 			const { $toast } = useNuxtApp()
 			return {
@@ -125,7 +137,8 @@
 					accept_terms: true,
 				},
 				authStore,
-				$toast
+				$toast,
+				googleAuth
 			}
 		},
 
