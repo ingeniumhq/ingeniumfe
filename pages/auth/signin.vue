@@ -45,7 +45,7 @@
 
             <div class="socialbutton-container col-md-12">
                     <a  @click="googleAuth" class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
-                    <a class=" btn btn-lg btn-socialauth btn-block text-sm  btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
+                    <a @click="signIn" class=" btn btn-lg btn-socialauth btn-block text-sm  btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
                     <a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a>
             </div>
                 
@@ -61,6 +61,8 @@
 import { useAuthStore } from '~/store/auth';
 import { AuthService } from '~/services';
 import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
+
+import { initFacebook, login, logout } from '~/services/auth/facebook-auth';
 
 
 
@@ -87,11 +89,21 @@ export default {
             })
         }
 
+        async function signIn() {
+            const result = await login();
+        }
+
         // nextTick(() => {
         //     if (process.client) {
         //         useNuxtApp().$toast.info('notify after nextTick');
         //     }
         // });
+
+        onMounted(async () => {
+            initFacebook('1641447452974121');
+        });
+
+
         const { $toast } = useNuxtApp()
         return {
             form: {
@@ -100,7 +112,8 @@ export default {
             },
             authStore,
             $toast,
-            googleAuth
+            googleAuth,
+            signIn
         }
     },
 
