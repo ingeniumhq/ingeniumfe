@@ -121,6 +121,7 @@
 					console.log(payload)
 					AuthService.socialAuth(payload).then(res =>{
 						authStore.setAuthUser(res.data)
+						navigateTo('/timeline')
 					});
 				})
 			}
