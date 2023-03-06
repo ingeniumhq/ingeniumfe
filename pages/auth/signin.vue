@@ -30,9 +30,27 @@
                     <input required v-model="form.email" type="text" placeholder="User Name @">
                     <input required v-model="form.password" type="password" placeholder="xxxxxxxxxx">
                     <button class="main-btn" type="submit" ><i class="icofont-key"></i> Login</button>
+
+                    
                 </form>
-                <span>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></span>
+                <div>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></div>
+
+                <div class="col-lg-12">
+                <div class="or-container">
+                    <div class="line-separator"></div>
+                    <div class="or-label">Signin with</div>
+                    <div class="line-separator"></div>
+                </div>
             </div>
+
+            <div class="socialbutton-container col-md-12">
+                    <a  @click="googleAuth" class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
+                    <a class=" btn btn-lg btn-socialauth btn-block text-sm  btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
+                    <a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a>
+            </div>
+                
+            </div>
+            
         </div>
         <div class="mockup right"><img src="/images/star-shape.png" alt=""></div>
     </div>
@@ -42,6 +60,8 @@
 <script lang="ts">
 import { useAuthStore } from '~/store/auth';
 import { AuthService } from '~/services';
+import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
+
 
 
 
@@ -52,6 +72,21 @@ export default {
             layout: 'landing',
             middleware: ["guest"],
         })
+
+        const googleAuth = () => {
+            googleTokenLogin().then((response) => {
+                const payload: SocialAuthPayload = {
+                    provider: 'google',
+                    code: response.access_token
+                }
+                console.log(payload)
+                AuthService.socialAuth(payload).then(res =>{
+                    authStore.setAuthUser(res.data)
+                    navigateTo('/timeline')
+                });
+            })
+        }
+
         // nextTick(() => {
         //     if (process.client) {
         //         useNuxtApp().$toast.info('notify after nextTick');
@@ -64,7 +99,8 @@ export default {
                 password: '',
             },
             authStore,
-            $toast
+            $toast,
+            googleAuth
         }
     },
 
