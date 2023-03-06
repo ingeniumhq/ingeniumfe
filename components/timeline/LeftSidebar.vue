@@ -31,7 +31,7 @@
 												</figure>
 											</div><!-- adversment widget -->
 											
-											<div class="widget">
+											<div class=" d-none widget">
 												<h4 class="widget-title"><i class="icofont-flame-torch"></i> Popular Courses</h4>
 												<ul class="premium-course">
 													<li>
@@ -73,13 +73,7 @@
 															<span>3 months ago </span>
 														</div>
 													</li>
-													<li>
-														<figure><img alt="" src="/images/resources/recentlink-3.jpg"></figure>
-														<div class="re-links-meta">
-															<h6><a title="" href="#">The socimo over watch scandals.</a></h6>
-															<span>1 day before</span>
-														</div>
-													</li>
+													
 												</ul>
 											</div><!-- recent blog -->
 											<div class="widget">
@@ -89,7 +83,7 @@
 												</p>
 												<a class="main-btn" href="profile.html" title="" data-ripple="">view profile</a>
 											</div><!-- your profile -->
-											<div class="widget web-links stick-widget">
+											<div class="d-none widget web-links stick-widget">
 												<h4 class="widget-title">Useful Links <a title="" href="#" class="see-all">See All</a></h4>
 												<ul>
 													<li><i class="icofont-dotted-right"></i> <a title="" href="#">about</a></li>

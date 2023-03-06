@@ -56,7 +56,7 @@
 													</div>
 												</div>	
 											</div><!-- suggested group -->
-											<div class="widget">
+											<div class="d-none widget">
 												<h4 class="widget-title">Ask Research Question?</h4>
 												<div class="ask-question">
 													<i class="icofont-question-circle"></i>
