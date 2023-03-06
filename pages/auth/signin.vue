@@ -100,7 +100,7 @@ export default {
         // });
 
         onMounted(async () => {
-            initFacebook('1641447452974121');
+            initFacebook('3349779741932998');
         });
 
 
