@@ -111,7 +111,7 @@
 					</a>
 				</li> -->
 				<li>
-					<a href="#" title="Home" data-toggle="tooltip">
+					<NuxtLink to="/timeline" title="Home" data-toggle="tooltip">
 						<i>
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
 								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -119,7 +119,7 @@
 								<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
 								<polyline points="9 22 9 12 15 12 15 22"></polyline>
 							</svg></i>
-					</a>
+					</NuxtLink>
 				</li>
 				<li>
 					<a class="mesg-notif" href="#" title="Messages" data-toggle="tooltip">
@@ -176,7 +176,7 @@
 					<!-- <li><a href="#" title=""><i class="icofont-price"></i> Payout</a></li> -->
 					<li><a href="#" title=""><i class="icofont-flash"></i> Upgrade</a></li>
 					<li><a href="#" title=""><i class="icofont-question-circle"></i> Help</a></li>
-					<li><a href="#" title=""><i class="icofont-gear"></i> Setting</a></li>
+					<li><NuxtLink to="/usr/settings" title=""><i class="icofont-gear"></i> Setting</NuxtLink></li>
 					<li><a href="#" title=""><i class="icofont-notepad"></i> Privacy</a></li>
 					<!-- <li><a class="dark-mod" href="#" title=""><i class="icofont-moon"></i> Dark Mode</a></li> -->
 					<li class="logout"><a href="#" @click="logout" title=""><i class="icofont-power"></i> Logout</a>

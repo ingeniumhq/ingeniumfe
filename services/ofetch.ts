@@ -30,13 +30,15 @@ let options = {
 if(process.client){
     const config = useRuntimeConfig()
     options.baseURL = config.NUXT_API_BASE_URL
+
+    // if token is in store
+    if ( authStore.isLoggedIn && authStore.bearerToken ){
+        console.log(authStore.bearerToken)
+        options.headers.Authorization = 'Bearer ' + authStore.bearerToken
+    }
 }
 
-// if token is in store
-if ( authStore.isLoggedIn && authStore.bearerToken ){
-    console.log(authStore.bearerToken)
-    options.headers.Authorization = 'Bearer ' + authStore.bearerToken
-}
+
 
 
 const apiRequest = ofetch.create(options)

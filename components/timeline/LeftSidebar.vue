@@ -24,14 +24,16 @@
 													<li><i class="icofont-plus-square"></i> <a href="#" title="">Add Payment Method</a><em>20%</em></li>
 												</ul>
 											</div><!-- complete profile widget -->
-											<div class="advertisment-box">
+
+											<!-- advertisement -->
+											<div class="advertisment-box d-none">
 												<h4 class=""><i class="icofont-info-circle"></i> advertisment</h4>
 												<figure>
 													<a href="#" title="Advertisment"><img src="/images/resources/ad-widget2.gif" alt=""></a>
 												</figure>
 											</div><!-- adversment widget -->
 											
-											<div class=" d-none widget">
+											<div class=" d-none widget d-none">
 												<h4 class="widget-title"><i class="icofont-flame-torch"></i> Popular Courses</h4>
 												<ul class="premium-course">
 													<li>

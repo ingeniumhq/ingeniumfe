@@ -53,10 +53,10 @@
           </form>
         </div>
         <ul>
-          <li><a class="join-butn" href="/timeline" title="">Today's Newsfeed</a></li>
+          <li><a class="join-butn" href="/timeline" title="">Get Started</a></li>
           <!-- <li><a href="#" title="">help</a></li> -->
           <!-- <li><a href="#" title=""><img src="/images/flags/US.png" alt=""></a></li> -->
-          <li><a href="/auth/signin" title="">Login / Register</a></li>
+          <!-- <li><a href="/auth/signin" title="">Login / Register</a></li> -->
         </ul>
       </div>
     </header>

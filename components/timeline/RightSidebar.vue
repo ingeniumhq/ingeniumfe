@@ -77,7 +77,7 @@
 													<img alt="" src="/images/clock.png">
 												</div>
 											</div><!-- event widget -->
-											<div class="widget">
+											<div class="widget d-none">
 												<span><i class="icofont-globe"></i> Sponsored</span>
 												<ul class="sponsors-ad">
 													<li>
@@ -96,7 +96,7 @@
 													</li>
 												</ul>
 											</div><!-- sponsord -->
-											<div class="widget stick-widget">
+											<div class="widget stick-widget d-none">
 												<h4 class="widget-title">Who's follownig</h4>
 												<ul class="followers" >
 													<li>

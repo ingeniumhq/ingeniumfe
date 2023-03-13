@@ -17,6 +17,9 @@ export default  {
     async deleteCertificate(id: number) {
         return await apiRequest(`users/me/certifications/${id}`, { method: 'DELETE'})
     },
+    async deleteInterest(id: number) {
+        return await apiRequest(`users/me/interests/${id}`, { method: 'DELETE'})
+    },
 
 
 }

@@ -31,7 +31,7 @@
 								<li class="nav-item"><a class="" href="#certifications" data-toggle="tab">Certifications</a>
 								</li>
 								<li class="nav-item"><a class="" href="#skills" data-toggle="tab">Skills/Interests</a></li>
-								<li class="nav-item"><a class="" href="#billing" data-toggle="tab">Portfolio</a></li>
+								<!-- <li class="nav-item"><a class="" href="#billing" data-toggle="tab">Portfolio</a></li> -->
 
 								<li class="nav-item"><a class="" href="#close" data-toggle="tab">Close Account</a></li>
 							</ul>
@@ -185,9 +185,7 @@
 															<div class="tab-pane active fade show" id="visa">
 																<div class="credit-card billing">
 																	<h6><i class="icofont-check-circled"></i> Add New</h6>
-																	<figure><img
-																			src="/images/resources/Credit-Card-Logos.jpg"
-																			alt=""></figure>
+																	
 																	<form @submit.prevent="saveExperience()">
 																		<div class="row merged20">
 																			<div class="col-lg-6 mb-4">
@@ -287,9 +285,7 @@
 															<div class="tab-pane active fade show" id="visa">
 																<div class="credit-card billing">
 																	<h6><i class="icofont-check-circled"></i> Add New</h6>
-																	<figure><img
-																			src="/images/resources/Credit-Card-Logos.jpg"
-																			alt=""></figure>
+																	
 																	<form @submit.prevent="saveCertification()">
 																		<div class="row merged20">
 
@@ -368,14 +364,14 @@
 												<h6>Interests</h6>
 												<span v-for="interest in interests">
 													{{ interest.name }}
-													<button type="submit" class="ml-2" title="Save" style="border: none; background: none; border-radius: 10px; margin: auto; color: gray;">
+													<button @click="deleteInterest(interest)" class="ml-2" title="Save" style="border: none; background: none; border-radius: 10px; margin: auto; color: gray;">
 														<i class="icofont-trash icon-label"></i>
 													</button>
 												</span>
 												
 												<span>
 													<form @submit.prevent="saveInterest()" class="d-flex">
-														<input class="uk-input" v-model="new_interest" type="text"
+														<input class="uk-input" v-model="new_interest.name" type="text"
 															placeholder="New Interest" required
 															style="border: none; border-radius: 50px; padding: 1px;">
 														<button type="submit" class="ml-2" title="Save"
@@ -387,13 +383,23 @@
 											</div>
 											<div class="dis-n-exp">
 												<h6>Skills &amp; Experties </h6>
-												<span>educational leadership</span>
-												<span>educational assesment</span>
-												<span>educational management</span>
-												<span>Social Psychology</span>
-												<span>organizational Psychology</span>
-												<span>Qualitative social research</span>
-												<span>Qualitative Psychology</span>
+												<span v-for="skill in skills">
+													{{ skill.name }}
+													<button @click="deleteSkill(skill)" class="ml-2" title="Save" style="border: none; background: none; border-radius: 10px; margin: auto; color: gray;">
+														<i class="icofont-trash icon-label"></i>
+													</button>
+												</span>
+												<span>
+													<form @submit.prevent="saveSkill()" class="d-flex">
+														<input class="uk-input" v-model="new_skill.name" type="text"
+															placeholder="New Skill" required
+															style="border: none; border-radius: 50px; padding: 1px;">
+														<button type="submit" class="ml-2" title="Save"
+															style="border: none; background: #098dcd; border-radius: 10px; margin: auto; color: white;">
+															<i class="icofont-plus icon-label"></i>
+														</button>
+													</form>
+												</span>
 											</div>
 										</div>
 									</div>
@@ -452,7 +458,9 @@ export default {
 			certifications: [],
 			new_certification: {},
 			interests: [],
-			new_interests: {},
+			new_interest: {},
+			skills: [],
+			new_skill: {},
 
 
 		}
@@ -478,6 +486,7 @@ export default {
 				this.user_account.experiences = this.experiences
 				this.user_account.certifications = this.certifications
 				this.user_account.interests = this.interests
+				this.user_account.skills = this.skills
 
 				UserService.updateAccount(this.user_account).then((res) => {
 					this.$toast(res.message);
@@ -518,12 +527,35 @@ export default {
 				this.$toast(res.message);
 			})
 		},
+		
 
 		saveInterest() {
 			const interest = this.new_interest
 			this.interests.push(interest)
-			this.new_interest = ''
+			this.new_interest = {}
 			this.updateAccount()
+		},
+
+		deleteInterest(interest: any) {
+			UserService.deleteInterest(interest.id).then((res) => {
+				this.interests.splice(this.interests.indexOf(interest), 1)
+				this.$toast(res.message);
+			})
+		},
+
+
+		saveSkill() {
+			const skill = this.new_skill
+			this.skills.push(skill)
+			this.new_skill = {}
+			this.updateAccount()
+		},
+
+		deleteSkill(interest: any) {
+			UserService.deleteInterest(interest.id).then((res) => {
+				this.interests.splice(this.interests.indexOf(interest), 1)
+				this.$toast(res.message);
+			})
 		},
 
 
@@ -535,6 +567,7 @@ export default {
 					this.experiences = res.data.experiences ?? []
 					this.certifications = res.data.certifications ?? []
 					this.interests = res.data.interests ?? []
+					this.skills = res.data.skills ?? []
 					// console.log(res)
 				}).catch((err) => {
 				})
