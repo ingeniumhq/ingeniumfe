@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<div class="gap no-gap bluesh high-opacity">
-			<div style="background-image: url(images/resources/top-bg.jpg)" class="bg-image"></div>
+			<div style="background-image: url(/images/resources/top-bg.jpg)" class="bg-image"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -186,7 +186,7 @@
 																<div class="credit-card billing">
 																	<h6><i class="icofont-check-circled"></i> Add New</h6>
 																	<figure><img
-																			src="images/resources/Credit-Card-Logos.jpg"
+																			src="/images/resources/Credit-Card-Logos.jpg"
 																			alt=""></figure>
 																	<form @submit.prevent="saveExperience()">
 																		<div class="row merged20">
@@ -288,7 +288,7 @@
 																<div class="credit-card billing">
 																	<h6><i class="icofont-check-circled"></i> Add New</h6>
 																	<figure><img
-																			src="images/resources/Credit-Card-Logos.jpg"
+																			src="/images/resources/Credit-Card-Logos.jpg"
 																			alt=""></figure>
 																	<form @submit.prevent="saveCertification()">
 																		<div class="row merged20">
