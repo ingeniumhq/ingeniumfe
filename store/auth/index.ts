@@ -1,7 +1,4 @@
 import { defineStore } from 'pinia';
-import { AuthService } from '~/services';
-
-
 export const useAuthStore = defineStore('useAuthStore', {
   state: (): {
     authUser: Object,
@@ -41,8 +38,11 @@ export const useAuthStore = defineStore('useAuthStore', {
     beforeRestore: (ctx) => {
       console.log(`about to restore '${ctx.store.$id}'`)
     },
-    paths: ['isLoggedIn', 'bearerToken'],
+
+    afterRestore: (ctx) => {
+      console.log(`just restored '${ctx.store.$id}'`)
+    },
+
+    paths: ['isLoggedIn', 'bearerToken', 'authUser'],
   },
-
-
 });

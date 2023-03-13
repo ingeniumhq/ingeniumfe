@@ -33,9 +33,61 @@
             </div>
         </div> -->
 
-        <main>
-        <slot />
-        </main>
+        <ClientOnly>
+          <main>
+
+            <!-- responsive header -->
+        
+            <PartialsAppTopbar></PartialsAppTopbar>
+            <!-- topbar header -->
+            
+          
+            <PartialsAppSidebar></PartialsAppSidebar>
+            <!-- nav sidebar -->
+            
+            <PartialsAppMenubar></PartialsAppMenubar>
+            <!-- nav carousel menubar -->
+
+
+            <slot />
+
+            <PartialsAppFooter></PartialsAppFooter>
+            <!-- bottombar footer -->
+            
+            <ModalsInviteColleagueModal></ModalsInviteColleagueModal>
+            <!-- invite colleague popup -->
+            
+            <!-- send message popup -->
+            
+            <!-- side slide message & popup -->
+            
+            <!-- New post popup -->
+            
+            <!-- ask question -->
+            
+            <!-- auto popup --> 
+            
+            <!-- share post -->
+            
+            <div class="cart-product">
+              <a href="product-cart.html" title="View Cart" data-toggle="tooltip"><i class="icofont-cart-alt"></i></a>
+              <span>03</span>
+            </div>
+            <!-- view cart button -->
+            
+            <div class="chat-live">
+              <a class="chat-btn" href="#" title="Start Live Chat" data-toggle="tooltip"><i class="icofont-facebook-messenger"></i></a>
+              <span>07</span>
+            </div><!-- chat button -->
+            
+            <!-- chat box -->
+            
+            <!-- create new room -->
+            
+            <!-- The Scrolling Modal image with comment -->
+
+          </main>
+        </ClientOnly>
         
     </Body>
 </template>

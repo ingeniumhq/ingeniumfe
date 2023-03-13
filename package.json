@@ -36,12 +36,14 @@
   },
   "dependencies": {
     "@nuxt/types": "^2.16.0",
+    "@nuxtjs/dayjs": "^1.4.1",
     "@pinia/nuxt": "^0.4.6",
     "cookie": "^0.5.0",
     "fb-sdk-wrapper": "^1.1.0",
     "js-cookie": "^3.0.1",
     "ofetch": "^1.0.1",
     "pinia": "^2.0.30",
+    "vue-dayjs": "^1.0.2",
     "vue3-google-login": "^2.0.14",
     "vue3-toastify": "^0.1.1"
   }

@@ -2404,6 +2404,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nuxtjs/dayjs@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "@nuxtjs/dayjs@npm:1.4.1"
+  dependencies:
+    consola: ^2.10.1
+    dayjs: ^1.10.4
+  checksum: 958b785b703603b38d0613a9a762f7105761412c3e3c487b9a6ba229bd12b424ee9bfc09b16c68ccbf52b3c425568e81cf56a1c0a587b42b7ce7cd51eb8ea991
+  languageName: node
+  linkType: hard
+
 "@pinia-plugin-persistedstate/nuxt@npm:^1.0.0":
   version: 1.0.0
   resolution: "@pinia-plugin-persistedstate/nuxt@npm:1.0.0"
@@ -6994,7 +7004,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"consola@npm:^2.15.3":
+"consola@npm:^2.10.1, consola@npm:^2.15.3":
   version: 2.15.3
   resolution: "consola@npm:2.15.3"
   checksum: 8ef7a09b703ec67ac5c389a372a33b6dc97eda6c9876443a60d76a3076eea0259e7f67a4e54fd5a52f97df73690822d090cf8b7e102b5761348afef7c6d03e28
@@ -7498,6 +7508,13 @@ __metadata:
   version: 4.0.1
   resolution: "data-uri-to-buffer@npm:4.0.1"
   checksum: 0d0790b67ffec5302f204c2ccca4494f70b4e2d940fea3d36b09f0bb2b8539c2e86690429eb1f1dc4bcc9e4df0644193073e63d9ee48ac9fce79ec1506e4aa4c
+  languageName: node
+  linkType: hard
+
+"dayjs@npm:^1.10.4, dayjs@npm:^1.5.24":
+  version: 1.11.7
+  resolution: "dayjs@npm:1.11.7"
+  checksum: 5003a7c1dd9ed51385beb658231c3548700b82d3548c0cfbe549d85f2d08e90e972510282b7506941452c58d32136d6362f009c77ca55381a09c704e9f177ebb
   languageName: node
   linkType: hard
 
@@ -15508,6 +15525,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@nuxt/types": ^2.16.0
+    "@nuxtjs/dayjs": ^1.4.1
     "@pinia-plugin-persistedstate/nuxt": ^1.0.0
     "@pinia/nuxt": ^0.4.6
     "@storybook/addon-a11y": ^6.5.16
@@ -15533,6 +15551,7 @@ __metadata:
     typescript: ^4.9.5
     vite-svg-loader: ^4.0.0
     vitest: ^0.28.5
+    vue-dayjs: ^1.0.2
     vue3-google-login: ^2.0.14
     vue3-toastify: ^0.1.1
   languageName: unknown
@@ -18088,6 +18107,15 @@ __metadata:
   dependencies:
     ufo: ^1.1.0
   checksum: fd619ea47b47942ef8594400162abb7b9a56f4af14777e13ae3d88b7d13417ee69d83def4384dc9bc8adf9c3a57a429e4b9895b42e2b8a54e6016b858c468f40
+  languageName: node
+  linkType: hard
+
+"vue-dayjs@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "vue-dayjs@npm:1.0.2"
+  dependencies:
+    dayjs: ^1.5.24
+  checksum: 88968b2524d131ff1797b21a35ff1867ce4e8427d4e87085084feebcdc218c88dcbbb79e0f7f2b52b4912ffbf017d4dd13ba3c7bef523e39f18c32384097c250
   languageName: node
   linkType: hard
 
