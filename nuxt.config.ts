@@ -26,9 +26,10 @@ export default defineNuxtConfig({
   piniaPersistedstate: {
     cookieOptions: {
       sameSite: 'strict',
-    },
-    // storage: 'localStorage',
+    }, // only used when cookie
+    // storage: 'sessionStorage', //'sessionStorage' , 'localStorage
     debug: true
+    
   },
     
   css: [

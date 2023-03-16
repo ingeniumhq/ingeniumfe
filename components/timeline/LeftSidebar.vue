@@ -83,7 +83,7 @@
 												<p>
 													Showcase your professional experience and education to help potential employers and collaborators find and contact you about career opportunities.
 												</p>
-												<a class="main-btn" href="profile.html" title="" data-ripple="">view profile</a>
+												<a class="main-btn" href="#" title="" data-ripple="">view profile</a>
 											</div><!-- your profile -->
 											<div class="d-none widget web-links stick-widget">
 												<h4 class="widget-title">Useful Links <a title="" href="#" class="see-all">See All</a></h4>

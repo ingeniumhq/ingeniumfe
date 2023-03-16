@@ -399,6 +399,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/parser@npm:^7.18.4":
+  version: 7.21.3
+  resolution: "@babel/parser@npm:7.21.3"
+  bin:
+    parser: ./bin/babel-parser.js
+  checksum: a71e6456a1260c2a943736b56cc0acdf5f2a53c6c79e545f56618967e51f9b710d1d3359264e7c979313a7153741b1d95ad8860834cc2ab4ce4f428b13cc07be
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:7.18.6"
@@ -1927,6 +1936,13 @@ __metadata:
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
   checksum: 4059f790e2d07bf3c3ff3e0fec0daa8144fe35c1f6e0111c9921bd32106adaa97a4ab096ad7dab1e28ee6a9060083c4d1a4ada42a7f5f3f7a96b8812e2b757c1
+  languageName: node
+  linkType: hard
+
+"@glidejs/glide@npm:^3.2.4":
+  version: 3.6.0
+  resolution: "@glidejs/glide@npm:3.6.0"
+  checksum: e2c8332f03dee891be5a310c9483355492093392efb35b5040d9678cd84d2dc067609a890cbf78f6824307f315e5f7e36940a5dc291c1c2ad653d43d62c7291d
   languageName: node
   linkType: hard
 
@@ -4517,6 +4533,17 @@ __metadata:
     "@vue/compiler-core": 3.2.47
     "@vue/shared": 3.2.47
   checksum: 1eced735f865e6df0c2d7fa041f9f27996ff4c0d4baf5fad0f67e65e623215f4394c49bba337b78427c6e71f2cc2db12b19ec6b865b4c057c0a15ccedeb20752
+  languageName: node
+  linkType: hard
+
+"@vue/compiler-sfc@npm:2.7.14":
+  version: 2.7.14
+  resolution: "@vue/compiler-sfc@npm:2.7.14"
+  dependencies:
+    "@babel/parser": ^7.18.4
+    postcss: ^8.4.14
+    source-map: ^0.6.1
+  checksum: 25e00abaecb311f1effbf539bc3e4fdeedb39d35f9c2947b2640187a047e6a7400e693fd7da1d3a98977b9078c5bf629ca47f8b9a59dc14a080c0a1e1dd06a49
   languageName: node
   linkType: hard
 
@@ -7478,6 +7505,13 @@ __metadata:
   version: 2.6.21
   resolution: "csstype@npm:2.6.21"
   checksum: 2ce8bc832375146eccdf6115a1f8565a27015b74cce197c35103b4494955e9516b246140425ad24103864076aa3e1257ac9bab25a06c8d931dd87a6428c9dccf
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.1.0":
+  version: 3.1.1
+  resolution: "csstype@npm:3.1.1"
+  checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
   languageName: node
   linkType: hard
 
@@ -14378,7 +14412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.0.9, postcss@npm:^8.1.10, postcss@npm:^8.4.21":
+"postcss@npm:^8.0.9, postcss@npm:^8.1.10, postcss@npm:^8.4.14, postcss@npm:^8.4.21":
   version: 8.4.21
   resolution: "postcss@npm:8.4.21"
   dependencies:
@@ -15552,6 +15586,7 @@ __metadata:
     vite-svg-loader: ^4.0.0
     vitest: ^0.28.5
     vue-dayjs: ^1.0.2
+    vue-glide-js: ^1.3.14
     vue3-google-login: ^2.0.14
     vue3-toastify: ^0.1.1
   languageName: unknown
@@ -18176,6 +18211,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vue-glide-js@npm:^1.3.14":
+  version: 1.3.14
+  resolution: "vue-glide-js@npm:1.3.14"
+  dependencies:
+    "@glidejs/glide": ^3.2.4
+    vue: ^2.5.16
+  checksum: 7eb55cda5d9b55133841a026ffc4ddb6c08c94668915dd9070abbbc8e5e3d8a412acdbb2c29dbfedf26860063bacfd18ff7f9b401649dd95815d872e01f1d18b
+  languageName: node
+  linkType: hard
+
 "vue-inbrowser-compiler-independent-utils@npm:^4.56.2":
   version: 4.56.2
   resolution: "vue-inbrowser-compiler-independent-utils@npm:4.56.2"
@@ -18227,6 +18272,16 @@ __metadata:
     vue:
       optional: true
   checksum: decc37d7f30ec0a820737f0e49e09d75dc0ca89516c6acd619e22e2078a8ce3331382104847c127cc47a037f4367ad6c3569789645a3c0027658454c5168d958
+  languageName: node
+  linkType: hard
+
+"vue@npm:^2.5.16":
+  version: 2.7.14
+  resolution: "vue@npm:2.7.14"
+  dependencies:
+    "@vue/compiler-sfc": 2.7.14
+    csstype: ^3.1.0
+  checksum: 8b06da67cc40870c66a30b7a6bc2874950cd4383792c371eb30497dd14fc7b41cf308b1c4517368d8f0e7ac16198c08de19236f6a79fe43f4bdbc4a1d9d4ad07
   languageName: node
   linkType: hard
 

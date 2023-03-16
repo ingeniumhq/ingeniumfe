@@ -49,39 +49,9 @@
 								
 																	
 							
-								<div class="main-wraper">
-									<div class="user-post">
-										<div class="friend-info">
-											<figure>
-												<i class="icofont-learn"></i>
-											</figure>
-											<div class="friend-name">
-												<ins><a title="" href="time-line.html">Suggested</a></ins>
-												<span><i class="icofont-runner-alt-1"></i> Follow similar People</span>
-											</div>
-											<ul class="suggested-caro">
-												<li>
-													<figure><img src="/images/resources/speak-1.jpg" alt=""></figure>
-													<span>Amy Watson</span>
-													<ins>Department of Socilolgy</ins>
-													<a href="#" title="" data-ripple=""><i class="icofont-star"></i> Follow</a>
-												</li>
-												<li>
-													<figure><img src="/images/resources/speak-2.jpg" alt=""></figure>
-													<span>Muhammad Khan</span>
-													<ins>Department of Socilolgy</ins>
-													<a href="#" title="" data-ripple=""><i class="icofont-star"></i> Follow</a>
-												</li>
-												<li>
-													<figure><img src="/images/resources/speak-3.jpg" alt=""></figure>
-													<span>Sadia Gill</span>
-													<ins>Department of Socilolgy</ins>
-													<a href="#" title="" data-ripple=""><i class="icofont-star"></i> Follow</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div><!-- suggested friends -->
+								<!-- suggested friends -->
+								<ComposeSimilarPeople></ComposeSimilarPeople>
+								<!-- suggested friends -->
 								
 								<div class="main-wraper">
 									<div class="user-post">
@@ -348,8 +318,15 @@ import { useAuthStore } from '~/store/auth';
 				const script = document.createElement('script')
 				script.onload = () => {}
 				script.src = '/js/script.js'
-				document.head.appendChild(script)
+				document.body.appendChild(script)
 			})
+		},
+
+		mounted() {
+			const script = document.createElement('script')
+			script.onload = () => {}
+			script.src = '/js/script.js'
+			document.body.appendChild(script)
 		},
 	}
 </script>

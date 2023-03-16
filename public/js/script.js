@@ -395,7 +395,7 @@ jQuery(document).ready(function ($) {
         size: $(this).width(),
         startAngle: 4.7,
         fill: {
-          gradient: ["#088dcd", "#9eddfb"],
+          gradient: ["#184391", "#9eddfb"],
         },
         emptyFill: "rgba(0, 0, 0, .1)",
       });
@@ -408,6 +408,7 @@ jQuery(document).ready(function ($) {
 
   //===== owl carousel  =====//
   if ($.isFunction($.fn.owlCarousel)) {
+    
     $(".suggested-caro").owlCarousel({
       items: 3,
       loop: true,

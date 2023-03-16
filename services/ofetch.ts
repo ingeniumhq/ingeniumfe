@@ -1,6 +1,5 @@
 import { ofetch } from 'ofetch'
 import { useAuthStore } from '../store/auth';
-const authStore = useAuthStore();
 
 
 let options = {
@@ -11,6 +10,10 @@ let options = {
     },
     onRequest: ({request, response, options, error}: any) => {
         // console.log(request, response, options, error);
+        const authStore =  JSON.parse(window.Cookies.useAuthStore); // global method
+        if ( authStore.isLoggedIn && authStore.bearerToken ){
+            options.headers.Authorization = 'Bearer ' + authStore.bearerToken
+        }
     },
 
     onRequestError: (err: any) => {
@@ -28,14 +31,19 @@ let options = {
 }
 
 if(process.client){
-    const config = useRuntimeConfig()
-    options.baseURL = config.NUXT_API_BASE_URL
+    // const config = useRuntimeConfig()
+    // options.baseURL = config.NUXT_API_BASE_URL
 
-    // if token is in store
-    if ( authStore.isLoggedIn && authStore.bearerToken ){
-        console.log(authStore.bearerToken)
-        options.headers.Authorization = 'Bearer ' + authStore.bearerToken
-    }
+    // const { $getCookie } = useNuxtApp()
+    // let useAuthStore  = $getCookie('useAuthStore')
+    // const authStore = JSON.parse(useAuthStore)
+    // // const authStore =  JSON.parse(window.Cookies.useAuthStore); // global method
+
+  
+
+    // if ( authStore.isLoggedIn && authStore.bearerToken ){
+    //     options.headers.Authorization = 'Bearer ' + authStore.bearerToken
+    // }
 }
 
 
