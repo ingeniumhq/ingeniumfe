@@ -33,8 +33,8 @@ let options = {
 }
 
 if(process.client){
-    // const config = useRuntimeConfig()
-    // options.baseURL = config.NUXT_API_BASE_URL
+    const config = useRuntimeConfig()
+    options.baseURL = config.NUXT_API_BASE_URL
 
     // const { $getCookie } = useNuxtApp()
     // let useAuthStore  = $getCookie('useAuthStore')
