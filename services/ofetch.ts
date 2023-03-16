@@ -10,10 +10,12 @@ let options = {
     },
     onRequest: ({request, response, options, error}: any) => {
         // console.log(request, response, options, error);
+       if(window.Cookies.useAuthStore){
         const authStore =  JSON.parse(window.Cookies.useAuthStore); // global method
         if ( authStore.isLoggedIn && authStore.bearerToken ){
             options.headers.Authorization = 'Bearer ' + authStore.bearerToken
         }
+       }
     },
 
     onRequestError: (err: any) => {
