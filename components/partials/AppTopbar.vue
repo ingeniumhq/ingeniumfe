@@ -169,7 +169,7 @@
 					</i>
 				</a>
 				<ul class="dropdown">
-					<li><a href="#" title=""><i class="icofont-user-alt-3"></i> Your Profile</a></li>
+					<li><NuxtLink to="/usr/me" title=""><i class="icofont-user-alt-3"></i> Your Profile</NuxtLink></li>
 					<!-- <li><a href="#" title=""><i class="icofont-plus"></i> New Course</a></li> -->
 					<li><a class="invite-new" href="#" title=""><i class="icofont-brand-slideshare"></i> Invite
 							Collegue</a></li>

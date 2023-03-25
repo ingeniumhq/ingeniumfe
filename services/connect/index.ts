@@ -8,8 +8,23 @@ export default  {
         return await apiRequest(`connect/suggestions?${query}`, { method: 'GET'})
     },
 
+
+    async getFollowers(query: any) {
+        query = new URLSearchParams (query)
+        return await apiRequest(`connect/followers?${query}`, { method: 'GET'})
+    },
+
+    async getFollowings(query: any) {
+        query = new URLSearchParams (query)
+        return await apiRequest(`connect/followings?${query}`, { method: 'GET'})
+    },
+
     async followUser(payload: Object) {
         return await apiRequest('connect/follow', { method: 'POST',  body: payload })
+    },
+
+    async unFollowUser(payload: Object) {
+        return await apiRequest('connect/unfollow', { method: 'POST',  body: payload })
     },
 
     async sendConnectRequest(payload: Object) {

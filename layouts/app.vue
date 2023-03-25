@@ -68,17 +68,18 @@
             <!-- auto popup --> 
             
             <!-- share post -->
-            
+<!--             
             <div class="cart-product">
               <a href="product-cart.html" title="View Cart" data-toggle="tooltip"><i class="icofont-cart-alt"></i></a>
               <span>03</span>
-            </div>
+            </div> -->
             <!-- view cart button -->
             
-            <div class="chat-live">
+            <!-- <div class="chat-live">
               <a class="chat-btn" href="#" title="Start Live Chat" data-toggle="tooltip"><i class="icofont-facebook-messenger"></i></a>
               <span>07</span>
-            </div><!-- chat button -->
+            </div> -->
+            <!-- chat button -->
             
             <!-- chat box -->
             

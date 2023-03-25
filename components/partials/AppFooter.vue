@@ -4,7 +4,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
-							<span class="">&copy; copyright All rights reserved by socimo 2020</span>
+							<span class="">&copy; copyright All rights reserved by Ingenium 2023</span>
 						</div>
 					</div>
 				</div>

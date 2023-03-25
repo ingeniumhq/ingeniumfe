@@ -694,6 +694,10 @@ iframe {
 #topcontrol:active {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.62) inset;
 }
+
+main {
+  background: #fafafa;
+}
 /*-- main title ---*/
 .title {
   display: inline-block;
@@ -1769,6 +1773,8 @@ aside .widget {
   position: relative;
   width: 100%;
   z-index: 9;
+  box-shadow: 1px 1px 5px rgba(35,40,47,.15);   /* air added shadow */
+ 
 }
 .friend-info {
   display: inline-block;
@@ -13924,5 +13930,37 @@ a.classic-btn:hover {
 .or-label {
   flex-grow: 1;
   margin: 0 15px;
+  text-align: center;
+}
+
+
+
+
+/* .empty_state{
+   background-image: url('/images/resources/emptybg.svg');
+} */
+.empty_state {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.empty_state i {
+  margin: auto;
+  margin-bottom: 0px;
+  font-size: 90px;
+  color: #ccc;
+}
+.empty_state h3 {
+  margin: 8px 0px;
+  text-align: center;
+  font-weight: normal;
+}
+.empty_state p {
+  font-size: 14px;
+  margin: 0px;
+  color: #999;
   text-align: center;
 }

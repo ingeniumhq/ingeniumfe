@@ -12,8 +12,9 @@
                 <ul ref="suggessted" class="suggested-carso">
                     <!-- suggested-caro -->
                     <li v-for="person in people">
-                        <figure><img src="/images/resources/speak-3.jpg" alt=""></figure>
+                        <figure><img src="/images/resources/no-user-image.jpg" alt=""></figure>
                         <span>{{ person.name }}</span>
+                        
                         <!-- <ins>Department of Socilolgy</ins> -->
                         <a @click.prevent="followUser(person)" href="#" title="" data-ripple=""><i class="icofont-star"></i> Follow</a>
                     </li>
@@ -73,6 +74,8 @@
                     user_id: user.id
                 }).then((res) => {
                     this.$toast(res.message);
+                    const { $event } = useNuxtApp()
+			        $event('connect:follow', {})
                     this.getSuggestions()
                 }).catch((err) => { })   
             }
