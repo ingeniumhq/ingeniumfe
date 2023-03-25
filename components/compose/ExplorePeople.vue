@@ -3,7 +3,7 @@
     <div class="row col-xs-6 merged-10">
         <div class="col-lg-3 col-md-3 col-sm-6" v-for="person in people">
             <div class="members">
-                <figure><img alt="" src="images/resources/no-user-image.jpg"></figure>
+                <figure><img alt="" src="/images/resources/no-user-image.jpg"></figure>
                 <span>{{ person.name }}</span>
                 <ins>{{person.headline ?? 'Customer Support | Tesla'}}</ins>
                 <a @click.prevent="followUser(person)" data-ripple="" title="" href="#"><i class="icofont-star"></i> Follow</a>
