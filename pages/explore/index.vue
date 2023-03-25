@@ -1,7 +1,7 @@
 <template>
 	<div class="gap no-gap">
 		<div class="top-area mate-black low-opacity">
-			<div class="bg-image" style="background-image: url(/images/resources/linkedinheaders-desktop.jpg)"></div>
+			<div class="bg-image" style="background-image: url(//images/resources/linkedinheaders-desktop.jpg)"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -62,7 +62,7 @@
 											<div class="row col-xs-6" v-for="i in 10">
 												<div class="col-lg-3 col-md-4 col-sm-4">
 													<div class="group-box">
-														<figure><img alt="" src="images/resources/group1.png"></figure>
+														<figure><img alt="" src="/images/resources/group1.png"></figure>
 														<a title="" href="#">Skill Buildup</a>
 														<span>125M Members</span>
 														<button>join group</button>
@@ -70,7 +70,7 @@
 												</div>
 												<div class="col-lg-3 col-md-4 col-sm-4">
 													<div class="group-box">
-														<figure><img src="images/resources/group2.png" alt=""></figure>
+														<figure><img src="/images/resources/group2.png" alt=""></figure>
 														<a href="#" title="">IMC Resource Group</a>
 														<span>12k Members</span>
 														<button>join group</button>
@@ -78,7 +78,7 @@
 												</div>
 												<div class="col-lg-3 col-md-4 col-sm-4">
 													<div class="group-box">
-														<figure><img src="images/resources/group3.png" alt=""></figure>
+														<figure><img src="/images/resources/group3.png" alt=""></figure>
 														<a href="#" title="">Exams Prep</a>
 														<span>125M Members</span>
 														<button>join group</button>
@@ -86,7 +86,7 @@
 												</div>
 												<div class="col-lg-3 col-md-4 col-sm-4">
 													<div class="group-box">
-														<figure><img src="images/resources/group4.png" alt=""></figure>
+														<figure><img src="/images/resources/group4.png" alt=""></figure>
 														<a href="#" title="">General Space</a>
 														<span>1M Members</span>
 														<button>join group</button>
@@ -124,7 +124,7 @@
 													<div class="col-lg-4 col-md-4 col-sm-6">
 														<div class="event-post mb-3">
 															<figure><a href="event-detail.html" title=""><img
-																		src="images/resources/event-post1.avif" alt=""></a>
+																		src="/images/resources/event-post1.avif" alt=""></a>
 															</figure>
 															<div class="event-meta">
 																<span>Happening Now</span>
@@ -170,7 +170,7 @@
 													<div class="col-lg-4 col-md-4 col-sm-6">
 														<div class="event-post mb-3">
 															<figure><a href="event-detail.html" title=""><img
-																		src="images/resources/event-post2.avif" alt=""></a>
+																		src="/images/resources/event-post2.avif" alt=""></a>
 															</figure>
 															<div class="event-meta">
 																<span>July, 15 2021</span>
@@ -217,7 +217,7 @@
 													<div class="col-lg-4 col-md-4 col-sm-6">
 														<div class="event-post mb-3">
 															<figure><a href="event-detail.html" title=""><img
-																		src="images/resources/event-post3.avif" alt=""></a>
+																		src="/images/resources/event-post3.avif" alt=""></a>
 															</figure>
 															<div class="event-meta">
 																<span>August, 10 2021</span>
@@ -263,7 +263,7 @@
 													<div class="col-lg-4 col-md-4 col-sm-6">
 														<div class="event-post mb-3">
 															<figure><a href="event-detail.html" title=""><img
-																		src="images/resources/event-post4.avif" alt=""></a>
+																		src="/images/resources/event-post4.avif" alt=""></a>
 															</figure>
 															<div class="event-meta">
 																<span>Sep, 10 2021</span>
@@ -309,7 +309,7 @@
 													<div class="col-lg-4 col-md-4 col-sm-6">
 														<div class="event-post mb-3">
 															<figure><a href="event-detail.html" title=""><img
-																		src="images/resources/event-post5.jpg" alt=""></a>
+																		src="/images/resources/event-post5.jpg" alt=""></a>
 															</figure>
 															<div class="event-meta">
 																<span>July, 10 2021</span>
@@ -355,7 +355,7 @@
 													<div class="col-lg-4 col-md-4 col-sm-6">
 														<div class="event-post mb-3">
 															<figure><a href="event-detail.html" title=""><img
-																		src="images/resources/event-post6.avif" alt=""></a>
+																		src="/images/resources/event-post6.avif" alt=""></a>
 															</figure>
 															<div class="event-meta">
 																<span>Oct, 11 2021</span>
