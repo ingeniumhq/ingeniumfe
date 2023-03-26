@@ -13,6 +13,7 @@ export default  {
         query = new URLSearchParams (query)
         return await apiRequest(`connect/followers?${query}`, { method: 'GET'})
     },
+   
 
     async getFollowings(query: any) {
         query = new URLSearchParams (query)
@@ -25,6 +26,11 @@ export default  {
 
     async unFollowUser(payload: Object) {
         return await apiRequest('connect/unfollow', { method: 'POST',  body: payload })
+    },
+
+    async getConnects(query: any) {
+        query = new URLSearchParams (query)
+        return await apiRequest(`connect?${query}`, { method: 'GET'})
     },
 
     async sendConnectRequest(payload: Object) {

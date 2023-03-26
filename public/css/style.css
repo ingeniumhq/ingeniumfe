@@ -13964,3 +13964,7 @@ a.classic-btn:hover {
   color: #999;
   text-align: center;
 }
+
+.accent_color{
+color: #b88801 !important;
+}

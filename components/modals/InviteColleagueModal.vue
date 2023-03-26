@@ -12,7 +12,7 @@
 						</div>
 						<div class="invitation-meta">
 							<p>
-								Enter an email address to invite a colleague or co-author to join you on socimo. They will receive an email and, in some cases, up to two reminders.
+								Enter an email address to invite a colleague or co-author to join you on Ingenium. They will receive an email and, in some cases, up to two reminders.
 							</p>
 							<form method="post" class="c-form">
 								<input type="text" placeholder="Enter Email">

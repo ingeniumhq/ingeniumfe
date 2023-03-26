@@ -22,7 +22,7 @@
 
 							<ul class="nav nav-tabs post-detail-btn">
 								 <li class="nav-item"><a class="active" href="#timeline" data-toggle="tab">Timeline</a></li>
-								 <li class="nav-item"><a class="" href="#connect" data-toggle="tab">Connects</a></li>
+								 <li class="nav-item"><a class="" href="#connects" data-toggle="tab">Connects</a></li>
 								 <li class="nav-item"><a class="" href="#followers" data-toggle="tab">Followers</a><span>23</span></li>
 								 <li class="nav-item"><a class="" href="#follow" data-toggle="tab">Followings</a><span>100</span></li>
 								<!-- <li class="nav-item"><a class="" href="#about" data-toggle="tab">Profile</a></li> -->
@@ -42,6 +42,7 @@
 					<div class="col-lg-12">
 						<div id="page-contents" class="row merged20" style="position: relative;">
 							<div class="col-lg-8">
+								
 								<div class="tab-content">
 								    <div class="tab-pane fade active show" id="timeline">
 										<div class="main-wraper">
@@ -286,6 +287,14 @@
 								  		<div class="sp sp-bars"></div>  
 									</div>
 
+
+									<div class="tab-pane fade" id="connects">
+										<div class="main-wraper">
+											<ComposeMyConnects></ComposeMyConnects>
+										</div>
+									</div>
+									<!-- connects -->
+
 								  	<div class="tab-pane fade" id="followers">
 										<div class="main-wraper">
 											<ComposeMyFollowers></ComposeMyFollowers>
@@ -426,11 +435,16 @@
 										</ul>
 									</div>
 									<div class="widget">
-										
 										<div class="ask-question">
 											<h6>Grow your audience.</h6>
 											<NuxtLink to="/explore" class="ask-qst" href="#" title="">Explore</NuxtLink>
 										</div>
+									</div>
+
+									<div class="widget">
+										<!-- expand network - connect matches widget -->
+										<ComposeConnectionRequests></ComposeConnectionRequests>
+										<!-- expand network - connect matches widget -->
 									</div>
 									
 									

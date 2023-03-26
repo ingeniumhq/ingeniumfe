@@ -6,7 +6,10 @@
                 <figure><img alt="" src="/images/resources/no-user-image.jpg"></figure>
                 <span>{{ person.name }}</span>
                 <ins>{{person.headline ?? 'Customer Support | Tesla'}}</ins>
-                <a @click.prevent="followUser(person)" data-ripple="" title="" href="#"><i class="icofont-star"></i> Follow</a>
+                <div>
+                    <a @click.prevent="followUser(person)" class="action_btn" data-ripple="" title="" href="#"> Follow</a>
+                    <a @click.prevent="sendConnectRequest(person)" class="action_btn" data-ripple="" title="" href="#"> Connect</a>
+                </div>
             </div>
         </div>
        
@@ -53,9 +56,27 @@ export default {
                 $event('connect:follow', {})
                 this.getSuggestions()
             }).catch((err) => { })
+        },
+
+        sendConnectRequest(user: any) {
+            ConnectService.sendConnectRequest({
+                user_id: user.id
+            }).then((res) => {
+                this.$toast(res.message);
+                this.getSuggestions()
+            }).catch((err) => { })
         }
     }
 }
 
 
 </script>
+
+<style scoped>
+.action_btn {
+    border: 1px solid #184391;
+    padding: 4px 6px;
+    border-radius: 10px;
+    margin: 2px 3px;
+}
+</style>

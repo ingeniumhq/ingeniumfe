@@ -65,18 +65,25 @@
 			</div>
 		</div><!-- ask question widget -->
 		<div class="widget">
-			<h4 class="widget-title">Explor Events <a class="see-all" href="#" title="">See All</a></h4>
-			<div class="rec-events bg-purple">
-				<i class="icofont-gift"></i>
-				<h6><a title="" href="#">BZ University good night event in columbia</a></h6>
-				<img alt="" src="/images/clock.png">
-			</div>
+			<h4 class="widget-title">Explore Events <a class="see-all" href="#" title="">See All</a></h4>
+		
 			<div class="rec-events bg-blue">
 				<i class="icofont-microphone"></i>
 				<h6><a title="" href="#">The 3rd International Conference 2020</a></h6>
 				<img alt="" src="/images/clock.png">
 			</div>
-		</div><!-- event widget -->
+		</div>
+		<!-- event widget -->
+
+		<div class="widget">
+			<div class="ask-question">
+				<h6>Grow your audience.</h6>
+				<NuxtLink to="/explore" class="ask-qst" href="#" title="">Explore</NuxtLink>
+			</div>
+		</div>
+		<!-- CTA -->
+
+
 		<div class="widget d-none">
 			<span><i class="icofont-globe"></i> Sponsored</span>
 			<ul class="sponsors-ad">
@@ -99,7 +106,7 @@
 		<!-- sponsord -->
 
 		<!-- expand network - connect matches widget -->
-		<ComposeConnectPeopleWidget></ComposeConnectPeopleWidget>
+		<!-- <ComposeConnectPeopleWidget></ComposeConnectPeopleWidget> -->
 		<!-- expand network - connect matches widget -->
 	</aside>
 </template>

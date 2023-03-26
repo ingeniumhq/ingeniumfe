@@ -22,6 +22,7 @@
 				<li><i class="icofont-plus-square"></i> <a href="#" title="">Upload Your Picture</a><em>10%</em></li>
 				<li><i class="icofont-plus-square"></i> <a href="#" title="">Your University?</a><em>20%</em></li>
 				<li><i class="icofont-plus-square"></i> <a href="#" title="">Add Payment Method</a><em>20%</em></li>
+				<NuxtLink to="/usr/settings" class="main-btn full-width text-center accent_color" href="#" title="" data-ripple="">Setup Profile</NuxtLink>
 			</ul>
 		</div><!-- complete profile widget -->
 
@@ -84,7 +85,7 @@
 				Showcase your professional experience and education to help potential employers and collaborators find and
 				contact you about career opportunities.
 			</p>
-			<a class="main-btn" href="#" title="" data-ripple="">view profile</a>
+			<NuxtLink to="/usr/me" class="main-btn" href="#" title="" data-ripple="">view profile</NuxtLink>
 		</div><!-- your profile -->
 		<div class="d-none widget web-links stick-widget">
 			<h4 class="widget-title">Useful Links <a title="" href="#" class="see-all">See All</a></h4>
@@ -99,7 +100,7 @@
 				<li><i class="icofont-dotted-right"></i> <a title="" href="#">content policy</a></li>
 				<li><i class="icofont-dotted-right"></i> <a title="" href="#">User Policy</a></li>
 			</ul>
-			<p>&copy; Socimo 2020. All Rights Reserved.</p>
+			<p>&copy; Ingenium 2023. All Rights Reserved.</p>
 		</div><!-- links -->
 	</aside>
 </template>
