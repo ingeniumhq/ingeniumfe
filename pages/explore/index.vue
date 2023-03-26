@@ -1,7 +1,7 @@
 <template>
 	<div class="gap no-gap">
 		<div class="top-area mate-black low-opacity">
-			<div class="bg-image" style="background-image: url(//images/resources/linkedinheaders-desktop.jpg)"></div>
+			<div class="bg-image" style="background-image: url(/images/resources/linkedinheaders-desktop.jpg)"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
