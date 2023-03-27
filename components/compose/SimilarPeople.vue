@@ -30,9 +30,9 @@
 	export default {
 
         setup(){
-            const { $toast } = useNuxtApp()
+            // const { $toast } = useNuxtApp()
             return{
-                $toast
+                // $toast
             }
         },
         data() {
@@ -73,7 +73,7 @@
                 ConnectService.followUser({
                     user_id: user.id
                 }).then((res) => {
-                    this.$toast(res.message);
+                    // this.$toast(res.message);
                     const { $event } = useNuxtApp()
 			        $event('connect:follow', {})
                     this.getSuggestions()

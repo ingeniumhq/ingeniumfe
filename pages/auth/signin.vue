@@ -102,14 +102,14 @@ export default {
         });
 
 
-        const { $toast } = useNuxtApp()
+        // const { $toast } = useNuxtApp()
         return {
             form: {
                 email: '',
                 password: '',
             },
             authStore,
-            $toast,
+            // $toast,
             googleAuth,
             signIn
         }
@@ -122,15 +122,15 @@ export default {
                 AuthService.loginUser(this.form).then((res)=>{
                     this.authStore.setAuthUser(res.data)
                     navigateTo('/timeline')
-                    this.$toast(res.message);
+                    // this.$toast(res.message);
                     useState('isBusy').value = false;
                 }).catch( (err) =>{
-                    this.$toast(err.data?.message ?? 'An error occured ');
+                    // this.$toast(err.data?.message ?? 'An error occured ');
                     console.log(err)
                     useState('isBusy').value = false;
                 })  
             } catch (error) {
-                this.$toast(error);
+                // this.$toast(error);
                 useState('isBusy').value = false;
             }
         }
