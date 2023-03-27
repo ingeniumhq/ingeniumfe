@@ -27,7 +27,7 @@
             <div class="login-form">
                 <h4><i class="icofont-key-hole"></i> Login</h4>
                 <form method="post" @submit="loginUser($event)" class="c-form">
-                    <input required v-model="form.email" type="text" placeholder="User Name @">
+                    <input required v-model="form.email" type="text" placeholder="email@domain.com">
                     <input required v-model="form.password" type="password" placeholder="xxxxxxxxxx">
                     <button type="submit" class="main-btn" value="Save Information"  ><i class="icofont-key"></i> Login</button>
                 </form>
