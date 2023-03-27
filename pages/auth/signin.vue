@@ -60,58 +60,67 @@ import { useAuthStore } from '~/store/auth';
 import { AuthService } from '~/services';
 import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
 
-import { initFacebook, login, logout } from '~/services/auth/facebook-auth';
+// import { initFacebook, login, logout } from '~/services/auth/facebook-auth';
 
 
 
 
 export default {
-    setup(){
-        const authStore = useAuthStore();
-        definePageMeta({
-            layout: 'landing',
-            middleware: ["guest"],
-        })
+    // setup(){
+    //     const authStore = useAuthStore();
+    //     definePageMeta({
+    //         layout: 'landing',
+    //         middleware: ["guest"],
+    //     })
 
-        const googleAuth = () => {
-            googleTokenLogin().then((response) => {
-                const payload: SocialAuthPayload = {
-                    provider: 'google',
-                    code: response.access_token
-                }
-                console.log(payload)
-                AuthService.socialAuth(payload).then(res =>{
-                    authStore.setAuthUser(res.data)
-                    navigateTo('/timeline')
-                });
-            })
-        }
+    //     // const googleAuth = () => {
+    //     //     googleTokenLogin().then((response) => {
+    //     //         const payload: SocialAuthPayload = {
+    //     //             provider: 'google',
+    //     //             code: response.access_token
+    //     //         }
+    //     //         console.log(payload)
+    //     //         AuthService.socialAuth(payload).then(res =>{
+    //     //             authStore.setAuthUser(res.data)
+    //     //             navigateTo('/timeline')
+    //     //         });
+    //     //     })
+    //     // }
 
-        async function signIn() {
-            const result = await login();
-        }
+    //     // async function signIn() {
+    //     //     const result = await login();
+    //     // }
 
-        // nextTick(() => {
-        //     if (process.client) {
-        //         useNuxtApp().$toast.info('notify after nextTick');
-        //     }
-        // });
+    //     // nextTick(() => {
+    //     //     if (process.client) {
+    //     //         useNuxtApp().$toast.info('notify after nextTick');
+    //     //     }
+    //     // });
 
-        onMounted(async () => {
-            initFacebook('3349779741932998');
-        });
+    //     // onMounted(async () => {
+    //     //     initFacebook('3349779741932998');
+    //     // });
 
 
-        // const { $toast } = useNuxtApp()
+    //     // const { $toast } = useNuxtApp()
+    //     return {
+    //         // form: {
+    //         //     email: '',
+    //         //     password: '',
+    //         // },
+    //         // authStore,
+    //         // $toast,
+    //         // googleAuth,
+    //         // signIn
+    //     }
+    // },
+
+    data(vm) {
         return {
             form: {
                 email: '',
                 password: '',
             },
-            authStore,
-            // $toast,
-            googleAuth,
-            signIn
         }
     },
 
@@ -121,8 +130,10 @@ export default {
             useState('isBusy').value = true;
             try {
                 AuthService.loginUser(this.form).then((res)=>{
-                    this.authStore.setAuthUser(res.data)
-                    navigateTo('/timeline')
+                    const authStore = useAuthStore();
+                    authStore.setAuthUser(res.data)
+                    alert(res.data.user.name);
+                    // navigateTo('/timeline')
                     // this.$toast(res.message);
                     useState('isBusy').value = false;
                 }).catch( (err) =>{

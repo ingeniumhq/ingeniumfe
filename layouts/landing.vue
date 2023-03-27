@@ -31,9 +31,11 @@
                 <span class="loader-item"></span><span class="loader-item"></span>
             </div>
         </div> -->
-        <main>
-        <slot />
-        </main>
+        <ClientOnly>
+          <main>
+          <slot />
+          </main>
+        </ClientOnly>
       </div>
     <LoadSpinner key="{{useState('isBusy').value}}"/>
 </template>
