@@ -17,7 +17,7 @@
 
      
     </Head>
-    <Body class="theme-layout">
+    <div class="theme-layout">
         <!-- <div class="page-loader" id="page-loader">
             <div class="loader">
                 <span class="loader-item"></span>
@@ -34,7 +34,7 @@
         <main>
         <slot />
         </main>
-    </Body>
+      </div>
     <LoadSpinner key="{{useState('isBusy').value}}"/>
 </template>
 
