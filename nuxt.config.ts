@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     // cookieOptions: {
     //   sameSite: 'strict',
     // }, // only used when cookie
-    storage: 'sessionStorage', //'sessionStorage' , 'localStorage
+    storage: 'localStorage', //'sessionStorage' , 'localStorage
     debug: true
     
   },
