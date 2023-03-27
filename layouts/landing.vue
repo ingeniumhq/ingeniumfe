@@ -13,7 +13,7 @@
       <Link rel="stylesheet" href="/css/style.css" />
       <Link rel="stylesheet" href="/css/color.css" />
       <Link rel="stylesheet" href="/css/responsive.css" />
-      <Link rel="stylesheet" href="~/assets/styles/css/tailwind.css" />
+      <!-- <Link rel="stylesheet" href="/css/tailwind.css" /> -->
 
      
     </Head>
