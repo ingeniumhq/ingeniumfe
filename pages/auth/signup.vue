@@ -5,7 +5,7 @@
 				<div class="logo"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
 				<h1>Welcome to Ingenium</h1>
 				<p>
-					Ingenium Academy is a customer service app that connects trained customer service professionals with HR executives.
+					Ingenium Academy is a customer service app that connects trained customer service professionals with HR executives globally.
 				</p>
 			</div>
 			<div class="bg-image" style="background-image: url(/images/resources/login-bg.png)"></div>
