@@ -127,22 +127,22 @@ export default {
     methods:{
         loginUser(event) {  
             event.preventDefault();
-            // const { $toast } = useNuxtApp()
+            const { $toast } = useNuxtApp()
             useState('isBusy').value = true;
             try {
                 AuthService.loginUser(this.form).then((res)=>{
                     const authStore = useAuthStore();
                     authStore.setAuthUser(res.data)
                     navigateTo('/timeline')
-                    // $toast(res.message);
+                    $toast(res.message);
                     useState('isBusy').value = false;
                 }).catch( (err) =>{
-                    // $toast(err.data?.message ?? 'An error occured ');
+                    $toast(err.data?.message ?? 'An error occured ');
                     console.log(err)
                     useState('isBusy').value = false;
                 })  
             } catch (error) {
-                // $toast(error);
+                $toast(error);
                 useState('isBusy').value = false;
             }
         }
