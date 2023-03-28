@@ -31,21 +31,21 @@
                     <input required v-model="form.password" type="password" placeholder="xxxxxxxxxx">
                     <button type="submit" class="main-btn" value="Save Information"  ><i class="icofont-key"></i> Login</button>
                 </form>
-                <div>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></div>
+                <!-- <div>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></div> -->
 
-                <div class="col-lg-12">
+                <!-- <div class="col-lg-12">
                 <div class="or-container">
                     <div class="line-separator"></div>
                     <div class="or-label">Signin with</div>
                     <div class="line-separator"></div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="socialbutton-container col-md-12">
-                    <a  @click="googleAuth" class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
+            <!-- <div class="socialbutton-container col-md-12"> -->
+                    <!-- <a  @click="googleAuth" class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
                     <a @click="signIn" class=" btn btn-lg btn-socialauth btn-block text-sm  btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
-                    <a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a>
-            </div>
+                    <a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a> -->
+            <!-- </div> -->
                 
             </div>
             
@@ -58,7 +58,7 @@
 <script lang="ts">
 import { useAuthStore } from '~/store/auth';
 import { AuthService } from '~/services';
-import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
+// import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
 
 // import { initFacebook, login, logout } from '~/services/auth/facebook-auth';
 
