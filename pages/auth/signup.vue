@@ -14,7 +14,7 @@
 	<div class="auth-login">
 		<div class="verticle-center">
 			<div class="signup-form">
-				<h4><i class="icofont-lock"></i> Sign up</h4>
+				<h4><i class="icofont-lock"></i> Sign Up</h4>
 				<form method="post" @submit.prevent="registerUser" class="c-form">
 					<div class="row merged-10">
 						<div class="col-lg-12"><h4>Create an account on Ingenium</h4></div>
@@ -46,14 +46,18 @@
 							<div class="checkbox">
 								<input  v-model="form.accept_terms" type="checkbox" id="checkbox" checked>
 								<label for="checkbox"><span>I agree the terms of Services and acknowledge the privacy policy</span></label>
+								<div>Already have an account?  <NuxtLink to="/auth/signin"> Sign In</NuxtLink></div>
+
 							</div>
-							<button class="main-btn" type="submit"><i class="icofont-key"></i> Sign up</button>
+							<!-- <div>Already have an account?  <NuxtLink to="/auth/signin"> Sign In</NuxtLink></div> -->
+
+							<button class="main-btn" type="submit"><i class="icofont-key"></i> Sign Up</button>
 						</div>
 
 						<div class="col-lg-12">
 							<div class="or-container">
 								<div class="line-separator"></div>
-								<div class="or-label">Sign up with</div>
+								<div class="or-label">Sign Up with</div>
 								<div class="line-separator"></div>
 							</div>
 						</div>

@@ -31,12 +31,17 @@
                     <input required v-model="form.password" type="password" placeholder="xxxxxxxxxx">
                     <button type="submit" class="main-btn" value="Save Information"  ><i class="icofont-key"></i> Login</button>
                 </form>
-                <div>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></div>
+                <div>Don't have an account yet?  <NuxtLink to="/auth/signup"> Sign Up</NuxtLink></div>
+                <!-- <div><NuxtLink to="/auth/forgot-password"> Forget Password? </NuxtLink></div> -->
+
+                <div class="chosen-rtl"> <NuxtLink to="/auth/forgot-password"> Forget Password? </NuxtLink></div>
+
+
 
                 <div class="col-lg-12">
                 <div class="or-container">
                     <div class="line-separator"></div>
-                    <div class="or-label">Sign in with</div>
+                    <div class="or-label">Sign In with</div>
                     <div class="line-separator"></div>
                 </div>
             </div>

@@ -272,7 +272,7 @@
         <div class="feature-meta">
           <h1>Network & <span>Connect</span> </h1>
           <h3><span>Hr Executives and Customer Service Professionals</span><span class="typed-cursor"></span></h3>
-          <a href="#" title="" class="main-btn" data-ripple="">Join Free</a>
+          <a href="/timeline" title="" class="main-btn" data-ripple="">Join Free</a>
         </div>
       </div>
     </section>
