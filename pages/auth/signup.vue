@@ -41,32 +41,7 @@
 							<input v-model="form.account_type" type="radio" id="ngo" name="account_type" value="2">
 							<label for="cs">Customer Service Professional</label>
 						</div>
-						<!-- <div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="radio" id="medical" name="acdamic" value="medical">
-							<label for="medical">Medical</label>
-						</div>
-						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="radio" id="other" name="acdamic" value="other">
-							<label for="other">Not a Rsearcher</label>
-						</div> -->
-						<!-- <div class="col-lg-6 col-sm-6 col-md-6">
-							<input v-model="form.institute" type="text" placeholder="Institute, Company">
-						</div>
-						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input v-model="form.department" type="text" placeholder="Department">
-						</div> -->
-						<!-- <div class="col-lg-12">
-							<input type="text" placeholder="Your Position">
-						</div> -->
-						<!-- <div class="col-lg-12">
-							<div class="gender">
-							  <input type="radio" id="male" name="gender" value="male">
-							  <label for="male">Male</label>
-							  <input type="radio" id="female" name="gender" value="female">
-							  <label for="female">Female</label>
-							</div>	
-						</div>
-						 -->
+						
 						<div class="col-lg-12">
 							<div class="checkbox">
 								<input  v-model="form.accept_terms" type="checkbox" id="checkbox" checked>

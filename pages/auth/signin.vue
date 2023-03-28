@@ -31,21 +31,21 @@
                     <input required v-model="form.password" type="password" placeholder="xxxxxxxxxx">
                     <button type="submit" class="main-btn" value="Save Information"  ><i class="icofont-key"></i> Login</button>
                 </form>
-                <!-- <div>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></div> -->
+                <div>Don't have an account?  <NuxtLink to="/auth/signup"> Sign up</NuxtLink></div>
 
-                <!-- <div class="col-lg-12">
+                <div class="col-lg-12">
                 <div class="or-container">
                     <div class="line-separator"></div>
                     <div class="or-label">Signin with</div>
                     <div class="line-separator"></div>
                 </div>
-            </div> -->
+            </div>
 
-            <!-- <div class="socialbutton-container col-md-12"> -->
-                    <!-- <a  @click="googleAuth" class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
+            <div class="socialbutton-container col-md-12">
+                    <a  @click="googleAuth" class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
                     <a @click="signIn" class=" btn btn-lg btn-socialauth btn-block text-sm  btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
-                    <a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a> -->
-            <!-- </div> -->
+                    <a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a>
+            </div>
                 
             </div>
             
@@ -58,62 +58,62 @@
 <script lang="ts">
 import { useAuthStore } from '~/store/auth';
 import { AuthService } from '~/services';
-// import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
+import { googleAuthCodeLogin, googleTokenLogin } from "vue3-google-login"
 
-// import { initFacebook, login, logout } from '~/services/auth/facebook-auth';
+import { initFacebook, login, logout } from '~/services/auth/facebook-auth';
 
 
 
 
 export default {
-    // setup(){
-    //     const authStore = useAuthStore();
-    //     definePageMeta({
-    //         layout: 'landing',
-    //         middleware: ["guest"],
-    //     })
+    setup(){
+        const authStore = useAuthStore();
+        definePageMeta({
+            layout: 'landing',
+            middleware: ["guest"],
+        })
 
-    //     // const googleAuth = () => {
-    //     //     googleTokenLogin().then((response) => {
-    //     //         const payload: SocialAuthPayload = {
-    //     //             provider: 'google',
-    //     //             code: response.access_token
-    //     //         }
-    //     //         console.log(payload)
-    //     //         AuthService.socialAuth(payload).then(res =>{
-    //     //             authStore.setAuthUser(res.data)
-    //     //             navigateTo('/timeline')
-    //     //         });
-    //     //     })
-    //     // }
+        const googleAuth = () => {
+            googleTokenLogin().then((response) => {
+                const payload: SocialAuthPayload = {
+                    provider: 'google',
+                    code: response.access_token
+                }
+                console.log(payload)
+                AuthService.socialAuth(payload).then(res =>{
+                    authStore.setAuthUser(res.data)
+                    navigateTo('/timeline')
+                });
+            })
+        }
 
-    //     // async function signIn() {
-    //     //     const result = await login();
-    //     // }
+        async function signIn() {
+            const result = await login();
+        }
 
-    //     // nextTick(() => {
-    //     //     if (process.client) {
-    //     //         useNuxtApp().$toast.info('notify after nextTick');
-    //     //     }
-    //     // });
+        nextTick(() => {
+            if (process.client) {
+                useNuxtApp().$toast.info('notify after nextTick');
+            }
+        });
 
-    //     // onMounted(async () => {
-    //     //     initFacebook('3349779741932998');
-    //     // });
+        onMounted(async () => {
+            initFacebook('3349779741932998');
+        });
 
 
-    //     // const { $toast } = useNuxtApp()
-    //     return {
-    //         // form: {
-    //         //     email: '',
-    //         //     password: '',
-    //         // },
-    //         // authStore,
-    //         // $toast,
-    //         // googleAuth,
-    //         // signIn
-    //     }
-    // },
+        // const { $toast } = useNuxtApp()
+        return {
+            // form: {
+            //     email: '',
+            //     password: '',
+            // },
+            authStore,
+            // $toast,
+            googleAuth,
+            signIn
+        }
+    },
 
     data(vm) {
         return {
@@ -127,22 +127,22 @@ export default {
     methods:{
         loginUser(event) {  
             event.preventDefault();
+             const { $toast } = useNuxtApp()
             useState('isBusy').value = true;
             try {
                 AuthService.loginUser(this.form).then((res)=>{
                     const authStore = useAuthStore();
                     authStore.setAuthUser(res.data)
-                    alert(res.data.user.name);
-                    // navigateTo('/timeline')
-                    // this.$toast(res.message);
+                    navigateTo('/timeline')
+                    $toast(res.message);
                     useState('isBusy').value = false;
                 }).catch( (err) =>{
-                    // this.$toast(err.data?.message ?? 'An error occured ');
+                    $toast(err.data?.message ?? 'An error occured ');
                     console.log(err)
                     useState('isBusy').value = false;
                 })  
             } catch (error) {
-                // this.$toast(error);
+                $toast(error);
                 useState('isBusy').value = false;
             }
         }
