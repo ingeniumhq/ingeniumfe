@@ -47,13 +47,13 @@
 								<input  v-model="form.accept_terms" type="checkbox" id="checkbox" checked>
 								<label for="checkbox"><span>I agree the terms of Services and acknowledge the privacy policy</span></label>
 							</div>
-							<button class="main-btn" type="submit"><i class="icofont-key"></i> Signup</button>
+							<button class="main-btn" type="submit"><i class="icofont-key"></i> Sign up</button>
 						</div>
 
 						<div class="col-lg-12">
 							<div class="or-container">
 								<div class="line-separator"></div>
-								<div class="or-label">Signup with</div>
+								<div class="or-label">Sign up with</div>
 								<div class="line-separator"></div>
 							</div>
 						</div>
@@ -101,7 +101,7 @@
 				})
 			}
 		
-			const { $toast } = useNuxtApp()
+			
 			return {
 				form: {
 					email: '',
@@ -115,26 +115,26 @@
 					accept_terms: true,
 				},
 				authStore,
-				$toast,
 				googleAuth
 			}
 		},
 
 		methods:{
-			registerUser() {  
+			registerUser() { 
+				const { $toast } = useNuxtApp() 
 				useState('isBusy').value = true;
 				try {
 					AuthService.registerUser(this.form).then((res)=>{
 						this.authStore.setAuthUser(res.data)
 						navigateTo('/auth/verify-email')
-						this.$toast(res.message);
+						$toast(res.message);
 						useState('isBusy').value = false;
 					}).catch( (err) =>{
-						this.$toast(err.data.message);
+						$toast(err.data.message);
 						useState('isBusy').value = false;
 					})  
 				} catch (error) {
-					this.$toast(error);
+					$toast(error);
 					useState('isBusy').value = false;
 				}
 			}
