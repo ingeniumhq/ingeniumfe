@@ -278,9 +278,10 @@
 								
 								
 								<div class="loadmore">
-									<div class="sp sp-bars"></div>
-									<a href="#" title="" data-ripple="">Load More..</a>
-								</div><!-- loadmore buttons -->
+									<!-- <div class="sp sp-bars"></div> -->
+									<!-- <a href="#" title="" data-ripple="">Load More..</a> -->
+								</div>
+								<!-- loadmore buttons -->
 							</div>
 							<div class="col-lg-3">
 								<TimelineRightSidebar></TimelineRightSidebar>

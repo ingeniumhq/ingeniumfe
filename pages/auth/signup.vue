@@ -14,7 +14,7 @@
 	<div class="auth-login">
 		<div class="verticle-center">
 			<div class="signup-form">
-				<h4><i class="icofont-lock"></i> Singup</h4>
+				<h4><i class="icofont-lock"></i> Sign up</h4>
 				<form method="post" @submit.prevent="registerUser" class="c-form">
 					<div class="row merged-10">
 						<div class="col-lg-12"><h4>Create an account on Ingenium</h4></div>

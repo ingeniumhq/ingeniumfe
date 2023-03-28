@@ -125,3 +125,9 @@
 				</ul>
 			</nav><!-- nav sidebar -->
 </template>
+
+<style scoped>
+	.show{
+		left: 0;
+	}
+</style>

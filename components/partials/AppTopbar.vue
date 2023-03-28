@@ -9,6 +9,45 @@
 			</div>
 		</div>
 		<div class="right-compact">
+			
+
+			<div class="topbar topbarmobile stick">
+			
+
+			<ul class="web-elements">
+				
+				<li>
+					<a href="#" title="">
+						<i>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								class="feather feather-grid">
+								<rect x="3" y="3" width="7" height="7"></rect>
+								<rect x="14" y="3" width="7" height="7"></rect>
+								<rect x="14" y="14" width="7" height="7"></rect>
+								<rect x="3" y="14" width="7" height="7"></rect>
+							</svg>
+						</i>
+					</a>
+					<ul class="dropdown">
+						<li><NuxtLink to="/usr/me" title=""><i class="icofont-user-alt-3"></i> Your Profile</NuxtLink></li>
+						<!-- <li><a href="#" title=""><i class="icofont-plus"></i> New Course</a></li> -->
+						<li><a class="invite-new" href="#" title=""><i class="icofont-brand-slideshare"></i> Invite
+								Collegue</a></li>
+						<!-- <li><a href="#" title=""><i class="icofont-price"></i> Payout</a></li> -->
+						<li><a href="#" title=""><i class="icofont-flash"></i> Upgrade</a></li>
+						<li><a href="#" title=""><i class="icofont-question-circle"></i> Help</a></li>
+						<li><NuxtLink to="/usr/settings" title=""><i class="icofont-gear"></i> Setting</NuxtLink></li>
+						<li><a href="#" title=""><i class="icofont-notepad"></i> Privacy</a></li>
+						<!-- <li><a class="dark-mod" href="#" title=""><i class="icofont-moon"></i> Dark Mode</a></li> -->
+						<li class="logout"><a href="#" @click="logout" title=""><i class="icofont-power"></i> Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		
+			</div>
+
 			<div class="sidemenu">
 				<i>
 					<svg id="side-menu2" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
@@ -19,7 +58,9 @@
 						<line x1="3" y1="18" x2="21" y2="18"></line>
 					</svg></i>
 			</div>
-			<div class="res-search">
+
+			
+			<div class="res-search d-none">
 				<span>
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
 						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -28,6 +69,8 @@
 						<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
 					</svg></span>
 			</div>
+
+
 
 		</div>
 		<div class="restop-search">
@@ -156,37 +199,39 @@
 					</a>
 				</li> -->
 				<li>
-				<a href="#" title="">
-					<i>
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-							stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-							class="feather feather-grid">
-							<rect x="3" y="3" width="7" height="7"></rect>
-							<rect x="14" y="3" width="7" height="7"></rect>
-							<rect x="14" y="14" width="7" height="7"></rect>
-							<rect x="3" y="14" width="7" height="7"></rect>
-						</svg>
-					</i>
-				</a>
-				<ul class="dropdown">
-					<li><NuxtLink to="/usr/me" title=""><i class="icofont-user-alt-3"></i> Your Profile</NuxtLink></li>
-					<!-- <li><a href="#" title=""><i class="icofont-plus"></i> New Course</a></li> -->
-					<li><a class="invite-new" href="#" title=""><i class="icofont-brand-slideshare"></i> Invite
-							Collegue</a></li>
-					<!-- <li><a href="#" title=""><i class="icofont-price"></i> Payout</a></li> -->
-					<li><a href="#" title=""><i class="icofont-flash"></i> Upgrade</a></li>
-					<li><a href="#" title=""><i class="icofont-question-circle"></i> Help</a></li>
-					<li><NuxtLink to="/usr/settings" title=""><i class="icofont-gear"></i> Setting</NuxtLink></li>
-					<li><a href="#" title=""><i class="icofont-notepad"></i> Privacy</a></li>
-					<!-- <li><a class="dark-mod" href="#" title=""><i class="icofont-moon"></i> Dark Mode</a></li> -->
-					<li class="logout"><a href="#" @click="logout" title=""><i class="icofont-power"></i> Logout</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+					<a href="#" title="">
+						<i>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								class="feather feather-grid">
+								<rect x="3" y="3" width="7" height="7"></rect>
+								<rect x="14" y="3" width="7" height="7"></rect>
+								<rect x="14" y="14" width="7" height="7"></rect>
+								<rect x="3" y="14" width="7" height="7"></rect>
+							</svg>
+						</i>
+					</a>
+					<ul class="dropdown">
+						<li><NuxtLink to="/usr/me" title=""><i class="icofont-user-alt-3"></i> Your Profile</NuxtLink></li>
+						<!-- <li><a href="#" title=""><i class="icofont-plus"></i> New Course</a></li> -->
+						<li><a class="invite-new" href="#" title=""><i class="icofont-brand-slideshare"></i> Invite
+								Collegue</a></li>
+						<!-- <li><a href="#" title=""><i class="icofont-price"></i> Payout</a></li> -->
+						<li><a href="#" title=""><i class="icofont-flash"></i> Upgrade</a></li>
+						<li><a href="#" title=""><i class="icofont-question-circle"></i> Help</a></li>
+						<li><NuxtLink to="/usr/settings" title=""><i class="icofont-gear"></i> Setting</NuxtLink></li>
+						<li><a href="#" title=""><i class="icofont-notepad"></i> Privacy</a></li>
+						<!-- <li><a class="dark-mod" href="#" title=""><i class="icofont-moon"></i> Dark Mode</a></li> -->
+						<li class="logout"><a href="#" @click="logout" title=""><i class="icofont-power"></i> Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		
+		</div>
 
-</header></template>
+	</header>
+</template>
 
 <script setup lang="ts">
 import { useAuthStore } from '~/store/auth';
@@ -197,3 +242,23 @@ function logout() {
 	authStore.logoutUser()
 }
 </script>
+
+<style>
+	.topbarmobile {
+		border-bottom: none;
+		display: inherit;
+		width: initial;
+		background: none;
+		padding: 0;
+	}
+
+	.topbarmobile ul.web-elements > li > a {
+    background: #deebf3 none repeat scroll 0 0;
+    border: 1px solid #184391;
+    border-radius: 100%;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    width: 27px;
+}
+</style>

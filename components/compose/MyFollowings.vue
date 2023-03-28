@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-lg-12">
-            <div class="load mb-4">
+            <!-- <div class="load mb-4">
                 <ul class="pagination">
                     <li><a title="" href="#"><i class="icofont-arrow-left"></i></a></li>
                     <li><a title="" href="#" class="active">1</a></li>
@@ -27,7 +27,7 @@
                     <li><a title="" href="#">10</a></li>
                     <li><a title="" href="#"><i class="icofont-arrow-right"></i></a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

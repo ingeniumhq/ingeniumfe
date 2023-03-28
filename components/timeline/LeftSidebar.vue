@@ -1,6 +1,6 @@
 <template>
 	<aside class="sidebar static left">
-		<div class="widget whitish low-opacity">
+		<!-- <div class="widget whitish low-opacity">
 			<img src="/images/time-clock.png" alt="">
 			<div class="bg-image" style="background-image: url(/images/resources/time-bg.jpg)"></div>
 			<div class="date-time">
@@ -11,7 +11,7 @@
 				</div>
 				<span id="date"></span>
 			</div>
-		</div>
+		</div> -->
 		<div class="widget">
 			<h4 class="widget-title">Complete Your Profile</h4>
 			<span>Your Profile is missing followings!</span>

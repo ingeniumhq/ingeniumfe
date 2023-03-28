@@ -36,7 +36,7 @@
                 <div class="col-lg-12">
                 <div class="or-container">
                     <div class="line-separator"></div>
-                    <div class="or-label">Signin with</div>
+                    <div class="or-label">Sign in with</div>
                     <div class="line-separator"></div>
                 </div>
             </div>
@@ -91,11 +91,11 @@ export default {
             const result = await login();
         }
 
-        nextTick(() => {
-            if (process.client) {
-                useNuxtApp().$toast.info('notify after nextTick');
-            }
-        });
+        // nextTick(() => {
+        //     if (process.client) {
+        //         useNuxtApp().$toast.info('notify after nextTick');
+        //     }
+        // });
 
         onMounted(async () => {
             initFacebook('3349779741932998');
@@ -127,22 +127,22 @@ export default {
     methods:{
         loginUser(event) {  
             event.preventDefault();
-             const { $toast } = useNuxtApp()
+            // const { $toast } = useNuxtApp()
             useState('isBusy').value = true;
             try {
                 AuthService.loginUser(this.form).then((res)=>{
                     const authStore = useAuthStore();
                     authStore.setAuthUser(res.data)
                     navigateTo('/timeline')
-                    $toast(res.message);
+                    // $toast(res.message);
                     useState('isBusy').value = false;
                 }).catch( (err) =>{
-                    $toast(err.data?.message ?? 'An error occured ');
+                    // $toast(err.data?.message ?? 'An error occured ');
                     console.log(err)
                     useState('isBusy').value = false;
                 })  
             } catch (error) {
-                $toast(error);
+                // $toast(error);
                 useState('isBusy').value = false;
             }
         }

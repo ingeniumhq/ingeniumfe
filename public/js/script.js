@@ -348,8 +348,13 @@ jQuery(document).ready(function ($) {
 
   // side header slide
 
-  jQuery(document).on("click", ".sidemenu", function () {
-    jQuery(".sidebar").addClass("hide");
+  $('.sidemenu').on("click", function (e) {
+    // alert('dssd')
+    $(".sidebar").toggleClass('hide show');
+
+    // $("nav.sidebar").removeClass("hide");
+    // $("nav.sidebar").removeClass("padding");
+    e.preventDefault();
   });
 
   $(window).scroll(function () {
