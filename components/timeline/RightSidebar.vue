@@ -1,6 +1,6 @@
 <template>
 	<aside class="sidebar static right">
-		<div class="widget">
+		<!-- <div class="widget">
 			<h4 class="widget-title">Your Groups</h4>
 			<ul class="ak-groups">
 				<li>
@@ -20,8 +20,9 @@
 					</div>
 				</li>
 			</ul>
-		</div><!-- Your groups -->
-		<div class="widget">
+		</div> -->
+		<!-- Your groups -->
+		<!-- <div class="widget">
 			<h4 class="widget-title">Suggested Group</h4>
 			<div class="sug-caro">
 				<div class="friend-box">
@@ -55,7 +56,8 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- suggested group -->
+		</div> -->
+		<!-- suggested group -->
 		<div class="d-none widget">
 			<h4 class="widget-title">Ask Research Question?</h4>
 			<div class="ask-question">
@@ -63,8 +65,9 @@
 				<h6>Ask questions in Q&A to get help from experts in your field.</h6>
 				<a class="ask-qst" href="#" title="">Ask a question</a>
 			</div>
-		</div><!-- ask question widget -->
-		<div class="widget">
+		</div>
+		<!-- ask question widget -->
+		<!-- <div class="widget">
 			<h4 class="widget-title">Explore Events <a class="see-all" href="#" title="">See All</a></h4>
 		
 			<div class="rec-events bg-blue">
@@ -72,7 +75,7 @@
 				<h6><a title="" href="#">The 3rd International Conference 2020</a></h6>
 				<img alt="" src="/images/clock.png">
 			</div>
-		</div>
+		</div> -->
 		<!-- event widget -->
 
 		<div class="widget">
