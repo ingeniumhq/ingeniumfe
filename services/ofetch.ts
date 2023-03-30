@@ -35,17 +35,6 @@ let options = {
 if(process.client){
     const config = useRuntimeConfig()
     options.baseURL = config.NUXT_API_BASE_URL
-
-    // const { $getCookie } = useNuxtApp()
-    // let useAuthStore  = $getCookie('useAuthStore')
-    // const authStore = JSON.parse(useAuthStore)
-    // // const authStore =  JSON.parse(window.Cookies.useAuthStore); // global method
-
-  
-
-    // if ( authStore.isLoggedIn && authStore.bearerToken ){
-    //     options.headers.Authorization = 'Bearer ' + authStore.bearerToken
-    // }
 }
 
 

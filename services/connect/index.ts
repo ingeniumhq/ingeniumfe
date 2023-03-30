@@ -17,24 +17,24 @@ export default  {
 
     async getFollowings(query: any) {
         query = new URLSearchParams (query)
-        return await apiRequest(`connect/followings?${query}`, { method: 'GET'})
+        return await apiRequest(`/connect/followings?${query}`, { method: 'GET'})
     },
 
     async followUser(payload: Object) {
-        return await apiRequest('connect/follow', { method: 'POST',  body: payload })
+        return await apiRequest('/connect/follow', { method: 'POST',  body: payload })
     },
 
     async unFollowUser(payload: Object) {
-        return await apiRequest('connect/unfollow', { method: 'POST',  body: payload })
+        return await apiRequest('/connect/unfollow', { method: 'POST',  body: payload })
     },
 
     async getConnects(query: any) {
         query = new URLSearchParams (query)
-        return await apiRequest(`connect?${query}`, { method: 'GET'})
+        return await apiRequest(`/connect?${query}`, { method: 'GET'})
     },
 
     async sendConnectRequest(payload: Object) {
-        return await apiRequest('connect/send', { method: 'POST',  body: payload })
+        return await apiRequest('/connect/send', { method: 'POST',  body: payload })
     },
 
    

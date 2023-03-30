@@ -48,10 +48,7 @@
 								</div><!-- create new post -->
 								
 																	
-							
-								<!-- suggested friends -->
-								<ComposeSimilarPeople></ComposeSimilarPeople>
-								<!-- suggested friends -->
+						
 								
 								<div class="main-wraper">
 									<div class="user-post">
