@@ -43,6 +43,6 @@ export const useAuthStore = defineStore('useAuthStore', {
       console.log(`just restored '${ctx.store.$id}'`)
     },
 
-    paths: ['isLoggedIn', 'bearerToken'],
+    paths: ['isLoggedIn', 'bearerToken', 'authUser'],
   },
 });

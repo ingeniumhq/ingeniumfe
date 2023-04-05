@@ -7,10 +7,10 @@
 					<div class="col-lg-12">
 						<div class="post-subject">
 							<div class="university-tag">
-								<figure><img src="/images/resources/user1.png" alt=""></figure>
+								<figure><img :src="authUser.profile_pic" alt=""></figure>
 								<div class="uni-name">
-									<h4>Georg Peeter </h4>
-									<span>@Georgofficial</span>
+									<h4>{{ authUser.name }}</h4>
+									<span>@{{ authUser.headline }}</span>
 								</div>
 								<ul class="sharing-options">
 									<li><a title="" href="#" data-toggle="tooltip" data-original-title="Invite Colleagues"><i class="icofont-id-card"></i></a> </li>
@@ -22,9 +22,9 @@
 
 							<ul class="nav nav-tabs post-detail-btn">
 								 <li class="nav-item"><a class="active" href="#timeline" data-toggle="tab">Timeline</a></li>
-								 <li class="nav-item"><a class="" href="#connects" data-toggle="tab">Connects</a></li>
-								 <li class="nav-item"><a class="" href="#followers" data-toggle="tab">Followers</a><span>23</span></li>
-								 <li class="nav-item"><a class="" href="#follow" data-toggle="tab">Followings</a><span>100</span></li>
+								 <li class="nav-item"><a class="" href="#connects" data-toggle="tab">Connects</a><span>{{ me.analytics?.connects_count }}</span></li>
+								 <li class="nav-item"><a class="" href="#followers" data-toggle="tab">Followers</a><span>{{ me.analytics?.followers_count }}</span></li>
+								 <li class="nav-item"><a class="" href="#follow" data-toggle="tab">Followings</a><span>{{ me.analytics?.followings_count }}</span></li>
 								<!-- <li class="nav-item"><a class="" href="#about" data-toggle="tab">Profile</a></li> -->
 							</ul>
 						</div>
@@ -429,9 +429,9 @@
 									<div class="widget">
 										<h4 class="widget-title">Profile Analytics</h4>
 										<ul class="widget-analytics">
-											<li>Followers <span>56</span></li>
-											<li>Connects <span>3</span></li>
-											<li>Profile Views <span>22</span></li>
+											<li>Followers <span>{{ me.analytics?.followers_count }}</span></li> 
+											<li>Connects <span>{{ me.analytics?.connects_count }}</span></li>
+											<li>Profile Views <span>{{ me.analytics?.impressions_count ?? 0 }}</span></li>
 										</ul>
 									</div>
 									<div class="widget">
@@ -441,7 +441,7 @@
 										</div>
 									</div>
 
-									<div class="widget">
+									<div class="widget" style="max-height: 400px; overflow-y: scroll;">
 										<!-- expand network - connect matches widget -->
 										<ComposeConnectionRequests></ComposeConnectionRequests>
 										<!-- expand network - connect matches widget -->
@@ -461,6 +461,7 @@
 <script lang="ts">
 import { matchesPattern } from '@babel/types';
 import { UserService } from '~/services';
+import { useAuthStore } from '~/store';
 export default {
 
 	setup() {
@@ -469,6 +470,7 @@ export default {
 			middleware: ["auth"],
 		});
 		const { $toast } = useNuxtApp()
+		
 		return {
 			$toast,
 		}
@@ -477,6 +479,8 @@ export default {
 	data() {
 		return {
 			key: Math.random().toString(),
+			authUser: {},
+			me: {},
 		}
 	},
 	beforeRouteEnter(to, from, next) {
@@ -490,6 +494,8 @@ export default {
 	},
 
 	mounted() {
+		this.authUser = useAuthStore().authUser
+		console.log(this.authUser)
 		this.getMe()
 	},
 
@@ -497,10 +503,10 @@ export default {
 
 		getMe() {
 			try {
-				// UserService.getMe().then((res) => {
-				// 	console.log(res)
-				// }).catch((err) => {
-				// })
+				UserService.getMe().then((res) => {
+					this.me = res.data
+				}).catch((err) => {
+				})
 			} catch (error) {
 			}
 		},

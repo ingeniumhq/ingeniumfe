@@ -36,6 +36,13 @@ export default  {
     async sendConnectRequest(payload: Object) {
         return await apiRequest('/connect/send', { method: 'POST',  body: payload })
     },
+    async declineConnectRequest(payload: Object) {
+        return await apiRequest('/connect/decline', { method: 'POST',  body: payload })
+    },
+
+    async acceptConnectRequest(payload: Object) {
+        return await apiRequest('/connect/accept', { method: 'POST',  body: payload })
+    },
 
    
 

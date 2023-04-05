@@ -7,7 +7,7 @@ export default  {
         return await apiRequest('users/me', { method: 'PATCH', body: payload })
     },
 
-    async getMe(payload: Object) {
+    async getMe() {
         return await apiRequest('users/me', { method: 'GET'})
     },
 

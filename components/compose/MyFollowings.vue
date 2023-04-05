@@ -2,7 +2,7 @@
     <div class="row col-xs-6 merged-10">
         <div class="col-lg-4 col-md-4 col-sm-6" v-for="following in followings">
             <div class="friendz">
-                <figure><img src="/images/resources/no-user-image.jpg" alt=""></figure>
+                <figure><img :src="following.followee.profile_pic" alt=""></figure>
                 <span><a href="#" title="">{{ following.followee.name }}</a></span>
                 <ins>{{ following.followee.headline }}</ins>
                 <a @click.prevent="unFollowUser(following.followee)" href="#" title="" data-ripple=""><i
@@ -15,19 +15,7 @@
         </div>
 
         <div class="col-lg-12">
-            <!-- <div class="load mb-4">
-                <ul class="pagination">
-                    <li><a title="" href="#"><i class="icofont-arrow-left"></i></a></li>
-                    <li><a title="" href="#" class="active">1</a></li>
-                    <li><a title="" href="#">2</a></li>
-                    <li><a title="" href="#">3</a></li>
-                    <li><a title="" href="#">4</a></li>
-                    <li><a title="" href="#">5</a></li>
-                    <li>....</li>
-                    <li><a title="" href="#">10</a></li>
-                    <li><a title="" href="#"><i class="icofont-arrow-right"></i></a></li>
-                </ul>
-            </div> -->
+           
         </div>
     </div>
 </template>

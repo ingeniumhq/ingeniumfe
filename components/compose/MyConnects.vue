@@ -9,22 +9,7 @@
             </div>
         </div>
 
-        <!-- <div class="col-lg-12 empty-state">
-            <div class="empty_state mx-auto">
-                <div class="sp sp-bars"></div>
-                <h3 class="">No content here yet</h3>
-                <p>There have been no posts in this section yet</p>
-                <a  href="#" class="text-center" title="" data-ripple="">Expand Network</a>
-            </div>
-        </div> -->
-        <!-- <div class="col-lg-12">
-            <div class="load mb-4">
-                <ul class="pagination uk-pagination">
-                    <li><a title="" href="#" class="active"><i class="icofont-arrow-left"></i></a></li>
-                    <li><a title="" href="#"><i class="icofont-arrow-right"></i></a></li>
-                </ul>
-            </div>
-        </div> -->
+
     </div>
 </template>
 
@@ -46,27 +31,27 @@ export default {
     },
 
     beforeCreate() {
-        ConnectService.getConnects({}).then((res) => {
-            this.connects = res.data
+        ConnectService.getConnects({status: 'active'}).then((res) => {
+            this.connects = res.data.data
         }).catch((err) => { })
     },
 
     mounted() {
         const { $listen } = useNuxtApp()
         $listen('connect:follow', (user: any) => {
-            this.getFollowers()
+            this.getConnects()
         })
     },
 
     methods: {
 
-        getFollowers() {
-            ConnectService.getFollowers({ exclude: 'following' }).then((res) => {
-                this.connects = res.data
+        getConnects() {
+            ConnectService.getConnects({status: 'active'}).then((res) => {
+                this.connects = res.data.data
             }).catch((err) => { })
         },
 
-        followUser(user: any) {
+        blockConnect(user: any) {
             ConnectService.followUser({
                 user_id: user.id
             }).then((res) => {

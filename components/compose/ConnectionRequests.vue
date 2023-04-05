@@ -3,15 +3,14 @@
         <h4 class="widget-title">Connection Requests</h4>
         <ul class="followers">
             <li v-for="person in people">
-                <figure><img alt="" src="/images/resources/friend-avatar.jpg"></figure>
+                <figure><img alt="" :src="person.user.profile_pic"></figure>
                 <div class="friend-meta">
                     <h4>
-                        <a title="" href="time-line.html">{{ person.name }}</a>
-                        <!-- <span>Dept colleague</span> -->
+                        <a title="" href="">{{ person.user.name }}</a>
                     </h4>
-                    <a @click.prevent="sendConnectRequest(person)" class="underline mx-1" title="" href="#">Accept</a>
-                    <a @click.prevent="sendConnectRequest(person)" class="underline mx-1" title="" href="#">Cancel</a>
-                    <a @click.prevent="sendConnectRequest(person)" class="underline mx-1" title="" href="#">Reject</a>
+                    <a v-if="auth.authUser.id !==  person.from_user_id"  @click.prevent="acceptConnectRequest(person)" class="underline mx-1" title="" href="#">Accept</a>
+                    <a v-if="auth.authUser.id !==  person.from_user_id"  @click.prevent="declineConnectRequest(person)" class="underline mx-1" title="" href="#">Decline</a>
+                    <a  v-if="auth.authUser.id ==  person.from_user_id" @click.prevent="sendConnectRequest(person)" class="underline mx-1" title="" href="#">Cancel</a>
                 </div>
             </li>
            
@@ -21,13 +20,16 @@
 
 <script lang="ts">
 import { ConnectService } from '~/services';
+import { useAuthStore } from '~/store';
 
 export default {
 
     setup() {
         const { $toast } = useNuxtApp()
+        const auth = useAuthStore()
         return {
-            $toast
+            $toast,
+            auth
         }
     },
     data() {
@@ -37,27 +39,17 @@ export default {
     },
 
     beforeCreate() {
-        ConnectService.getSuggestions({exclude: 'connected'}).then((res) => {
-            this.people = res.data
-            const script = document.createElement('script')
-            script.onload = () => { }
-            script.src = '/js/script.js'
-            document.body.appendChild(script)
+        ConnectService.getConnects({status: 'pending'}).then((res) => {
+            this.people = res.data.data
+            console.log(this.people)
         }).catch((err) => { })
     },
 
     methods: {
 
-        getSuggestions() {
-            ConnectService.getSuggestions({exclude: 'connected'}).then((res) => {
-                this.people = res.data
-                //    this.$refs.suggessted.$el.classList.add('suggested-caro')
-                this.$refs['suggessted'].classList.add('suggested-caro')
-
-                const script = document.createElement('script')
-                script.onload = () => { }
-                script.src = '/js/script.js'
-                document.body.appendChild(script)
+        getConnects() {
+            ConnectService.getConnects({status: 'pending'}).then((res) => {
+                this.people = res.data.data
             }).catch((err) => { })
         },
 
@@ -66,11 +58,28 @@ export default {
                 user_id: user.id
             }).then((res) => {
                 this.$toast(res.message);
-                this.getSuggestions()
+                this.getConnects()
+            }).catch((err) => { })
+        },
+
+        acceptConnectRequest(connect: any) {
+            ConnectService.acceptConnectRequest({
+                connect_id: connect.id,
+            }).then((res) => {
+                this.$toast(res.message);
+                this.getConnects()
+            }).catch((err) => { })
+        },
+
+        declineConnectRequest(connect: any) {
+            ConnectService.declineConnectRequest({
+                connect_id: connect.id
+            }).then((res) => {
+                this.$toast(res.message);
+                this.getConnects()
             }).catch((err) => { })
         }
     }
-
 
 }
 
