@@ -16,7 +16,7 @@
                 <li>
                   <div class="searched-user">
                     <figure><img src="/images/resources/user1.jpg" alt=""></figure>
-                    <span>Danial Carabal</span>
+                    <span>Oladeji Stephen</span>
                   </div>
                   <span class="trash"><i class="icofont-close-circled"></i></span>
                 </li>
@@ -270,8 +270,9 @@
       <div class="gap overlap nogap mate-black low-opacity">
         <div class="bg-image" style="background-image: url(/images/resources/slider3.jpg)"></div>
         <div class="feature-meta">
-          <h1>Network & <span>Connect</span> </h1>
-          <h3><span>Hr Executives and Customer Service Professionals</span><span class="typed-cursor"></span></h3>
+          
+          <h1 style="font-size:40px">You’ve Got The Dream, <span>We’ve Got The Team!</span> </h1>
+          <h3><span>Hire the best talents. Discover the perfect job</span><span class="typed-cursor"></span></h3>
           <a href="/timeline" title="" class="main-btn" data-ripple="">Join Free</a>
         </div>
       </div>
@@ -397,9 +398,11 @@
               <div class="verticle-center">
                 <div class="measure right">
                   <i class="icofont-connection"></i>
-                  <h2>Connect with our  huge Customer Service Community</h2>
+                  <h2>Africa's Premier Customer Service Learning Platform</h2>
                   <p>
-                    <a href="#" title="">Engineering</a>
+                    Looking to streamline your customer service operations and connect with trained professionals in the industry? Download the Ingenium Academy app to explore new opportunities and gain access to a wealth of resources designed to help you deliver exceptional customer experiences.
+
+                    <!-- <a href="#" title="">Engineering</a>
                     <a href="#" title="">mathamatic</a>
                     <a href="#" title="">biology</a>
                     <a href="#" title="">computer science</a>
@@ -408,7 +411,7 @@
                     <a href="#" title="">Physics</a>
                     <a href="#" title="">sociology</a>
                     <a href="#" title="">chemistry</a>
-                    <a href="#" title="">astrophysics</a>
+                    <a href="#" title="">astrophysics</a> -->
                   </p>
                 </div>
               </div>
@@ -425,8 +428,8 @@
           <div class="row remove-ext30">
             <div class="col-lg-12">
               <div class="title">
-                <h1>Recent Events</h1>
-                <p>Our Recent News about the events.</p>
+                <h1>Core Values</h1>
+                <p>Our Core Values.</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -434,15 +437,10 @@
                 <figure><img src="/images/resources/blog.jpg" alt=""></figure>
                 <div class="blog-meta">
                   <div class="blog-head">
-                    <ul class="postby">
-                      <li>
-                        <figure><img src="/images/resources/postby1.jpg" alt=""></figure>
-                        <span>Saden joe</span>
-                      </li>
-                      <li><i class="icofont-heart"></i><span>1.3k</span></li>
-                    </ul>
-                    <a href="#" title="" class="date">06 Aug</a>
-                    <h4 class="blog-title"><a href="#" title="">Oddo is coming to dubai in 2020</a></h4>
+                    
+                    <!-- <a href="#" title="" class="date">06 Aug</a> -->
+                    <h4 class="blog-title"><a href="#" title="">Collaboration</a></h4>
+                    <p>We believe in the power of collaboration and sharing of knowledge and experiences to achieve our common goal of improving customer service quality in Africa</p>
                   </div>
                 </div>
               </div>
@@ -452,15 +450,9 @@
                 <figure><img src="/images/resources/blog2.jpg" alt=""></figure>
                 <div class="blog-meta">
                   <div class="blog-head">
-                    <ul class="postby">
-                      <li>
-                        <figure><img src="/images/resources/postby2.jpg" alt=""></figure>
-                        <span>Andrew</span>
-                      </li>
-                      <li><i class="icofont-heart"></i><span>1.3k</span></li>
-                    </ul>
-                    <a href="#" title="" class="date">08 Sep</a>
-                    <h4 class="blog-title"><a href="#" title="">Coming soon event by Microsoft</a></h4>
+                   
+                    <h4 class="blog-title"><a href="#" title="">Excellence</a></h4>
+                    <p>We strive to provide our users with the highest quality resources, tools, and services. We hold ourselves to the highest standards and are dedicated to exceptional results.</p>
                   </div>
                 </div>
               </div>
@@ -470,15 +462,9 @@
                 <figure><img src="/images/resources/blog3.jpg" alt=""></figure>
                 <div class="blog-meta">
                   <div class="blog-head">
-                    <ul class="postby">
-                      <li>
-                        <figure><img src="/images/resources/postby3.jpg" alt=""></figure>
-                        <span>Emma Lucy</span>
-                      </li>
-                      <li><i class="icofont-heart"></i><span>1.3k</span></li>
-                    </ul>
-                    <a href="#" title="" class="date">12 Oct</a>
-                    <h4 class="blog-title"><a href="#" title="">This year Whatsapp event is ready in July</a></h4>
+                    
+                    <h4 class="blog-title"><a href="#" title="">Innovation</a></h4>
+                    <p>We encourage creativity and embrace original ideas. We are constantly seeking new and better ways to connect professionals, provide training resources and improve the customer experience.</p>
                   </div>
                 </div>
               </div>
@@ -496,7 +482,7 @@
               <div class="newsletter-sec">
                 <figure><img src="/images/news-icon.png" alt=""></figure>
                 <div class="leter-meta">
-                  <span>our newsletter</span>
+                  <span>Join us on our mission to revolutionize Africa's customer service industry.</span>
                   <h3>subscribe now</h3>
                 </div>
                 <form method="post">
@@ -522,8 +508,8 @@
                 <div class="logo"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
                 <p>Subscribe our newsletter for getting notifications and alerts</p>
                 <div class="contact-little">
-                  <span><i class="icofont-phone-circle"></i> +1-235-099-34</span>
-                  <span><i class="icofont-email"></i> info@akedmic.com</span>
+                  <span><i class="icofont-phone-circle"></i> +234 803 660 4417</span>
+                  <span><i class="icofont-email"></i> hello@theingeniumapp.com</span>
                 </div>
               </div>
             </div>
@@ -601,7 +587,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <span class="">© copyright All rights reserved by SBE 2020</span>
+            <span class="">© copyright All rights reserved by theingeniumapp 2023</span>
           </div>
         </div>
       </div>
