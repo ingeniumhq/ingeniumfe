@@ -7,6 +7,10 @@ export default  {
         return await apiRequest('users/me', { method: 'PATCH', body: payload })
     },
 
+    async uploadMedia(payload: Object) {
+        return await apiRequest('users/me', { method: 'POST', body: payload })
+    },
+
     async getMe() {
         return await apiRequest('users/me', { method: 'GET'})
     },

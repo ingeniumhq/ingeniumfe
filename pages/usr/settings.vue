@@ -45,12 +45,24 @@
 									<div class="uk-width">
 										<div class="setting-card">
 											<h2>Account Settings</h2>
-											<p class="mb-4">This is your public presence on Socimo. You need a account to
-												upload your paid courses, comment on courses, purchased by users, or
-												earning.
-											</p>
+											<p class="mb-4">This is your public presence on Ingenium.</p>
 											<h6>Basic Profile</h6>
-											<p>Add information about yourself</p>
+											
+											<form action=""  @submit.prevent="uploadMedia()">
+												
+												<div class="row">
+													<div class="mb-4 col-md-6">
+														<p>Upload profile picture</p>
+														<input @change="onFileChange($event)" class="uk-input" type="file">
+													</div>
+													<div class="col-md-6">
+														<img style="height: 70px; border-radius: 10px;" class="figure mb-1" :src="authUser.profile_pic" alt="">
+														<button type="submit" class="button secondary  block">Upload</button>
+													</div>
+												</div>
+												
+											</form>
+
 											<form @submit.prevent="updateAccount()">
 												<fieldset class="row merged-10">
 													<div class="mb-4 col-lg-6">
@@ -147,6 +159,9 @@
 													</div>
 												</fieldset>
 											</form>
+
+
+											
 										</div>
 									</div>
 								</div>
@@ -437,6 +452,7 @@
 
 <script lang="ts">
 import { UserService } from '~/services';
+import { useAuthStore } from '~/store';
 export default {
 
 	setup() {
@@ -445,8 +461,10 @@ export default {
 			middleware: ["auth"],
 		});
 		const { $toast } = useNuxtApp()
+		const {authUser} = useAuthStore()
 		return {
 			$toast,
+			authUser
 		}
 	},
 
@@ -480,6 +498,21 @@ export default {
 	},
 
 	methods: {
+		onFileChange(e) {
+			const file = e.target.files[0];
+			this.authUser.profile_pic = URL.createObjectURL(file);
+		},
+
+		uploadMedia(){
+			const file = e.target.files[0];
+			UserService.uploadMedia({profile_pic: file}).then((res) => {
+				this.$toast(res.message);
+				this.getMe()
+			}).catch((err) => {
+				this.$toast(err.data.message);
+				useState('isBusy').value = false;
+			})
+		},
 		updateAccount() {
 			useState('isBusy').value = true;
 			try {

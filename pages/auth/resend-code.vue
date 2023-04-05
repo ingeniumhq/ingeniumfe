@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <span class="">&copy; Copyright All rights reserved by Socimo 2020</span>
+                        <span class="">&copy; Copyright All rights reserved by Ingenium 2020</span>
                     </div>
                 </div>
             </div>
