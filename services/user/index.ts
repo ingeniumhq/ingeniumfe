@@ -8,7 +8,7 @@ export default  {
     },
 
     async uploadMedia(payload: Object) {
-        return await apiRequest('users/me', { method: 'POST', body: payload })
+        return await apiRequest('users/media', { method: 'POST', body: payload })
     },
 
     async getMe() {

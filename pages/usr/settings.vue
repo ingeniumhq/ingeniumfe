@@ -48,7 +48,7 @@
 											<p class="mb-4">This is your public presence on Ingenium.</p>
 											<h6>Basic Profile</h6>
 											
-											<form action=""  @submit.prevent="uploadMedia()">
+											<form method="POST" enctype="multipart/form-data"  @submit.prevent="uploadMedia()">
 												
 												<div class="row">
 													<div class="mb-4 col-md-6">
@@ -479,6 +479,7 @@ export default {
 			new_interest: {},
 			skills: [],
 			new_skill: {},
+			file: ''
 
 
 		}
@@ -500,11 +501,12 @@ export default {
 	methods: {
 		onFileChange(e) {
 			const file = e.target.files[0];
+			this.file = file
 			this.authUser.profile_pic = URL.createObjectURL(file);
 		},
 
 		uploadMedia(){
-			const file = e.target.files[0];
+			const file =this.file;
 			UserService.uploadMedia({profile_pic: file}).then((res) => {
 				this.$toast(res.message);
 				this.getMe()

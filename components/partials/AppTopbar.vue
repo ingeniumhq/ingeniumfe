@@ -1,11 +1,10 @@
 <template>
 	<div class="responsive-header">
 		<div class="logo res"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
-		<div class="d-none user-avatar mobile">
-			<a href="profile.html" title="View Profile"><img alt="" src="/images/resources/user.jpg"></a>
+		<div class=" user-avatar mobile">
+			<NuxtLink to="/usr/me" title="View Profile"><img alt="" :src="authUser.profile_pic"></NuxtLink>
 			<div class="name">
-				<h4>Danial Cardos</h4>
-				<span>Ontario, Canada</span>
+				<h4>{{ authUser.name }}</h4>
 			</div>
 		</div>
 		<div class="right-compact">
@@ -79,7 +78,8 @@
 				<input type="text" placeholder="Search...">
 			</form>
 		</div>
-	</div><!-- responsive header -->
+	</div>
+	<!-- responsive header -->
 
 	<header class="">
 		<div class="topbar stick">
@@ -134,13 +134,13 @@
 
 			<ul class="web-elements">
 				<li>
-					<div class=" d-none user-dp">
-						<a href="profile-page2.html" title="">
-							<img alt="" src="/images/resources/user.jpg">
+					<div class=" user-dp">
+						<NuxtLink to="/usr/me" title="">
+							<img alt="" :src="authUser.profile_pic">
 							<div class="name">
-								<h4>Danial Cardos</h4>
+								<h4>{{ authUser.name }}</h4>
 							</div>
-						</a>
+						</NuxtLink>
 					</div>
 				</li>
 				<!-- <li class="go-live">
@@ -237,6 +237,7 @@
 import { useAuthStore } from '~/store/auth';
 
 const authStore = useAuthStore();
+const {authUser} = useAuthStore();
 
 function logout() {
 	authStore.logoutUser()
