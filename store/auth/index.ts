@@ -23,11 +23,18 @@ export const useAuthStore = defineStore('useAuthStore', {
       this.authUser = {}
     },
 
-    async setAuthUser(data: any) {
+    async setAuthUser(user: any) {
       try {
-        this.authUser = data.user
+        this.authUser = user
+      } catch (error) {
+        console.log( error)
+      }
+    },
+
+    async setToken(token: any) {
+      try {
         this.isLoggedIn = true
-        this.bearerToken = data.token
+        this.bearerToken = token
       } catch (error) {
         return error
       }

@@ -5,24 +5,25 @@
                 <div class="col-lg-12">
                     <div class="group-feed">
                         <div class="group-avatar">
-                            <img src="/images/resources/profile-banner.jpg" alt="">
-                            <a href="#" title=""><i class="icofont-check-circled"></i>Follow</a>
-                            <figure class="group-dp"><img src="/images/resources/user.jpg" alt=""></figure>
+                            <img :src="user.cover_pic ?? ' /images/resources/profile-banner.jpg'" alt="">
+                            <a v-if="user.is_follower" @click.prevent="unFollowUser(user)" href="#" title=""><i class="icofont-check-circled"></i>Unfollow</a>
+                            <a v-else @click.prevent="followUser(user)" href="#" title=""><i class="icofont-check-circled"></i>Follow</a>
+                            <figure class="group-dp"><img :src="user.profile_pic" alt=""></figure>
                         </div>
                         <div class="grp-info about">
-                            <h4>Georg Peeter <span>@Georgofficial</span></h4>
+                            <h4>{{ user.name }} <span>@{{ user.username }}</span></h4>
                             <ul class="joined-info">
-                                <li><span>Joined:</span> April 2020</li>
-                                <li><span>Follow:</span> 55K</li>
-                                <li><span>Followers:</span> 2.2K</li>
-                                <li><span>Posts:</span> 932</li>
+                                <li><span>Joined:</span>{{ user.created_at }}</li>
+                                <li><span>Following:</span> {{ user?.analytics?.followings_count ?? 0 }}</li>
+                                <li><span>Followers:</span>{{ user?.analytics?.followers_count ?? 0 }}</li>
+                                <!-- <li><span>Posts:</span> 932</li> -->
                             </ul>
                             <ul class="nav nav-tabs about-btn">
                                 <li class="nav-item"><a class="active" href="#timeline" data-toggle="tab">Timeline</a></li>
                                 <li class="nav-item"><a class="" href="#connects" data-toggle="tab">Connects</a></li>
                                 <li class="nav-item"><a class="" href="#about" data-toggle="tab">About</a></li>
                             </ul>
-                            
+
                         </div>
 
                         <div class="row">
@@ -37,7 +38,7 @@
                                                     <div class="user-post">
                                                         <div class="friend-info">
                                                             <figure>
-                                                                <img alt="" src="images/resources/user4.jpg">
+                                                                <img alt="" src="/images/resources/user4.jpg">
                                                             </figure>
                                                             <div class="friend-name">
                                                                 <div class="more">
@@ -235,10 +236,10 @@
                                                                         <div class="popover_wrapper">
                                                                             <a class="popover_title" href="#" title=""><img
                                                                                     alt=""
-                                                                                    src="images/smiles/thumb.png"></a>
+                                                                                    src="/images/smiles/thumb.png"></a>
                                                                             <div class="popover_content">
                                                                                 <span><img alt=""
-                                                                                        src="images/smiles/thumb.png">
+                                                                                        src="/images/smiles/thumb.png">
                                                                                     Likes</span>
                                                                                 <ul class="namelist">
                                                                                     <li>Jhon Doe</li>
@@ -251,10 +252,10 @@
                                                                         <div class="popover_wrapper">
                                                                             <a class="popover_title" href="#" title=""><img
                                                                                     alt=""
-                                                                                    src="images/smiles/heart.png"></a>
+                                                                                    src="/images/smiles/heart.png"></a>
                                                                             <div class="popover_content">
                                                                                 <span><img alt=""
-                                                                                        src="images/smiles/heart.png">
+                                                                                        src="/images/smiles/heart.png">
                                                                                     Love</span>
                                                                                 <ul class="namelist">
                                                                                     <li>Amara Sin</li>
@@ -266,10 +267,10 @@
                                                                         <div class="popover_wrapper">
                                                                             <a class="popover_title" href="#" title=""><img
                                                                                     alt=""
-                                                                                    src="images/smiles/smile.png"></a>
+                                                                                    src="/images/smiles/smile.png"></a>
                                                                             <div class="popover_content">
                                                                                 <span><img alt=""
-                                                                                        src="images/smiles/smile.png">
+                                                                                        src="/images/smiles/smile.png">
                                                                                     Happy</span>
                                                                                 <ul class="namelist">
                                                                                     <li>Sarah K.</li>
@@ -281,10 +282,11 @@
                                                                         </div>
                                                                         <div class="popover_wrapper">
                                                                             <a class="popover_title" href="#" title=""><img
-                                                                                    alt="" src="images/smiles/weep.png"></a>
+                                                                                    alt=""
+                                                                                    src="/images/smiles/weep.png"></a>
                                                                             <div class="popover_content">
                                                                                 <span><img alt=""
-                                                                                        src="images/smiles/weep.png">
+                                                                                        src="/images/smiles/weep.png">
                                                                                     Dislike</span>
                                                                                 <ul class="namelist">
                                                                                     <li>Danial Carbal</li>
@@ -306,7 +308,7 @@
                                                                             <ul>
                                                                                 <li>
                                                                                     <figure><img alt=""
-                                                                                            src="images/resources/user1.jpg">
+                                                                                            src="/images/resources/user1.jpg">
                                                                                     </figure>
                                                                                     <div class="commenter">
                                                                                         <h5><a title="" href="#">Jack
@@ -332,7 +334,7 @@
                                                                                 </li>
                                                                                 <li>
                                                                                     <figure><img alt=""
-                                                                                            src="images/resources/user2.jpg">
+                                                                                            src="/images/resources/user2.jpg">
                                                                                     </figure>
                                                                                     <div class="commenter">
                                                                                         <h5><a title="" href="#">Ching
@@ -385,114 +387,65 @@
 
                                     <div class="tab-pane fade" id="connects">
                                         <h5 class="tab-title"></h5>
-                                        <ul class="pix-filter">
-                                            <li><a title="" href="#" class="active">Connects</a></li>
-                                            <li><a title="" href="#">Followers</a></li>
-                                            <li><a title="" href="#">Followings</a></li>
-                                
+                                        <ul class="nav nav-tabsn about-btn pix-filter">
+                                            <li class="nav-item"> <a title="" href="#connections" class="active" data-toggle="tab">Connects</a></li>
+                                            <li class="nav-item"> <a title="" href="#followers" data-toggle="tab">Followers</a></li>
+                                            <li class="nav-item"> <a title="" href="#followings" data-toggle="tab">Followings</a></li>
+
                                         </ul>
-                                        <div class="row merged-10 col-xs-6">
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-10.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Amy Watson</a></span>
-                                                    <ins>Bz University, Pakistan</ins>
-                                                    <a href="#" title="" data-ripple=""><i
-                                                            class="icofont-star"></i>Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-11.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Muhammad Khan</a></span>
-                                                    <ins>Oxford University, UK</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-12.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Sadia Gill</a></span>
-                                                    <ins>WB University, USA</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-4.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Rjapal</a></span>
-                                                    <ins>Km University, India</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-1.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Amy watson</a></span>
-                                                    <ins>Oxford University, UK</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-2.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Bob Frank</a></span>
-                                                    <ins>WB University, Canada</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-5.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Amy Watson</a></span>
-                                                    <ins>Bz University, Pakistan</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-7.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Muhammad Khan</a></span>
-                                                    <ins>Oxford University, UK</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-10.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Sadia Gill</a></span>
-                                                    <ins>WB University, USA</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-2.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Bob Frank</a></span>
-                                                    <ins>WB University, Canada</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="friendz">
-                                                    <figure><img src="/images/resources/speak-11.jpg" alt=""></figure>
-                                                    <span><a href="#" title="">Muhammad Khan</a></span>
-                                                    <ins>Oxford University, UK</ins>
-                                                    <a href="#" title="" data-ripple=""><i class="icofont-star"></i>
-                                                        Unfollow</a>
-                                                </div>
-                                            </div>
+                                            
+                                        <div class="row">
                                             <div class="col-lg-12">
-                                                <div class="sp sp-bars"></div>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade show active" id="connections">
+                                                        <div class="row merged-10 col-xs-6">
+                                                            <div v-for="user in connects" class="col-lg-3 col-md-4 col-sm-6">
+                                                                <div class="friendz">
+                                                                    <figure><img :src="user.profile_pic" alt=""></figure>
+                                                                    <span><NuxtLink :to="{ name: 'usr-username', params: { username: user.username }}" title="">{{ user.name }}</NuxtLink></span>
+                                                                    <ins>{{ user.headline }}</ins>
+                                                            
+                                                                </div>
+                                                            </div>
+                                                        
+                                                            <div class="col-lg-12">
+                                                                <div class="sp sp-bars"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tab-pane fade " id="followers">
+                                                        <div class="row merged-10 col-xs-6">
+                                                            <div v-for="user in followers" class="col-lg-3 col-md-4 col-sm-6">
+                                                                <div class="friendz">
+                                                                    <figure><img :src="user.profile_pic" alt=""></figure>
+                                                                    <span><NuxtLink :to="{ name: 'usr-username', params: { username: user.username }}" title="">{{ user.name }}</NuxtLink></span>
+                                                                    <ins>{{ user.headline }}</ins>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                            <div class="col-lg-12">
+                                                                <div class="sp sp-bars"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tab-pane fade " id="followings">
+                                                        <div class="row merged-10 col-xs-6">
+                                                            <div v-for="user in followings" class="col-lg-3 col-md-4 col-sm-6">
+                                                                <div class="friendz">
+                                                                    <figure><img :src="user.profile_pic" alt=""></figure>
+                                                                    <span><NuxtLink :to="{ name: 'usr-username', params: { username: user.username }}" title="">{{ user.name }}</NuxtLink></span>
+                                                                    <ins>{{ user.headline }}</ins>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                            <div class="col-lg-12">
+                                                                <div class="sp sp-bars"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -502,108 +455,100 @@
                                             <div class="col-lg-8">
 
                                                 <div class="main-wraper">
-                                                    <h5 class="main-title">About me</h5>
+                                                    <h5 class="main-title">About user</h5>
                                                     <div class="grp-about">
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12">
 
-                                                                <p>{{ me.account?.biography }}</p>
+                                                                <p>{{ user.account?.biography }}</p>
                                                                 <ul class="badges">
-                                                                    <li><img src="/images/badges/badge2.png" alt=""></li>
+                                                                    <!-- <li><img src="/images/badges/badge2.png" alt=""></li>
                                                                     <li><img src="/images/badges/badge3.png" alt=""></li>
                                                                     <li><img src="/images/badges/badge4.png" alt=""></li>
                                                                     <li><img src="/images/badges/badge5.png" alt=""></li>
                                                                     <li><img src="/images/badges/badge7.png" alt=""></li>
-                                                                    <li><img src="/images/badges/badge8.png" alt=""></li>
+                                                                    <li><img src="/images/badges/badge8.png" alt=""></li> -->
                                                                 </ul>
                                                             </div>
 
                                                         </div>
                                                     </div>
                                                 </div>
+                                               
+
                                                 <div class="main-wraper">
-                                                    <h5 class="main-title">Personal</h5>
+                                                    <h5 class="main-title">Experiences</h5>
                                                     <div class="info-block-list">
-                                                        <ul>
-                                                            <li>Date of Birth: <span>Dec, 17 1980</span></li>
-                                                            <li>Location: <span>Los Angeles, California</span></li>
-                                                            <li>Web: <span>www.sample.com</span></li>
-                                                            <li>Email: <span>sample123@yourmail.com</span></li>
-                                                            <li>Location: <span>Los Angeles, California</span></li>
-                                                            <li>Occupation: <span>Doctor</span></li>
-                                                            <li>Location: <span>Los Angeles, California</span></li>
-                                                        </ul>
+                                                        
+                                                        <div v-for="experience in user.experiences" class="exp-col">
+                                                            <div class="exp-meta">
+                                                                <h5> {{ experience.company }}</h5>
+                                                                <p>Position: {{ experience.position }}</p>
+                                                                <p>Period: {{ experience.start_date }} - {{ experience.end_date ?? 'Present' }}</p>
+                                                            </div>
+                                                        </div>
+                                                
                                                     </div>
                                                 </div>
 
+
                                                 <div class="main-wraper">
-                                                    <h5 class="main-title">Interests</h5>
+                                                    <h5 class="main-title">Certifications</h5>
                                                     <div class="info-block-list">
-                                                        <div class="info-block">
-                                                            <h6>Favourite TV Shows</h6>
-                                                            <p>Breaking Good, RedDevil, People of Interest, The Running
-                                                                Dead, Found, American Guy, The Last Windbender, Game of
-                                                                Wars.</p>
+                                                        
+                                                        <div v-for="certification in user.certifications" class="exp-col">
+                                                            <div class="exp-meta">
+                                                                <h5><i class="icofont-certificate"></i> {{ certification.name }}</h5>
+                                                                <p>{{ certification.issuer }} - {{ certification.date }}</p>
+                                                                <span>Note</span>
+                                                                <ins>{{ certification.note }}</ins>
+                                                            </div>
+                                                            
                                                         </div>
-                                                        <div class="info-block">
-                                                            <h6>Favourite Music Bands / Artists</h6>
-                                                            <p>Iron Maid, DC/AC, Megablow, Kung Fighters, System of a
-                                                                Revenge, Rammstown.</p>
-                                                        </div>
-                                                        <div class="info-block">
-                                                            <h6>Favourite Movies</h6>
-                                                            <p>The Revengers Saga, The Scarred Wizard and the Fire
-                                                                Crown, Crime Squad, Metal Man, The Dark Rider, Watchers,
-                                                                The Impossible Heist.</p>
-                                                        </div>
-                                                        <div class="info-block">
-                                                            <h6>Favourite Books</h6>
-                                                            <p>The Crime of the Century, Egiptian Mythology 101, The
-                                                                Scarred Wizard, Lord of the Wings, Amongst Gods, The
-                                                                Oracle, A Tale of Air and Water.</p>
-                                                        </div>
-                                                        <div class="info-block">
-                                                            <h6>Favourite Games</h6>
-                                                            <p>The First of Us, Assassin’s Squad, Dark Assylum, NMAK16,
-                                                                Last Cause 4, Grand Snatch Auto.</p>
-                                                        </div>
+                                                
                                                     </div>
                                                 </div>
+
+
+                                               
+
+                                               
                                             </div>
 
                                             <div class="col-lg-4">
-                                                <aside class="sidebar">
-                                                    <div class="widget">
-                                                        <h4 class="widget-title">Complete Your Profile</h4>
-                                                        <span>Complete your profile by filling profile info fields,
-                                                            completing quests &amp; unlocking badges</span>
-                                                        <div data-progress="tip" class="progress__outer" data-value="0.67">
-                                                            <canvas width="160" height="160"
-                                                                style="height: 80px; width: 80px;"></canvas>
-                                                            <div class="progress__inner">82%</div>
+                                                <aside class="sidebar static left">
+
+                                                    <div class="main-wraper">
+                                                        <h5 class="main-title">Interests</h5>
+                                                        <div class="info-block-list">
+                                                            <div class="info-block">
+                                                                <span class="d" v-for="interest in user.interests"> {{interest.name}}, </span>
+                                                            </div>
+                                                            
                                                         </div>
-                                                        <ul class="prof-complete">
-                                                            <li><i class="icofont-plus-square"></i> <a href="#"
-                                                                    title="">Upload Your Picture</a><em>10%</em></li>
-                                                            <li><i class="icofont-plus-square"></i> <a href="#"
-                                                                    title="">Your University?</a><em>20%</em></li>
-                                                            <li><i class="icofont-plus-square"></i> <a href="#"
-                                                                    title="">Invite to 10+ members</a><em>20%</em></li>
-                                                        </ul>
-                                                    </div><!-- complete profile widget -->
-                                                    <div class="widget">
-                                                        <h4 class="widget-title">User stats</h4>
-                                                        <ul class="user-stat">
-                                                            <li><i class="icofont-lollipop"></i><span>Last Post <em>2
-                                                                        hours ago</em></span></li>
-                                                            <li><i class="icofont-spotify"></i><span>Last comment <em>6
-                                                                        hours ago</em></span></li>
-                                                            <li><i class="icofont-like"></i><span>Most Liked Post<em>540
-                                                                        Likes</em></span></li>
-                                                            <li><i class="icofont-user-alt-4"></i><span>Last Friend
-                                                                    Added <em>2 days ago</em></span></li>
-                                                        </ul>
-                                                    </div><!-- complete profile widget -->
+                                                    </div>
+
+
+                                                    <div class="main-wraper">
+                                                        <h5 class="main-title">Skills</h5>
+                                                        <div class="info-block-list">
+                                                            <div class="info-block">
+                                                                <span class="d" v-for="skill in user.skills"> {{skill.name}}, </span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="advertisment-box">
+                                                        <h4 class=""><i class="icofont-info-circle"></i> advertisment
+                                                        </h4>
+                                                        <figure>
+                                                            <a href="#" title="Advertisment"><img
+                                                                    src="/images/resources/ad-widget2.gif" alt=""></a>
+                                                        </figure>
+                                                    </div>
+
                                                 </aside>
                                             </div>
                                         </div>
@@ -620,8 +565,7 @@
 </template>
 
 <script lang="ts">
-import { matchesPattern } from '@babel/types';
-import { UserService } from '~/services';
+import { ConnectService, UserService } from '~/services';
 import { useAuthStore } from '~/store';
 export default {
 
@@ -639,9 +583,12 @@ export default {
 
     data() {
         return {
-            key: Math.random().toString(),
             authUser: {},
-            me: {},
+            user: {},
+            connects: [],
+            followings: [],
+            followers: [],
+            username: this.$route.params.username
         }
     },
     beforeRouteEnter(to, from, next) {
@@ -656,27 +603,87 @@ export default {
 
     mounted() {
         this.authUser = useAuthStore().authUser
-        console.log(this.authUser)
-        this.getMe()
+        this.getUser(this.username)
+        this.getUserConnects(this.username)
+        this.getUserFollowers(this.username)
+        this.getUserFollowings(this.username)
     },
 
     methods: {
 
-        getMe() {
+        getUser(username: any) {
             try {
-                UserService.getMe().then((res) => {
-                    this.me = res.data
+                UserService.getUser(username).then((res) => {
+                    this.user = res.data
                 }).catch((err) => {
                 })
             } catch (error) {
             }
         },
 
-        refreshComponent() {
-            this.key = Math.random().toString()
-            const { $event } = useNuxtApp()
-            $event('connect:follow', {})
+
+        getUserConnects(username: any) {
+            try {
+                UserService.getUserConnects(username).then((res) => {
+                    this.connects = res.data
+                }).catch((err) => {
+                })
+            } catch (error) {
+            }
+        },
+
+        getUserFollowings(username: any) {
+            try {
+                UserService.getUserFollowings(username).then((res) => {
+                    this.followings = res.data
+                }).catch((err) => {
+                })
+            } catch (error) {
+            }
+        },
+
+        getUserFollowers(username: any) {
+            try {
+                UserService.getUserFollowers(username).then((res) => {
+                    this.followers = res.data
+                }).catch((err) => {
+                })
+            } catch (error) {
+            }
+        },
+
+        followUser(user: any) {
+            ConnectService.followUser({
+                user_id: user.id
+            }).then((res) => {
+                this.$toast(res.message);
+                
+                //  TODO: 3 extra calls are not needed
+                this.getUser(this.username)
+                this.getUserFollowers(this.username)
+                this.getUserFollowings(this.username)
+
+
+                const { $event } = useNuxtApp()
+                $event('connect:follow', {})
+            }).catch((err) => { })   
+        },
+        unFollowUser(user: any) {
+            ConnectService.unFollowUser({
+                user_id: user.id
+            }).then((res) => {
+                this.$toast(res.message);
+               
+                //  TODO: 3 extra calls are not needed
+                this.getUser(this.username)
+                this.getUserFollowers(this.username)
+                this.getUserFollowings(this.username)
+
+                const { $event } = useNuxtApp()
+                $event('connect:unfollow', {}) // emit event for follow
+            }).catch((err) => { })
         }
+
     }
 }
 </script>

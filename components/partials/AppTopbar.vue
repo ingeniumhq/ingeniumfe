@@ -1,18 +1,16 @@
 <template>
+
+	<!-- Mobile responsive header -->
 	<div class="responsive-header">
 		<div class="logo res"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
 		<div class=" user-avatar mobile">
-			<NuxtLink to="/usr/me" title="View Profile"><img alt="" :src="authUser.profile_pic"></NuxtLink>
+			<NuxtLink to="/usr/me" title="View Profile"><img alt="" :src="authUser?.profile_pic"></NuxtLink>
 			<div class="name">
 				<h4>{{ authUser.name }}</h4>
 			</div>
 		</div>
 		<div class="right-compact">
-			
-
 			<div class="topbar topbarmobile stick">
-			
-
 			<ul class="web-elements">
 				
 				<li>
@@ -81,6 +79,8 @@
 	</div>
 	<!-- responsive header -->
 
+
+	<!-- large screen header -->
 	<header class="">
 		<div class="topbar stick">
 			<div class="logo"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
@@ -136,7 +136,7 @@
 				<li>
 					<div class=" user-dp">
 						<NuxtLink to="/usr/me" title="">
-							<img alt="" :src="authUser.profile_pic">
+							<img alt="" :src="authUser?.profile_pic">
 							<div class="name">
 								<h4>{{ authUser.name }}</h4>
 							</div>
@@ -242,6 +242,8 @@ const {authUser} = useAuthStore();
 function logout() {
 	authStore.logoutUser()
 }
+
+console.log(authUser)
 </script>
 
 <style>

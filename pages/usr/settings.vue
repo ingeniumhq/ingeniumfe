@@ -53,10 +53,10 @@
 												<div class="row">
 													<div class="mb-4 col-md-6">
 														<p>Upload profile picture</p>
-														<input @change="onFileChange($event)" class="uk-input" type="file">
+														<input ref="file"  @change="onFileChange($event)" class="uk-input" type="file">
 													</div>
 													<div class="col-md-6">
-														<img style="height: 70px; border-radius: 10px;" class="figure mb-1" :src="authUser.profile_pic" alt="">
+														<img style="height: 70px; border-radius: 10px;" class="figure mb-1" :src="user_account.profile_pic" alt="">
 														<button type="submit" class="button secondary  block">Upload</button>
 													</div>
 												</div>
@@ -461,10 +461,11 @@ export default {
 			middleware: ["auth"],
 		});
 		const { $toast } = useNuxtApp()
-		const {authUser} = useAuthStore()
+		const {authUser, setAuthUser} = useAuthStore()
 		return {
 			$toast,
-			authUser
+			authUser,
+			setAuthUser,
 		}
 	},
 
@@ -479,7 +480,8 @@ export default {
 			new_interest: {},
 			skills: [],
 			new_skill: {},
-			file: ''
+			file: '',
+			selectedFiles: ''
 
 
 		}
@@ -502,12 +504,12 @@ export default {
 		onFileChange(e) {
 			const file = e.target.files[0];
 			this.file = file
-			this.authUser.profile_pic = URL.createObjectURL(file);
+			this.user_account.profile_pic = URL.createObjectURL(file);
 		},
 
 		uploadMedia(){
-			const file =this.file;
-			UserService.uploadMedia({profile_pic: file}).then((res) => {
+			
+			UserService.uploadMedia(this.file ).then((res) => {
 				this.$toast(res.message);
 				this.getMe()
 			}).catch((err) => {
@@ -603,12 +605,15 @@ export default {
 					this.certifications = res.data.certifications ?? []
 					this.interests = res.data.interests ?? []
 					this.skills = res.data.skills ?? []
+					this.authUser.profile_pic = res.data.profile_pic ?? []
 					// console.log(res)
 				}).catch((err) => {
 				})
 			} catch (error) {
 			}
-		}
+		},
+
+		
 	}
 }
 </script>

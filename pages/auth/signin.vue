@@ -137,7 +137,8 @@ export default {
             try {
                 AuthService.loginUser(this.form).then((res)=>{
                     const authStore = useAuthStore();
-                    authStore.setAuthUser(res.data)
+                    authStore.setAuthUser(res.data.user)
+                    authStore.setToken(res.data.token)
                     navigateTo('/timeline')
                     $toast(res.message);
                     useState('isBusy').value = false;
