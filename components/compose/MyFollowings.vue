@@ -4,7 +4,7 @@
             <div class="friendz">
                 <figure><img :src="following.followee?.profile_pic" alt=""></figure>
                 <span><NuxtLink :to="'/usr/' + following.followee?.username" title="">{{ following.followee?.name }}</NuxtLink></span>
-                <ins>{{ following.followee.headline }}</ins>
+                <ins>{{ following.followee?.headline }}</ins>
                 <a @click.prevent="unFollowUser(following.followee)" href="#" title="" data-ripple=""><i
                         class="icofont-star"></i> Unfollow</a>
             </div>

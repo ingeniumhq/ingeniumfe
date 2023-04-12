@@ -4,7 +4,7 @@
             <div class="friendz">
                 <figure><img src="/images/resources/no-user-image.jpg" alt=""></figure>
                 <span><a href="#" title="">{{ connect.user.name }}</a></span>
-                <ins>{{ connect.user.headline }}</ins>
+                <ins>{{ connect.user?.headline }}</ins>
                 <a  href="#" title="" data-ripple="">View Profile</a>
             </div>
         </div>
