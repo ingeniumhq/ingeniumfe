@@ -2,9 +2,9 @@
     <div class="row col-xs-6 merged-10">
         <div class="col-lg-4 col-md-4 col-sm-6" v-for="follower in followers">
             <div class="friendz">
-                <figure><img :src="follower.follower.profile_pic" alt=""></figure>
-                <span><a href="#" title="">{{ follower.follower.name }}</a></span>
-                <ins>{{ follower.follower.headline }}</ins>
+                <figure><img :src="follower.follower?.profile_pic" alt=""></figure>
+                <span><a href="#" title="">{{ follower.follower?.name }}</a></span>
+                <ins>{{ follower.follower?.headline }}</ins>
                 <a @click.prevent="followUser(follower.follower)" href="#" title="" data-ripple=""><i
                         class="icofont-star"></i> Follow</a>
             </div>

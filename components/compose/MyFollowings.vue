@@ -2,8 +2,8 @@
     <div class="row col-xs-6 merged-10">
         <div class="col-lg-4 col-md-4 col-sm-6" v-for="following in followings">
             <div class="friendz">
-                <figure><img :src="following.followee.profile_pic" alt=""></figure>
-                <span><NuxtLink :to="'/usr/' + following.followee.username" title="">{{ following.followee.name }}</NuxtLink></span>
+                <figure><img :src="following.followee?.profile_pic" alt=""></figure>
+                <span><NuxtLink :to="'/usr/' + following.followee?.username" title="">{{ following.followee?.name }}</NuxtLink></span>
                 <ins>{{ following.followee.headline }}</ins>
                 <a @click.prevent="unFollowUser(following.followee)" href="#" title="" data-ripple=""><i
                         class="icofont-star"></i> Unfollow</a>
