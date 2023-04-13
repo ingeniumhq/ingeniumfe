@@ -3,10 +3,10 @@
         <h4 class="widget-title">Connection Requests</h4>
         <ul class="followers">
             <li v-for="person in people">
-                <figure><img alt="" :src="person.user.profile_pic"></figure>
+                <figure><img alt="" :src="person.user?.profile_pic"></figure>
                 <div class="friend-meta">
                     <h4>
-                        <a title="" href="">{{ person.user.name }}</a>
+                        <a title="" href="">{{ person.user?.name }}</a>
                     </h4>
                     <a v-if="auth.authUser.id !==  person.from_user_id"  @click.prevent="acceptConnectRequest(person)" class="underline mx-1" title="" href="#">Accept</a>
                     <a v-if="auth.authUser.id !==  person.from_user_id"  @click.prevent="declineConnectRequest(person)" class="underline mx-1" title="" href="#">Decline</a>
