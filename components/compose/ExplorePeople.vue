@@ -5,6 +5,7 @@
             <NuxtLink :to=" '/usr/' + person.username  " class="members">
                 <figure><img alt="" :src="person.profile_pic"></figure>
                 <span>{{ person.name }}</span>
+                <img class="userbadge-ico" :src="person.badge" alt="">
                 <ins>{{ person.headline }}</ins>
                 <div>
                     <a @click.prevent="followUser(person)" class="action_btn" data-ripple="" title="" href="#"> Follow</a>

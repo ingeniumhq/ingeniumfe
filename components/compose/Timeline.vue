@@ -46,7 +46,7 @@
                 </div>
                 <div class="post-meta">
 
-                    <a href="post-detail.html" class="post-title">{{ content.title }}</a>
+                    <a href="#" class="post-title">{{ content.title }}</a>
                     <div class="mb-4" style="max-height: 200px; overflow-y: hidden;" v-html="content.content"></div>
 
 
