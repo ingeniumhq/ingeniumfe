@@ -15,6 +15,7 @@ export default defineNuxtConfig({
           src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
           type: "text/javascript"
         },
+       
       ]
     },
   },
@@ -22,6 +23,12 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
   ],
+
+  vue: {  
+    compilerOptions: {
+      isCustomElement: (tag) => ['vue-lightbox-advanced', 'lightbox'].includes(tag),
+    },
+  },
 
   piniaPersistedstate: {
     cookieOptions: {

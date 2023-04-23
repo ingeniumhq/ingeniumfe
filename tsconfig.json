@@ -21,6 +21,6 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@types/node", "@pinia/nuxt", "@nuxt/types"]
+    "types": ["@types/node", "@pinia/nuxt", "@nuxt/types", "@types/jquery"]
   }
 }

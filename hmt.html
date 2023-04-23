@@ -1,0 +1,89 @@
+<div class="stat-tools">
+    <!-- <div class="box">
+        <div class="Like"><a class="Like__link"><i class="icofont-like"></i> Like</a></div>
+    </div> -->
+   
+    <a title="" href="#" class="comment-to"><i class="icofont-comment"></i> Comment</a>
+    <!-- <a title="" href="#" class="share-to"><i class="icofont-share-alt"></i> Share</a> -->
+    <div class="emoji-state">
+        <div class="popover_wrapper">
+            <a class="popover_title" @click.prevent="postReaction(content, 'like')" title="">
+                <img v-if="content.own_reactions.like" alt="" src="/images/smiles/thumb.png">
+                <img v-else alt="" src="/images/smiles/unlike.png">
+
+            </a>
+            <div class="popover_content">
+                <span><img alt="" src="/images/smiles/thumb.png"> Likes</span>
+                <ul class="namelist">
+                    <li><span>{{ content.reactions_summary.likes }}</span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="popover_wrapper">
+            <a class="popover_title" href="#" title=""><img alt="" src="/images/smiles/heart.png"></a>
+            <div class="popover_content">
+                <span><img alt="" src="/images/smiles/heart.png"> Love</span>
+                <ul class="namelist">
+                    <li><span>{{ content.reactions_summary.love }}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="popover_wrapper">
+            <a class="popover_title" href="#" title=""><img alt="" src="/images/smiles/smile.png"></a>
+            <div class="popover_content">
+                <span><img alt="" src="/images/smiles/smile.png"> Happy</span>
+                <ul class="namelist">
+                    <li><span>{{ content.reactions_summary.happy }}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="popover_wrapper">
+            <a class="popover_title" href="#" title=""><img alt="" src="/images/smiles/weep.png"></a>
+            <div class="popover_content">
+                <span><img alt="" src="/images/smiles/weep.png"> Dislike</span>
+                <ul class="namelist">
+                  
+                    <li><span>{{ content.reactions_summary.dislikes }}</span></li>
+                </ul>
+            </div>
+        </div> -->
+       
+    </div>
+    <div class="new-comment" style="display: none;">
+        <form method="post">
+            <input type="text" placeholder="write comment">
+            <button type="submit"><i class="icofont-paper-plane"></i></button>
+        </form>
+        <div class="comments-area">
+            <ul>
+                <li>
+                    <figure><img alt="" src="/images/resources/user1.jpg"></figure>
+                    <div class="commenter">
+                        <h5><a title="" href="#">Jack Carter</a></h5>
+                        <span>2 hours ago</span>
+                        <p>
+                            i think that some how, we learn who we really are and then live with that
+                            decision, great post!
+                        </p>
+                        <span>you can view the more detail via link</span>
+                        <a title="" href="https://www.youtube.com/watch?v=HpZgwHU1GcI"
+                            target="_blank">https://www.youtube.com/watch?v=HpZgwHU1GcI</a>
+                    </div>
+                   
+                </li>
+                <li>
+                    <figure><img alt="" src="/images/resources/user2.jpg"></figure>
+                    <div class="commenter">
+                        <h5><a title="" href="#">Ching xang</a></h5>
+                        <span>2 hours ago</span>
+                        <p>
+                            i think that some how, we learn who we really are and then live with that
+                            decision, great post!
+                        </p>
+                    </div>
+                  
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

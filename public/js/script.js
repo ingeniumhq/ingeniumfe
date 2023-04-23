@@ -37,6 +37,23 @@ $(window).on("load", function () {
 jQuery(document).ready(function ($) {
   "use strict";
 
+
+  
+
+// Airon - convert post images to gallery images
+  $('.gallery').each(function(index, obj){
+  
+    const urls = [];
+    $(this).children('img').each(function(index, img){
+        urls.push(img.src);
+    })
+
+    $('#'+index).imagesGrid({
+      images: urls,
+
+    });
+  })
+
   // select gender on pitpoint page
   $(".starting-ask").click(function () {
     $(this).addClass("selected").siblings().removeClass("selected");
@@ -106,10 +123,11 @@ jQuery(document).ready(function ($) {
     .click(function () {
       $(".postoverlay").fadeOut(500);
     });
-  $("[type = submit]").click(function () {
-    var post = $("textarea").val();
-    $("<p class='post'>" + post + "</p>").appendTo("section");
-  });
+
+  // $("[type = submit]").click(function () {
+  //   var post = $("textarea").val();
+  //   $("<p class='post'>" + post + "</p>").appendTo("section");
+  // });
 
   // top menu list
   $(".main-menu > span").on("click", function () {
@@ -283,9 +301,9 @@ jQuery(document).ready(function ($) {
   }
 
   //chosen select plugin
-  if ($.isFunction($.fn.chosen)) {
-    $("select").chosen();
-  }
+  // if ($.isFunction($.fn.chosen)) {
+  //   $("select").chosen();
+  // }
 
   // Sticky Sidebar & header
   if ($(window).width() < 981) {

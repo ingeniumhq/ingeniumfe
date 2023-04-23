@@ -13968,3 +13968,9 @@ a.classic-btn:hover {
 .accent_color{
 color: #b88801 !important;
 }
+
+
+.userbadge-ico{
+  width: 15px;
+  margin: auto 4px
+}

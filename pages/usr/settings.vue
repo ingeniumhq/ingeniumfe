@@ -488,10 +488,8 @@ export default {
 	},
 	beforeRouteEnter(to, from, next) {
 		next((vm) => {
-			const script = document.createElement('script')
-			script.onload = () => { }
-			script.src = '/js/script.js'
-			document.head.appendChild(script)
+			const { $event } = useNuxtApp()
+            $event('dom-updated', {})
 
 		})
 	},
@@ -508,7 +506,6 @@ export default {
 		},
 
 		uploadMedia(){
-			
 			UserService.uploadMedia(this.file ).then((res) => {
 				this.$toast(res.message);
 				this.getMe()

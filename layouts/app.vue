@@ -13,6 +13,7 @@
       <Link rel="stylesheet" href="/css/style.css" />
       <Link rel="stylesheet" href="/css/color.css" />
       <Link rel="stylesheet" href="/css/responsive.css" />
+      <Link rel="stylesheet" href="/grid/images-grid.css" />
       <!-- <Link rel="stylesheet" href="~assets/styles/css/tailwind.css" /> -->
 
 
@@ -61,6 +62,7 @@
             
             <!-- side slide message & popup -->
             
+            <ModalsNewTimelinePostModal></ModalsNewTimelinePostModal>
             <!-- New post popup -->
             
             <!-- ask question -->
@@ -85,6 +87,7 @@
             
             <!-- create new room -->
             
+            <ModalsImageModal></ModalsImageModal>
             <!-- The Scrolling Modal image with comment -->
 
           </main>
@@ -95,28 +98,50 @@
 
 
 <script setup lang="ts">
+import { nextTick } from "vue";
+
   useHead({
     script: [
     
       {
-        src: '/js/main.min.js',
-        body: true,
+        src: '/js/main.js',
+        // body: true,
+        class: 'mainscript'
       //   defer: true,
       //   async: false
       },
+      {
+          src: '/grid/images-grid.js',
+          // body: true,
+          class: 'gridscript'
+      },
+
       {
         src: '/js/date-time.js',
         body: true,
       //   async: false
       },
+     
       {
         src: '/js/script.js',
         body: true,
+        class: 'customscript'
       //   async: false,
       //   defer: true,
       },
+     
+
+    ],
+
+    link:[
+        {href: '/grid/images-grid.css'}
     ]
+   
+    
   })
+
+
+
 
   onMounted(() => {
     useHead({
@@ -124,9 +149,43 @@
         {
           src: '/js/script.js',
           // body: true,
+          class: 'customscript'
         },
-      ]
+    ]})
+
+
+    const { $listen } = useNuxtApp()
+    $listen('dom-updated', (user: any) => {
+
+     
+        document.querySelectorAll(".customscript").forEach(el => el.remove());
+        // document.querySelectorAll(".mainscript").forEach(el => el.remove());
+
+        const customscript = document.createElement('script')
+        customscript.onload = () => { }
+
+        // const mainscript = document.createElement('script')
+        // mainscript.onload = () => { }
+
+        // mainscript.src = '/js/main.js'
+        // mainscript.className = 'mainscript'
+        // document.body.appendChild(mainscript)
+
+        customscript.src = '/js/script.js'
+        customscript.className = 'customscript'
+        document.body.appendChild(customscript)
+
+
+        console.log('dom-updated')
     })
-  });
+
+    
+  })
+
+    
+
+  nextTick( () => {
+    console.log('next tick')
+  })
 </script>
 

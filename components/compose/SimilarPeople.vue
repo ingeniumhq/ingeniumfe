@@ -44,13 +44,9 @@
         beforeCreate() {
             ConnectService.getSuggestions({exclude: 'following'}).then((res) => {
                 this.people = res.data
-                    //    this.$refs.suggessted.$el.classList.add('suggested-caro')
-                    this.$refs['suggessted'].classList.add('suggested-caro')
+                    const { $event } = useNuxtApp()
+                    $event('dom-updated', {})
 
-                    const script = document.createElement('script')
-                    script.onload = () => {}
-                    script.src = '/js/script.js'
-                    document.body.appendChild(script)
             }).catch((err) => { })   
         },
 
@@ -59,13 +55,11 @@
             getSuggestions(){
                 ConnectService.getSuggestions({exclude: 'following'}).then((res) => {
                 this.people = res.data
-                    //    this.$refs.suggessted.$el.classList.add('suggested-caro')
-                    this.$refs['suggessted'].classList.add('suggested-caro')
+                   
 
-                    const script = document.createElement('script')
-                    script.onload = () => {}
-                    script.src = '/js/script.js'
-                    document.body.appendChild(script)
+                    const { $event } = useNuxtApp()
+                    $event('dom-updated', {})
+
                 }).catch((err) => { })    
             },
 
@@ -73,8 +67,9 @@
                 ConnectService.followUser({
                     user_id: user.id
                 }).then((res) => {
-                    // this.$toast(res.message);
                     const { $event } = useNuxtApp()
+
+                    // emit event
 			        $event('connect:follow', {})
                     this.getSuggestions()
                 }).catch((err) => { })   

@@ -10,6 +10,7 @@
 								<figure><img :src="authUser.profile_pic" alt=""></figure>
 								<div class="uni-name">
 									<h4>{{ authUser.name }}</h4>
+									<img class="userbadge-ico" alt="" :src="authUser.badge">
 									<span>@{{ authUser.headline }}</span>
 								</div>
 								<ul class="sharing-options">
@@ -61,10 +62,7 @@
 														<i><img src="/images/activity.png" alt=""></i>
 														<span>Feeling/Activity</span>
 													</li>
-													<li>
-														<i><img src="/images/live-stream.png" alt=""></i>
-														<span>Live Stream</span>
-													</li>
+													
 												</ul>
 											</div>
 										</div><!-- create new post -->
@@ -270,10 +268,8 @@ export default {
 	},
 	beforeRouteEnter(to, from, next) {
 		next((vm) => {
-			const script = document.createElement('script')
-			script.onload = () => { }
-			script.src = '/js/script.js'
-			document.head.appendChild(script)
+			const { $event } = useNuxtApp()
+            $event('dom-updated', {})
 
 		})
 	},

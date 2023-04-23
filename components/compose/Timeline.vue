@@ -1,9 +1,11 @@
 <template>
-    <div v-for="content in timelineContents" class="main-wraper">
-        <div  class="user-post">
+    <div v-for="(content, index) in timelineContents" class="main-wraper">
+
+        <div class="user-post">
             <div class="friend-info">
                 <figure>
-                    <img alt="" src="/images/resources/no-user-image.jpg">
+                    <img alt="" :src="content.user.profile_pic">
+                   
                 </figure>
                 <div class="friend-name">
                     <div class="more">
@@ -17,7 +19,7 @@
                                     <circle cx="5" cy="12" r="1"></circle>
                                 </svg></i>
                             <ul>
-                                <li>
+                                <!-- <li>
                                     <i class="icofont-pen-alt-1"></i>Edit Post
                                     <span>Edit This Post within a Hour</span>
                                 </li>
@@ -28,7 +30,7 @@
                                 <li>
                                     <i class="icofont-ui-delete"></i>Delete Post
                                     <span>If inappropriate Post By Mistake</span>
-                                </li>
+                                </li> -->
                                 <li>
                                     <i class="icofont-flag"></i>Report
                                     <span>Inappropriate content</span>
@@ -36,177 +38,100 @@
                             </ul>
                         </div>
                     </div>
-                    <ins><a title="" href="time-line.html">Jack Carter</a> Share Post</ins>
-                    <span><i class="icofont-globe"></i> published: Sep,15 2020</span>
+                    <ins>
+                        <NuxtLink title="" :to="'/usr/'.content?.user?.username">{{ content?.user?.name }}</NuxtLink>
+                        <img class="userbadge-ico" alt="" :src="content.user.badge">
+                    </ins>
+                    <span><i class="icofont-globe"></i> published: {{ content.date }}</span>
                 </div>
                 <div class="post-meta">
-                    <a href="post-detail.html" class="post-title">{{ content.title }}</a>
-                    <div style="max-height: 200px; overflow-y: hidden;" v-html="content.content" ></div>
-                    <div class="we-video-info">
-                        <ul>
-                            <!-- <li>
-                                <span title="views" class="views">
-                                    <i>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="feather feather-eye">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg></i>
-                                    <ins>1.2k</ins>
-                                </span>
-                            </li>
-                            <li>
-                                <span title="Comments" class="Recommend">
-                                    <i>
-                                        <svg class="feather feather-message-square" stroke-linejoin="round"
-                                            stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none"
-                                            viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                        </svg></i>
-                                    <ins>54</ins>
-                                </span>
 
-                            </li>
-                            <li>
-                                <span title="follow" class="Follow">
-                                    <i>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="feather feather-star">
-                                            <polygon
-                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                            </polygon>
-                                        </svg></i>
-                                    <ins>5k</ins>
-                                </span>
-                            </li> -->
-                            <!-- <li>
-                                <span class="share-pst" title="Share">
-                                    <i>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" class="feather feather-share-2">
-                                            <circle cx="18" cy="5" r="3"></circle>
-                                            <circle cx="6" cy="12" r="3"></circle>
-                                            <circle cx="18" cy="19" r="3"></circle>
-                                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                                        </svg></i>
-                                    <ins>205</ins>
-                                </span>
-                            </li> -->
-                        </ul>
-                        <!-- <a href="post-detail.html" title="" class="reply">Reply <i class="icofont-reply"></i></a> -->
+                    <a href="post-detail.html" class="post-title">{{ content.title }}</a>
+                    <div class="mb-4" style="max-height: 200px; overflow-y: hidden;" v-html="content.content"></div>
+
+
+                    
+
+
+                    <div class="gallery" :id="index">
+                        <img v-for="media in content.media" :src="media.url" alt="">
                     </div>
+
                     <div class="stat-tools">
                         <!-- <div class="box">
                             <div class="Like"><a class="Like__link"><i class="icofont-like"></i> Like</a></div>
                         </div> -->
-                       
+
                         <a title="" href="#" class="comment-to"><i class="icofont-comment"></i> Comment</a>
                         <!-- <a title="" href="#" class="share-to"><i class="icofont-share-alt"></i> Share</a> -->
                         <div class="emoji-state">
                             <div class="popover_wrapper">
-                                <a class="popover_title" href="#" title=""><img alt="" src="/images/smiles/thumb.png"></a>
-                                <!-- <div class="popover_content">
+                                <a class="popover_title" @click.prevent="postReaction(content, 'like')" title="">
+                                    <img v-if="content.own_reactions.like" alt="" src="/images/smiles/thumb.png">
+                                    <img v-else alt="" src="/images/smiles/unlike.png">
+
+                                </a>
+                                <div class="popover_content">
                                     <span><img alt="" src="/images/smiles/thumb.png"> Likes</span>
                                     <ul class="namelist">
-                                        <li>Jhon Doe</li>
-                                        <li>Amara Sin</li>
-                                        <li>Sarah K.</li>
-                                        <li><span>20+ more</span></li>
-                                    </ul>
-                                </div> -->
-                            </div>
-                            <!-- <div class="popover_wrapper">
-                                <a class="popover_title" href="#" title=""><img alt="" src="/images/smiles/heart.png"></a>
-                                <div class="popover_content">
-                                    <span><img alt="" src="/images/smiles/heart.png"> Love</span>
-                                    <ul class="namelist">
-                                        <li>Amara Sin</li>
-                                        <li>Jhon Doe</li>
-                                        <li><span>10+ more</span></li>
+                                        <li><span>{{ content.reactions_summary.likes }}</span></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="popover_wrapper">
-                                <a class="popover_title" href="#" title=""><img alt="" src="/images/smiles/smile.png"></a>
-                                <div class="popover_content">
-                                    <span><img alt="" src="/images/smiles/smile.png"> Happy</span>
-                                    <ul class="namelist">
-                                        <li>Sarah K.</li>
-                                        <li>Jhon Doe</li>
-                                        <li>Amara Sin</li>
-                                        <li><span>100+ more</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="popover_wrapper">
-                                <a class="popover_title" href="#" title=""><img alt="" src="/images/smiles/weep.png"></a>
-                                <div class="popover_content">
-                                    <span><img alt="" src="/images/smiles/weep.png"> Dislike</span>
-                                    <ul class="namelist">
-                                        <li>Danial Carbal</li>
-                                        <li>Amara Sin</li>
-                                        <li>Sarah K.</li>
-                                        <li><span>15+ more</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p>10+</p> -->
+
+
                         </div>
                         <div class="new-comment" style="display: none;">
-                            <form method="post">
-                                <input type="text" placeholder="write comment">
+                            <form @submit.prevent="postComment(content)" method="post">
+                                <input type="text" v-model="newcomment.comment" placeholder="write comment">
                                 <button type="submit"><i class="icofont-paper-plane"></i></button>
                             </form>
                             <div class="comments-area">
                                 <ul>
-                                    <li>
-                                        <figure><img alt="" src="/images/resources/user1.jpg"></figure>
+
+                                    <li v-for="comment in content?.recent_comments">
+                                        <figure><img alt="" :src="comment?.user?.profile_pic"></figure>
                                         <div class="commenter">
-                                            <h5><a title="" href="#">Jack Carter</a></h5>
-                                            <span>2 hours ago</span>
+                                            <h5><a title="" href="#">{{ comment.user.name }}</a></h5>
+                                            <span>{{ comment.date }}</span>
                                             <p>
-                                                i think that some how, we learn who we really are and then live with that
-                                                decision, great post!
-                                            </p>
-                                            <span>you can view the more detail via link</span>
-                                            <a title="" href="https://www.youtube.com/watch?v=HpZgwHU1GcI"
-                                                target="_blank">https://www.youtube.com/watch?v=HpZgwHU1GcI</a>
-                                        </div>
-                                       
-                                    </li>
-                                    <li>
-                                        <figure><img alt="" src="/images/resources/user2.jpg"></figure>
-                                        <div class="commenter">
-                                            <h5><a title="" href="#">Ching xang</a></h5>
-                                            <span>2 hours ago</span>
-                                            <p>
-                                                i think that some how, we learn who we really are and then live with that
-                                                decision, great post!
+                                                {{ comment.comment }}
                                             </p>
                                         </div>
-                                      
+
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
+
+
                 </div>
             </div>
         </div>
     </div><!-- share post without image -->
 
+
     <div class="sp sp-bars"></div>
 </template>
 
 <script lang="ts">
-import { ContentService } from '~/services';
+import { ConnectService, ContentService, UserService } from '~/services';
+import VueLightboxAdvanced from 'vue-lightbox-advanced'
+// import jQuery from 'jQuery'
+import 'vue-lightbox-advanced/dist/vue-lightbox-advanced.css'
+// import '@morioh/v-lightbox/dist/lightbox.css';
+
+
 
 export default {
     props: ['username'],
+    components: {
+        VueLightboxAdvanced,
+        // [process.client && 'Lightbox']: () => import('@morioh/v-lightbox')
+        // Lightbox: () => import('@morioh/v-lightbox')
+    },
     setup() {
         const { $toast } = useNuxtApp()
         return {
@@ -217,44 +142,169 @@ export default {
         return {
             connects: [],
             timelineContents: [],
+            newcomment: {},
+            images: [
+                "https://i.wifegeek.com/200426/f9459c52.jpg",
+                "https://i.wifegeek.com/200426/5ce1e1c7.jpg",
+                "https://i.wifegeek.com/200426/5fa51df3.jpg",
+                "https://i.wifegeek.com/200426/663181fe.jpg",
+            ]
         }
     },
 
     beforeCreate() {
-        ContentService.getTimeline(this.username).then((res) => {
+        UserService.getTimeline(this.username).then((res) => {
             this.timelineContents = res.data
+            const { $event } = useNuxtApp()
+            $event('dom-updated', {})
         }).catch((err) => { })
     },
 
     mounted() {
         const { $listen } = useNuxtApp()
-        $listen('connect:follow', (user: any) => {
-            this.getConnects()
+        $listen('newpostadded', (user: any) => {
+            UserService.getTimeline(this.username).then((res) => {
+                this.timelineContents = res.data
+                const { $event } = useNuxtApp()
+            }).catch((err) => { })
         })
+
+        // console.log(window.$)
+
+        window.$('#gallery').imagesGrid({
+            images: [
+                'https://unsplash.it/750/500?image=868',
+                'https://unsplash.it/750/500?image=868',
+                'https://unsplash.it/750/500?image=868',
+                'https://unsplash.it/750/500?image=868',
+                'https://unsplash.it/750/500?image=868',
+                'https://unsplash.it/750/500?image=868',
+                
+            ],
+
+        });
+
     },
 
     methods: {
 
-        getConnects() {
-            ConnectService.getConnects({ status: 'active' }).then((res) => {
-                this.connects = res.data.data
-            }).catch((err) => { })
-        },
+        postReaction(post: never, reactionType: any) {
+            ContentService.postReaction(post.id, reactionType).then((res) => {
+                const currentPostIndex = this.timelineContents.indexOf(post)
+                this.timelineContents[currentPostIndex] = res.data
 
-        blockConnect(user: any) {
-            ConnectService.followUser({
-                user_id: user.id
-            }).then((res) => {
-                this.$toast(res.message);
-                this.getFollowers()
-            }).catch((err) => { })
-        },
 
+            }).catch((err) => {
+                console.log(err)
+            })
+        },
+        postComment(post: any) {
+            ContentService.postComment(post.id, this.newcomment).then((res) => {
+                const currentPostIndex = this.timelineContents.indexOf(post)
+                this.timelineContents[currentPostIndex] = res.data
+
+                this.newcomment = {}
+
+            }).catch((err) => {
+                console.log(err)
+            })
+        },
+        getContentMedia(content) {
+            let images = []
+            content.media.forEach(element => {
+                images.push(element.url)
+            });
+
+
+          
+
+            console.log(window)
+            
+
+            return images
+
+
+            
+
+        }
 
     }
-
 
 }
 
 
 </script>
+
+<style>
+    /* .profile {
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+    .profile .profile-img-list {
+        list-style-type: none;
+        margin: -0.0625rem -1.3125rem;
+        padding: 0;
+    }
+
+    .profile .profile-img-list:after,
+    .profile .profile-img-list:before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .profile .profile-img-list .profile-img-list-item {
+        float: left;
+        width: 25%;
+        padding: 0.0625rem;
+    }
+
+    .profile .profile-img-list .profile-img-list-item.main {
+        width: 20%;
+    }
+
+    .profile .profile-img-list .profile-img-list-item .profile-img-list-link {
+        display: block;
+        padding-top: 75%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content,
+    .profile .profile-img-list .profile-img-list-item .profile-img-list-link img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content:before,
+    .profile .profile-img-list .profile-img-list-item .profile-img-list-link img:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid rgba(60, 78, 113, 0.15);
+    }
+
+    .profile .profile-img-list .profile-img-list-item.with-number .profile-img-number {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        color: #fff;
+        font-size: 1.625rem;
+        font-weight: 500;
+        line-height: 1.625rem;
+        margin-top: -0.8125rem;
+        text-align: center;
+    } */
+</style>

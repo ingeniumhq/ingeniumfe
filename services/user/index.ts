@@ -7,6 +7,10 @@ export default  {
         return await apiRequest('users/me', { method: 'PATCH', body: payload })
     },
 
+    async getTimeline(username: any) {
+        return await apiRequest(`users/timeline?username=${username}`, { method: 'GET' })
+    },
+
     async uploadMedia(payload: any) {
 
         let formData = new FormData();
@@ -21,20 +25,7 @@ export default  {
         })
 
 
-        // let formData = new FormData();
-        
-
-        // formData.append("file", file);
-
-
-        // console.log(formData);
-        // return await apiRequest('users/media', { 
-        //     method: 'POST', 
-        //     body: file,
-        //     headers: {
-        //         "Content-Type": "multipart/form-data"
-        //     }
-        // })
+  
     },
 
     async getMe() {
