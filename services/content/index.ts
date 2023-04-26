@@ -8,29 +8,16 @@ export default  {
     },
 
     async storePost( post: any, files: any) {
-
         let formData = new FormData();
-
-        // post.forEach((
-
         Object.entries(post).forEach(entry => {
             const [key, value] :any = entry;
             formData.append(key, value);
         });
-
-        // formData.append("files", post.files);
-        // files.forEach(element => {
-        //     console.log(element)
-        // });
-
         Object.entries(files).forEach(entry => {
             const [key, value] :any = entry;
             formData.append(key, value);
         });
-
-        console.log(post, files, formData)
        
-
         return await apiRequest('contents/posts', { 
             method: 'POST', 
             body: formData,
@@ -38,10 +25,6 @@ export default  {
                 // "Content-Type": "multipart/form-data"
             }
         })
-
-
-        // console.log(post)
-        // return await apiRequest(`contents/posts`, { body: post,  method: 'POST' })
     },
 
     async postComment(postId: any, comment: any) {
@@ -60,6 +43,12 @@ export default  {
             }
         })
     },
+
+
+    async getRecentBlogPost() {
+        return await apiRequest(`contents/posts?filter=recent`, { method: 'GET' })
+    },
+
 
 
 }

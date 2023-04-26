@@ -105,8 +105,6 @@
                         </div>
                     </div>
 
-
-
                 </div>
             </div>
         </div>
@@ -143,12 +141,7 @@ export default {
             connects: [],
             timelineContents: [],
             newcomment: {},
-            images: [
-                "https://i.wifegeek.com/200426/f9459c52.jpg",
-                "https://i.wifegeek.com/200426/5ce1e1c7.jpg",
-                "https://i.wifegeek.com/200426/5fa51df3.jpg",
-                "https://i.wifegeek.com/200426/663181fe.jpg",
-            ]
+           
         }
     },
 
@@ -169,20 +162,7 @@ export default {
             }).catch((err) => { })
         })
 
-        // console.log(window.$)
 
-        window.$('#gallery').imagesGrid({
-            images: [
-                'https://unsplash.it/750/500?image=868',
-                'https://unsplash.it/750/500?image=868',
-                'https://unsplash.it/750/500?image=868',
-                'https://unsplash.it/750/500?image=868',
-                'https://unsplash.it/750/500?image=868',
-                'https://unsplash.it/750/500?image=868',
-                
-            ],
-
-        });
 
     },
 
@@ -209,25 +189,7 @@ export default {
                 console.log(err)
             })
         },
-        getContentMedia(content) {
-            let images = []
-            content.media.forEach(element => {
-                images.push(element.url)
-            });
-
-
-          
-
-            console.log(window)
-            
-
-            return images
-
-
-            
-
-        }
-
+    
     }
 
 }

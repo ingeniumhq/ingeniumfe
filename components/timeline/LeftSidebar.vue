@@ -26,6 +26,8 @@
 			</ul>
 		</div><!-- complete profile widget -->
 
+		
+
 		<!-- advertisement -->
 		<div class="advertisment-box d-none">
 			<h4 class=""><i class="icofont-info-circle"></i> advertisment</h4>
@@ -59,26 +61,13 @@
 				</li>
 			</ul>
 		</div><!-- popular courses -->
+		
 		<div class="widget">
-			<h4 class="widget-title">Recent Blogs <a class="see-all" href="#" title="">See All</a></h4>
-			<ul class="recent-links">
-				<li>
-					<figure><img alt="" src="/images/resources/recentlink-1.jpg"></figure>
-					<div class="re-links-meta">
-						<h6><a title="" href="#">Moira's fade reach much farther...</a></h6>
-						<span>2 weeks ago </span>
-					</div>
-				</li>
-				<li>
-					<figure><img alt="" src="/images/resources/recentlink-2.jpg"></figure>
-					<div class="re-links-meta">
-						<h6><a title="" href="#">Daniel asks The voice of doomfist...</a></h6>
-						<span>3 months ago </span>
-					</div>
-				</li>
+			<ComposeRecentBlogWidget></ComposeRecentBlogWidget>
+		</div>
+		<!-- recent blog -->
 
-			</ul>
-		</div><!-- recent blog -->
+		
 		<div class="widget">
 			<h4 class="widget-title">Your profile has a new Experience section</h4>
 			<p>
