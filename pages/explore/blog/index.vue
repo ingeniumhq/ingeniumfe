@@ -23,7 +23,7 @@
 												{{ posts.summary }}
 											</p>
 											<span><i class="icofont-clock-time"></i> {{post.date}}</span>
-											<a href=#" title="" class="button primary circle">read more</a>
+											<a href="#" title="" class="button primary circle">read more</a>
 										</div>
 									</div>
 									
