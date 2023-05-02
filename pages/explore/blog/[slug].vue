@@ -9,7 +9,7 @@
                                 <h2>{{ post.title }}</h2>
                             </div>
                             <div class="blog-details-meta">
-                                <figure><img src="images/resources/blog-detail.png" alt=""></figure>
+                                <figure><img :src="post.image" alt=""></figure>
                                 <ul>
                                     <li><i class="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
