@@ -12,7 +12,7 @@
 									
 									<div v-for="post in posts" class="blog-posts my-4">
 										<figure><img :src="post.image" alt=""></figure>
-										<div class="blog-post-meta">
+										<div class="blog-post-meta ml-5">
 											<ul>
 												<li><i class="icofont-read-book"></i><a title="Reads" href="#"> {{ post.impressions }} </a></li>
 												<li><i class="icofont-comment"></i><a title="comments" href="#">{{ post?.reactions_summary?.comments }}</a></li>
@@ -23,7 +23,9 @@
 												{{ posts.summary }}
 											</p>
 											<span><i class="icofont-clock-time"></i> {{post.date}}</span>
-											<a href="#" title="" class="button primary circle">read more</a>
+											<div class="mt-5 float-right w-full">
+												<NuxtLink :to=" '/explore/blog/' + post.slug" title="" class="button primary circle">read more</NuxtLink>
+											</div>
 										</div>
 									</div>
 									

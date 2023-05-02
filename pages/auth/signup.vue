@@ -130,7 +130,7 @@
 				try {
 					AuthService.registerUser(this.form).then((res)=>{
 						this.authStore.setAuthUser(res.data)
-						navigateTo('/auth/verify-email')
+						// navigateTo('/auth/verify-email')
 						$toast(res.message);
 						useState('isBusy').value = false;
 					}).catch( (err) =>{

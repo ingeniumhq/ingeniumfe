@@ -6,7 +6,7 @@
         <li v-for="post in posts" class="my-3">
             <figure><img alt="" :src="post.image"></figure>
             <div class="re-links-meta">
-                <h6><a title="" href="#">{{ post.title }}</a></h6>
+                <h6><NuxtLink :to=" '/explore/blog/' + post.slug "  href="#">{{ post.title }}</NuxtLink></h6>
                 <span>{{ post.date }}</span>
             </div>
         </li>

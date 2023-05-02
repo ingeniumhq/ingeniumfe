@@ -46,9 +46,16 @@ export default  {
 
 
     async getRecentBlogPost() {
-        return await apiRequest(`contents/posts?filter=recent`, { method: 'GET' })
+        return await apiRequest(`contents/posts?limit=5`, { method: 'GET' })
     },
 
 
+    async getEvents() {
+        return await apiRequest(`contents/events`, { method: 'GET' })
+    },
+
+    async getBlogPost(slug: any) {
+        return await apiRequest(`contents/posts/${slug}`, { method: 'GET' })
+    },
 
 }

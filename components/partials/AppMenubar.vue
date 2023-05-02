@@ -48,12 +48,12 @@
 												<p>Books</p>
 											</a>
 										</div> -->
-										<!-- <div class="link-item">
-											<a  href="#" title="">
+										<div class="link-item">
+											<NuxtLink  href="/explore/blog" title="">
 												<i class=""><svg class="feather feather-layout" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><rect ry="2" rx="2" height="18" width="18" y="3" x="3"/><line y2="9" x2="21" y1="9" x1="3"/><line y2="9" x2="9" y1="21" x1="9"/></svg></i>
 												<p>Blog</p>
-											</a>
-										</div> -->
+											</NuxtLink>
+										</div>
 										<div class="link-item">
 											<a  href="#" title="">
 												<i class="">
