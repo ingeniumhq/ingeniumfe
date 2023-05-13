@@ -75,9 +75,9 @@
 											
 
 											<li v-for="comment in post?.recent_comments">
-												<figure><img alt="" :src="post?.user?.profile_pic"></figure>
+												<figure><img alt="" :src="comment?.user?.profile_pic"></figure>
 												<div class="commenter">
-													<h5><a title="" href="#">{{ post.user.name }}</a></h5>
+													<h5><a title="" href="#">{{ comment.user.name }}</a></h5>
 													<span>{{ comment.date }}</span>
 													<p>
 														{{ comment.comment }}
