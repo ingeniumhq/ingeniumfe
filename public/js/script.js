@@ -222,6 +222,13 @@ jQuery(document).ready(function ($) {
     $(".share-wraper").removeClass("active");
   });
 
+
+  // // close post modal
+  // $(".close-post-btn").on("click", function () {
+  //   $(".post-modal").removeClass("show");
+  //   $(".post-modal").hide();
+  // });
+
   // watch list unread
   $(".watchlist > li").on("click", function () {
     $(this).removeClass("unread");

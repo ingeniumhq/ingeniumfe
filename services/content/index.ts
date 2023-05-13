@@ -45,8 +45,19 @@ export default  {
     },
 
 
+    // USER TIMELINE
+    async getTimeline(username: any) {
+        if(username) return await apiRequest(`contents/timeline?username=${username}`, { method: 'GET' })
+        return await apiRequest(`contents/timeline`, { method: 'GET' })
+    },
+    
+    async getDraftTimeline() {
+        return await apiRequest(`contents/timeline/drafts`, { method: 'GET' })
+    },
+
+
     async getRecentBlogPost() {
-        return await apiRequest(`contents/posts?limit=5`, { method: 'GET' })
+        return await apiRequest(`contents/blog?limit=5`, { method: 'GET' })
     },
 
 
@@ -55,7 +66,12 @@ export default  {
     },
 
     async getBlogPost(slug: any) {
-        return await apiRequest(`contents/posts/${slug}`, { method: 'GET' })
+        return await apiRequest(`contents/blog/${slug}`, { method: 'GET' })
+    },
+
+
+    async getSingleTimelinePost(slug: any) {
+        return await apiRequest(`contents/timeline/${slug}`, { method: 'GET' })
     },
 
 }

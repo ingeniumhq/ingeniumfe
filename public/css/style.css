@@ -3392,7 +3392,7 @@ a.download-btn {
 }
 .post-detail-btn li.nav-item a {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 5px 1px;
   position: relative;
   color: #eee;
   font-weight: 500;
@@ -8794,7 +8794,7 @@ a.main-btn2:hover,
 .new-comment {
   display: none;
   margin-top: 15px;
-  position: relative;
+  /* position: relative; */
   width: 100%;
 }
 .new-comment > form {
@@ -12561,8 +12561,8 @@ ul.chat-rooms {
   padding: 3px 20px;
 }
 .pop-image {
-  background: #181e28;
-  display: table;
+  background: #181e2808;
+  /* display: table; */
   height: 98.2vh;
   padding: 50px;
   width: 100%;

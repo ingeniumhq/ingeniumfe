@@ -1,6 +1,5 @@
 <template>
-    <div v-for="(content, index) in timelineContents" class="main-wraper">
-
+    <div v-for="(content, index) in timelineContents" class="main-wraper" style="cursor: pointer;">
         <div class="user-post">
             <div class="friend-info">
                 <figure>
@@ -46,24 +45,18 @@
                 </div>
                 <div class="post-meta">
 
-                    <a href="#" class="post-title">{{ content.title }}</a>
-                    <div class="mb-4" style="max-height: 200px; overflow-y: hidden;" v-html="content.content"></div>
+                    <div  @click.prevent="openPost(content)" >
+                        <a href="#" class="post-title">{{ content.title }}</a>
+                        <div class="mb-4" style="max-height: 200px; overflow-y: hidden;" v-html="content.content"></div>
 
-
-                    
-
-
-                    <div class="gallery" :id="index">
-                        <img v-for="media in content.media" :src="media.url" alt="">
+                        <div class="gallery" :id="index">
+                            <img v-for="media in content.media" :src="media.url" alt="">
+                        </div>
                     </div>
 
-                    <div class="stat-tools">
-                        <!-- <div class="box">
-                            <div class="Like"><a class="Like__link"><i class="icofont-like"></i> Like</a></div>
-                        </div> -->
-
-                        <a title="" href="#" class="comment-to"><i class="icofont-comment"></i> Comment</a>
-                        <!-- <a title="" href="#" class="share-to"><i class="icofont-share-alt"></i> Share</a> -->
+                    <div class="stat-tools">  
+                        <!-- <a title="" href="#" class="comment-to"><i class="icofont-comment"></i> Comment</a> -->
+                        <a title="" href="#" class="share-to"><i class="icofont-share-alt"></i> Share</a>
                         <div class="emoji-state">
                             <div class="popover_wrapper">
                                 <a class="popover_title" @click.prevent="postReaction(content, 'like')" title="">
@@ -78,9 +71,8 @@
                                     </ul>
                                 </div>
                             </div>
-
-
                         </div>
+
                         <div class="new-comment" style="display: none;">
                             <form @submit.prevent="postComment(content)" method="post">
                                 <input type="text" v-model="newcomment.comment" placeholder="write comment">
@@ -98,7 +90,6 @@
                                                 {{ comment.comment }}
                                             </p>
                                         </div>
-
                                     </li>
                                 </ul>
                             </div>
@@ -111,11 +102,13 @@
     </div><!-- share post without image -->
 
 
+    <!-- veiw post modal -->
+    <ModalsImageModal :key=" Math.random() " :isOpenPostId="isOpenPostId" v-if="isOpenPostId"></ModalsImageModal>
     <div class="sp sp-bars"></div>
 </template>
 
 <script lang="ts">
-import { ConnectService, ContentService, UserService } from '~/services';
+import { ContentService } from '~/services';
 import VueLightboxAdvanced from 'vue-lightbox-advanced'
 // import jQuery from 'jQuery'
 import 'vue-lightbox-advanced/dist/vue-lightbox-advanced.css'
@@ -141,12 +134,12 @@ export default {
             connects: [],
             timelineContents: [],
             newcomment: {},
-           
+            isOpenPostId: null,
         }
     },
 
     beforeCreate() {
-        UserService.getTimeline(this.username).then((res) => {
+        ContentService.getTimeline(this.username).then((res) => {
             this.timelineContents = res.data
             const { $event } = useNuxtApp()
             $event('dom-updated', {})
@@ -156,11 +149,12 @@ export default {
     mounted() {
         const { $listen } = useNuxtApp()
         $listen('newpostadded', (user: any) => {
-            UserService.getTimeline(this.username).then((res) => {
+            ContentService.getTimeline(this.username).then((res) => {
                 this.timelineContents = res.data
                 const { $event } = useNuxtApp()
             }).catch((err) => { })
         })
+        
 
 
 
@@ -172,8 +166,6 @@ export default {
             ContentService.postReaction(post.id, reactionType).then((res) => {
                 const currentPostIndex = this.timelineContents.indexOf(post)
                 this.timelineContents[currentPostIndex] = res.data
-
-
             }).catch((err) => {
                 console.log(err)
             })
@@ -182,13 +174,19 @@ export default {
             ContentService.postComment(post.id, this.newcomment).then((res) => {
                 const currentPostIndex = this.timelineContents.indexOf(post)
                 this.timelineContents[currentPostIndex] = res.data
-
                 this.newcomment = {}
 
             }).catch((err) => {
                 console.log(err)
             })
         },
+
+        openPost(content){
+            this.isOpenPostId = content.id
+            // console.log(content)
+            $(".post-modal").addClass("show");
+			$(".post-modal").show();
+        }
     
     }
 
@@ -198,75 +196,13 @@ export default {
 </script>
 
 <style>
-    /* .profile {
-        margin-top: 20px;
-        margin-bottom: 60px;
-    }
+   
 
-    .profile .profile-img-list {
-        list-style-type: none;
-        margin: -0.0625rem -1.3125rem;
-        padding: 0;
-    }
-
-    .profile .profile-img-list:after,
-    .profile .profile-img-list:before {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    .profile .profile-img-list .profile-img-list-item {
-        float: left;
-        width: 25%;
-        padding: 0.0625rem;
-    }
-
-    .profile .profile-img-list .profile-img-list-item.main {
-        width: 20%;
-    }
-
-    .profile .profile-img-list .profile-img-list-item .profile-img-list-link {
+    /* .profile .profile-img-list .profile-img-list-item .profile-img-list-link {
         display: block;
         padding-top: 75%;
         overflow: hidden;
         position: relative;
-    }
-
-    .profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content,
-    .profile .profile-img-list .profile-img-list-item .profile-img-list-link img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        max-width: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content:before,
-    .profile .profile-img-list .profile-img-list-item .profile-img-list-link img:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 1px solid rgba(60, 78, 113, 0.15);
-    }
-
-    .profile .profile-img-list .profile-img-list-item.with-number .profile-img-number {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        color: #fff;
-        font-size: 1.625rem;
-        font-weight: 500;
-        line-height: 1.625rem;
-        margin-top: -0.8125rem;
-        text-align: center;
     } */
+
 </style>

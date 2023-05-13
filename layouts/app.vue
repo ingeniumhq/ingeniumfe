@@ -87,7 +87,7 @@
             
             <!-- create new room -->
             
-            <ModalsImageModal></ModalsImageModal>
+            <!-- <ModalsImageModal></ModalsImageModal> -->
             <!-- The Scrolling Modal image with comment -->
 
           </main>

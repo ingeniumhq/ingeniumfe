@@ -14,7 +14,7 @@ export default  {
         return await apiRequest(`connect/followers?${query}`, { method: 'GET'})
     },
    
-
+ 
     async getFollowings(query: any) {
         query = new URLSearchParams (query)
         return await apiRequest(`/connect/followings?${query}`, { method: 'GET'})
