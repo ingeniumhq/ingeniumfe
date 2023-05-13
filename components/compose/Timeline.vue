@@ -56,7 +56,7 @@
 
                     <div class="stat-tools">  
                         <!-- <a title="" href="#" class="comment-to"><i class="icofont-comment"></i> Comment</a> -->
-                        <a title="" href="#" class="share-to"><i class="icofont-share-alt"></i> Share</a>
+                        <!-- <a title="" href="#" class="share-to"><i class="icofont-share-alt"></i> Share</a> -->
                         <div class="emoji-state">
                             <div class="popover_wrapper">
                                 <a class="popover_title" @click.prevent="postReaction(content, 'like')" title="">

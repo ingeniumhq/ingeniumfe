@@ -28,7 +28,7 @@ export default  {
     },
 
     async postComment(postId: any, comment: any) {
-        return await apiRequest(`contents/posts/${postId}/comments/`, { body: comment,  method: 'POST' })
+        return await apiRequest(`contents/posts/${postId}/comments`, { body: comment,  method: 'POST' })
     },
 
     async uploadMedia(payload: any) {
