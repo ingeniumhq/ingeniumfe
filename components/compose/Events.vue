@@ -7,10 +7,10 @@
                 </figure>
                 <div class="event-meta">
                     <span>{{ event.start_date }}</span>
-                    <h6><a href="event-detail.html" title="">{{ event.title }}</a></h6>
+                    <h6><NuxtLink :to="event.url" :title="event.title">{{ event.title }}</NuxtLink></h6>
                     <div v-html="event.description"></div>
                     <p>{{ event.type?.toUpperCase() }}</p>
-                    <a class="classic-btn" href="#" title="">Browse</a>
+                    <a class="classic-btn" target="_blank" blank :href="event.link" >Browse</a>
                     <!-- <div class="more">
                         <div class="more-post-optns">
                             <i class="">
