@@ -46,9 +46,14 @@ export default  {
 
 
     // USER TIMELINE
-    async getTimeline(username: any) {
-        if(username) return await apiRequest(`contents/timeline?username=${username}`, { method: 'GET' })
-        return await apiRequest(`contents/timeline`, { method: 'GET' })
+    async getTimeline(username: any, page = null ) {
+        if(username) return await apiRequest(`contents/timeline?username=${username}&page=${page}`, { method: 'GET' })
+        return await apiRequest(`contents/timeline?page=${page}`, { method: 'GET' })
+    },
+
+
+    async getSingleTimelinePost(slug: any) {
+        return await apiRequest(`contents/timeline/${slug}`, { method: 'GET' })
     },
     
     async getDraftTimeline() {
@@ -56,22 +61,23 @@ export default  {
     },
 
 
-    async getRecentBlogPost() {
-        return await apiRequest(`contents/blog?limit=5`, { method: 'GET' })
+    async getBlogPosts(query: any) {
+        query = new URLSearchParams (query)
+        return await apiRequest(`contents/blogs?${query}`, { method: 'GET' })
     },
 
 
-    async getEvents() {
-        return await apiRequest(`contents/events`, { method: 'GET' })
-    },
-
-    async getBlogPost(slug: any) {
-        return await apiRequest(`contents/blog/${slug}`, { method: 'GET' })
+    async getSingleBlogPost(slug: any) {
+        return await apiRequest(`contents/blogs/${slug}`, { method: 'GET' })
     },
 
 
-    async getSingleTimelinePost(slug: any) {
-        return await apiRequest(`contents/timeline/${slug}`, { method: 'GET' })
+    async getEvents(query: any) {
+        query = new URLSearchParams (query)
+        return await apiRequest(`contents/events?${query}`, { method: 'GET' })
     },
+   
+
+
 
 }

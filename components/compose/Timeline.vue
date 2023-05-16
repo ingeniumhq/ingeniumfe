@@ -135,30 +135,29 @@ export default {
             timelineContents: [],
             newcomment: {},
             isOpenPostId: null,
+            next_page_number: null,
+            next_page_url: null
         }
     },
 
-    beforeCreate() {
+    beforeMount() {
         ContentService.getTimeline(this.username).then((res) => {
-            this.timelineContents = res.data
+            this.timelineContents = res.data.data // paginated results
+            if(res.data.next_page_url) {
+                this.next_page_number = res.data.current_page + 1
+            }
+            this.next_page_url = res.data.next_page_url
+
             const { $event } = useNuxtApp()
             $event('dom-updated', {})
         }).catch((err) => { })
     },
 
-    mounted() {
-        const { $listen } = useNuxtApp()
-        $listen('newpostadded', (user: any) => {
-            ContentService.getTimeline(this.username).then((res) => {
-                this.timelineContents = res.data
-                const { $event } = useNuxtApp()
-            }).catch((err) => { })
-        })
-        
 
-
-
+    mounted(){
+        this.scroll()
     },
+   
 
     methods: {
 
@@ -181,13 +180,42 @@ export default {
             })
         },
 
-        openPost(content){
+        openPost(content: any){
             this.isOpenPostId = content.id
             // console.log(content)
             $(".post-modal").addClass("show");
 			$(".post-modal").show();
-        }
-    
+        },
+
+        scroll () {
+            window.onscroll = () => {
+                let bottomOfWindow = Math.max(Math.ceil(window.pageYOffset), document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+                // let bottomOfWindow = window.innerHeight + Math.ceil(window.pageYOffset) >= document.documentElement.offsetHeight
+                if (bottomOfWindow) {
+                 
+                    if(this.next_page_number && this.next_page_url){
+                        console.log("next_page_number", this.next_page_number)
+                        this.loadMore()
+
+                    }
+                }
+            }
+        },
+
+        loadMore(){
+            ContentService.getTimeline(this.username, this.next_page_number).then((res) => {
+                this.timelineContents =  this.timelineContents.concat(res.data.data)  // paginated results
+
+                console.log(this.timelineContents)
+                if(res.data.next_page_url) {
+                    this.next_page_number = res.data.current_page + 1
+                }
+                this.next_page_url = res.data.next_page_url
+                const { $event } = useNuxtApp()
+                $event('dom-updated', {})
+            }).catch((err) => { })
+        },
+            
     }
 
 }

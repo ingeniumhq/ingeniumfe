@@ -22,7 +22,7 @@
 				<li><i class="icofont-plus-square"></i> <a href="#" title="">Upload Your Picture</a><em>10%</em></li>
 				<li><i class="icofont-plus-square"></i> <a href="#" title="">Your University?</a><em>20%</em></li>
 				<li><i class="icofont-plus-square"></i> <a href="#" title="">Add Payment Method</a><em>20%</em></li>
-				<NuxtLink to="/usr/settings" class="main-btn full-width text-center accent_color" href="#" title="" data-ripple="">Setup Profile</NuxtLink>
+				<NuxtLink to="/usr/settings" class="main-btn full-width text-center accent_color" title="" data-ripple="">Setup Profile</NuxtLink>
 			</ul>
 		</div><!-- complete profile widget -->
 

@@ -81,10 +81,15 @@
 		<div class="widget">
 			<div class="ask-question">
 				<h6>Grow your audience.</h6>
-				<NuxtLink to="/explore" class="ask-qst" href="#" title="">Explore</NuxtLink>
+				<NuxtLink to="/explore" class="ask-qst"  title="">Explore</NuxtLink>
 			</div>
 		</div>
 		<!-- CTA -->
+
+		<div class="widget">
+			<ComposeRecentEventWidget></ComposeRecentEventWidget>
+		</div>
+		<!-- recent events -->
 
 
 		<div class="widget d-none">

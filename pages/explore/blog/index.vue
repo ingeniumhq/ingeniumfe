@@ -62,20 +62,58 @@ export default {
     data() {
         return {
             posts: [],
+			next_page_number: null,
+            next_page_url: null
         }
     },
 
     beforeCreate() {
-        ContentService.getRecentBlogPost().then((res) => {
-            this.posts = res.data
+        ContentService.getBlogPosts({}).then((res) => {
+            this.posts = res.data.data //paginated
+
+			if(res.data.next_page_url) {
+                this.next_page_number = res.data.current_page + 1
+            }
+            this.next_page_url = res.data.next_page_url
+
             const { $event } = useNuxtApp()
             $event('dom-updated', {})
         }).catch((err) => { })
     },
 
+	mounted(){
+        this.scroll()
+    },
+   
+
     methods: {
 
-       
+        scroll () {
+            window.onscroll = () => {
+                let bottomOfWindow = Math.max(Math.ceil(window.pageYOffset), document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+                // let bottomOfWindow = window.innerHeight + Math.ceil(window.pageYOffset) >= document.documentElement.offsetHeight
+                if (bottomOfWindow) {
+                    if(this.next_page_number && this.next_page_url){
+                        console.log("next_page_number", this.next_page_number)
+                        this.loadMore()
+
+                    }
+                }
+            }
+        },
+
+        loadMore(){
+			let page = this.next_page_number;
+            ContentService.getBlogPosts({page}).then((res) => {
+                this.posts =  this.posts.concat(res.data.data)  // paginated results
+                if(res.data.next_page_url) {
+                    this.next_page_number = res.data.current_page + 1
+                }
+                this.next_page_url = res.data.next_page_url
+                const { $event } = useNuxtApp()
+                $event('dom-updated', {})
+            }).catch((err) => { })
+        },
     }
 
 }

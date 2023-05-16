@@ -1,12 +1,11 @@
 <template>
 
     <h4 class="widget-title">Recent Blogs <NuxtLink class="see-all" to="explore/blog" title="">See All</NuxtLink></h4>
-    <ul class="recent-links">
-
+    <ul v-if="posts.length > 0" class="recent-links">
         <li v-for="post in posts" class="my-3">
             <figure><img alt="" :src="post.image"></figure>
             <div class="re-links-meta">
-                <h6><NuxtLink :to=" '/explore/blog/' + post.slug "  href="#">{{ post.title }}</NuxtLink></h6>
+                <h6><NuxtLink :to=" '/explore/blog/' + post.slug " >{{ post.title }}</NuxtLink></h6>
                 <span>{{ post.date }}</span>
             </div>
         </li>
@@ -31,8 +30,8 @@ export default {
     },
 
     beforeCreate() {
-        ContentService.getRecentBlogPost().then((res) => {
-            this.posts = res.data
+        ContentService.getBlogPosts({paginate: 5}).then((res) => {
+            this.posts = res.data.data
             const { $event } = useNuxtApp()
             $event('dom-updated', {})
         }).catch((err) => { })
