@@ -114,7 +114,7 @@ export default {
     },
 
     beforeCreate() {
-        ContentService.getBlogPost(this.$route.params.slug)
+        ContentService.getSingleBlogPost(this.$route.params.slug)
             .then((res) => {
                 this.post = res.data;
                 const { $event } = useNuxtApp();
