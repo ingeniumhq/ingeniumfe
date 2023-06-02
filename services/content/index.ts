@@ -18,7 +18,7 @@ export default  {
             formData.append(key, value);
         });
        
-        return await apiRequest('contents/posts', { 
+        return await apiRequest('contents/timeline', { 
             method: 'POST', 
             body: formData,
             headers: {
