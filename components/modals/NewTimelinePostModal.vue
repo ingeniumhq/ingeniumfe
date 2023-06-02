@@ -11,10 +11,10 @@
 								<form @submit.prevent="storePost()" enctype="application/x-www-form-urlencoded" method="post" class="c-form" style="width: 100%">
 								<textarea ref="contentarea" id="emojionearea1" placeholder="What's On Your Mind?"></textarea>
 								
-									<select v-model="newpost.visibility" class="custom-select my-5"   name="visibility" id="visibility">
+									<select v-model="newpost.visibility" class="custom-select my-5" required  name="visibility" id="visibility">
 										<option  class="select-box__option" value="" >Choose visibility</option>
 										<option  class="select-box__option"  value="Public">Public</option>
-										<option class="select-box__option" value="Network">Network</option>
+										<!-- <option class="select-box__option" value="Network">Network</option> -->
 									</select>   
 								
 								<div class="fallback">
@@ -25,7 +25,9 @@
 								<button type="submit" class="main-btn">Publish</button>
 							</form>
 
-							</div>	
+							<p v-if="postadded" class="text-center text-success text-lg">New post created and awaiting admin moderation</p>	
+
+							</div>
 							
 						</div>
 					</div>
@@ -49,7 +51,8 @@ export default {
 				content: "",
 				visibility: ""
 			},
-			files: []
+			files: [],
+			postadded: false
         }
     },
 
@@ -72,10 +75,20 @@ export default {
 				document.getElementById('newpostcontentarea').innerHTML = ""
                 const { $event } = useNuxtApp()
             	$event('newpostadded', {})
-                
+
+				const { $toast } = useNuxtApp()
+				$toast('New post awaiting admin moderation');
+				this.postadded = true
+
+				window.setTimeout(() => {
+					this.postadded = false
+				}, 4000)
+				
             }).catch((err) => {
                 console.log(err)
-             })
+				
+            })
+
         }
 
     }
