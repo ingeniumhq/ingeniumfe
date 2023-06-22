@@ -243,6 +243,7 @@
 
 												<p>{{ me.account?.biography }}</p>
 												<ul class="badges">
+													<p>{{ me.badge }}</p>
 													<!-- <li><img src="/images/badges/badge2.png" alt=""></li>
 																<li><img src="/images/badges/badge3.png" alt=""></li>
 																<li><img src="/images/badges/badge4.png" alt=""></li>
