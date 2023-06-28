@@ -32,9 +32,12 @@
 								<li class="nav-item"><a class="" href="#connects" data-toggle="tab">Connects</a><span>{{
 									me.analytics?.connects_count }}</span></li>
 								<!-- <li class="nav-item"><a class="" href="#followers" data-toggle="tab">Followers</a><span>{{ me.analytics?.followers_count }}</span></li> -->
-								<li class="nav-item"><a class="" href="#follow" data-toggle="tab">Followings</a><span>{{
-									me.analytics?.followings_count }}</span></li>
+								<!-- <li class="nav-item"><a class="" href="#follow" data-toggle="tab">Followings</a><span>{{
+									me.analytics?.followings_count }}</span></li> -->
 								<li class="nav-item"><a class="" href="#about" data-toggle="tab">About</a></li>
+
+
+								<li  class="nav-item"><a class="" href="#jobs" data-toggle="tab">Jobs</a></li>
 							</ul>
 						</div>
 					</div>
@@ -146,9 +149,6 @@
 											</div>
 										</div>
 									</div>
-
-
-
 								</aside>
 							</div>
 
@@ -321,6 +321,97 @@
 						</div>
 					</div>
 
+					<div class="tab-pane row fade" id="jobs">
+						<div class="row merged20">
+							<div class="col-lg-8">
+								
+								<div v-for="myjob in myjobs" class="main-wraper">
+									<h5 class="main-title">{{myjob.title}}</h5>
+									<div class="info-block-list">
+
+										<div  class="exp-col">
+											<div class="exp-meta">
+												<h5><ins>Company Name: </ins> {{  myjob.company_name  }} </h5>
+												<h5><ins>Location: </ins> {{  myjob.location  }} </h5>
+												<h5><ins>Closing Date: </ins> {{  myjob.timeline  }} </h5>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+							</div>
+
+							<div class="col-lg-4">
+								<aside class="sidebar static left">
+
+									<div class="widget">
+										<div class="ask-question">
+											<h6>Post a Job Advert</h6>
+											<a  class="ask-qst" title="">Create New</a>
+											<div class="new-post">
+											
+										
+									</div>
+										</div>
+									</div>
+
+									<div class="advertisment-box">
+										<h4 class=""><i class="icofont-info-circle"></i> Recent Applications</h4>
+										
+										<div v-for="application in recentJobApplications" class="main-wraper">
+											<div class="user-post">
+												<div class="friend-info">
+													<figure>
+														<img alt="" :src="application">
+
+													</figure>
+													<div class="friend-name">
+														<div class="more">
+															<div class="more-post-optns">
+																<i class="">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24"
+																		height="24" viewBox="0 0 24 24" fill="none"
+																		stroke="currentColor" stroke-width="2"
+																		stroke-linecap="round" stroke-linejoin="round"
+																		class="feather feather-more-horizontal">
+																		<circle cx="12" cy="12" r="1"></circle>
+																		<circle cx="19" cy="12" r="1"></circle>
+																		<circle cx="5" cy="12" r="1"></circle>
+																	</svg></i>
+																<ul>
+																	
+																	<li>
+																		View Applicant
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<ins>
+															<NuxtLink title="" :to="'/usr/'.application?.user?.username">{{
+																application?.user?.name }}</NuxtLink>
+															<img class="userbadge-ico" alt="" :src="application.user.badge">
+														</ins>
+														
+														<span class="mt-2">
+															<i class="icofont-globe"></i> Date: {{ application.created_at }}
+														</span>
+													</div>
+													<div class="post-meta">
+														<div class="post-title"><ins class="">Job Title:</ins> <a class="" >{{ application.jobadvert.title }}</a></div>  
+														<div class="post-title"><ins>Company Name:</ins> <a >{{ application.jobadvert.company_name }}</a></div>	
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</aside>
+							</div>
+						</div>
+					</div>
+
 				</div>
 
 			</div>
@@ -330,7 +421,7 @@
 
 <script lang="ts">
 import { matchesPattern } from '@babel/types';
-import { ContentService, UserService } from '~/services';
+import { ContentService, UserService, HiringService } from '~/services';
 import { useAuthStore } from '~/store';
 export default {
 
@@ -352,6 +443,8 @@ export default {
 			authUser: {},
 			me: {},
 			pendingPosts: [],
+			myjobs: [],
+			recentJobApplications: []
 		}
 	},
 	beforeRouteEnter(to, from, next) {
@@ -364,9 +457,10 @@ export default {
 
 	mounted() {
 		this.authUser = useAuthStore().authUser
-		console.log(this.authUser)
 		this.getMe()
 		this.getPendingPost()
+		this.getJobApplications()
+		this.getMyJobs()
 	},
 
 	methods: {
@@ -384,6 +478,25 @@ export default {
 			try {
 				ContentService.getDraftTimeline().then((res) => {
 					this.pendingPosts = res.data
+				}).catch((err) => {
+				})
+			} catch (error) {
+			}
+		},
+		getJobApplications() {
+			try {
+				HiringService.getJobApplications().then((res) => {
+					this.recentJobApplications = res.data.data
+				}).catch((err) => {
+				})
+			} catch (error) {
+			}
+		},
+
+		getMyJobs() {
+			try {
+				HiringService.getMyJobs().then((res) => {
+					this.myjobs = res.data.data
 				}).catch((err) => {
 				})
 			} catch (error) {

@@ -3,7 +3,7 @@ import { useAuthStore } from '../store/auth';
 
 
 let options = {
-    baseURL: 'http://ingeniumbe.test/api/v1',
+    baseURL : 'http://ingeniumbe.test/api/v1',
     headers: {
         Accept: 'application/json',
         'Cache-Control': 'no-cache'
@@ -32,9 +32,11 @@ let options = {
     },
 }
 
+
+
 if(process.client){
     const config = useRuntimeConfig()
-    options.baseURL = config.NUXT_API_BASE_URL
+    options.baseURL = config.public.NUXT_API_BASE_URL
 }
 
 

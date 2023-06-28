@@ -183,9 +183,12 @@ jQuery(document).ready(function ($) {
     $(".post-new-popup").removeClass("active");
   });
 
+
+
   // New Post Popup
   $(".ask-qst").on("click", function () {
     $(".new-question-popup").addClass("active");
+    console.log('ds')
     return false;
   });
   $(".popup-closed").on("click", function () {
