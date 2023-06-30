@@ -45,6 +45,7 @@
     "fb-sdk-wrapper": "^1.1.0",
     "jquery": "^3.6.4",
     "js-cookie": "^3.0.1",
+    "moment-timezone": "^0.5.43",
     "ofetch": "^1.0.1",
     "pinia": "^2.0.30",
     "vue-dayjs": "^1.0.2",

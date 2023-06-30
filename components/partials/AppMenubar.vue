@@ -35,11 +35,11 @@
 											</NuxtLink>
 										</div>
 										<div class="link-item">
-											<a  href="#" title="">
+											<NuxtLink to="/advert" title="">
 												<i class="">
 													<svg class="feather feather-airplay" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg></i>
 												<p>Job Advert</p>
-											</a>
+												</NuxtLink>
 										</div>
 										<!-- <div class="link-item">
 											<a  href="#" title="">
