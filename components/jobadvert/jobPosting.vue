@@ -62,7 +62,7 @@
             <input
               @change=""
               class="block form__input input-field"
-              type="text"
+              type="name"
               name=""
               placeholder=""
               v-model.trim="company"
@@ -73,8 +73,7 @@
               >Description</label
             >
             <textarea
-             minlength="0"
-              maxlength="100"
+            
               v-model.trim="description"
               class="
                 bg-white
@@ -149,7 +148,7 @@
             <input
               @change=""
               class="block form__input input-field"
-              type="text"
+              type="address"
               name=""
               placeholder=""
               v-model.trim="location"

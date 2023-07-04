@@ -33,7 +33,7 @@
           <span>Post Job</span>
         </button>
         <NuxtLink to="/advert/myjobs">
-          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] text-white">
+          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] sm:left-[43px] text-white">
             <div v-if="currentPath === '/advert/myjobs'" class="relative bg-white p-1 text-[#184391] rounded-t-md font-semibold">
               My Applications
               <span class="active-border-right"></span>

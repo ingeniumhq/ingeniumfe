@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[4%] w-full px-4">
+  <div class=" w-full mt-[4%] px-[16px] sm:px-[40px]">
     <div
       class="
         grid grid-cols-1
@@ -10,6 +10,7 @@
         xl:grid-cols-4
         w-full
         items-center
+       
       "
     >
       <div v-if="!isLoading"
@@ -101,12 +102,13 @@
 
           <div
             class="
-              flex flex-wrap
+            
               text-[12px]
               font-light
               sm:text-[13px]
               text-ellipsis
               whitespace-nowrap
+              overflow-hidden
               w-full
             "
           >

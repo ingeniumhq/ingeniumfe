@@ -33,7 +33,7 @@
             <span>Post Job</span>
           </button>
           <NuxtLink to="/advert/myjobs">
-          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] text-white">
+          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] sm:left-[43px] text-white">
             <div v-if="currentPath === '/advert/myjobs'" class="relative bg-white p-1 text-[#184391] rounded-t-md font-semibold">
                 My Applications
               <span class="active-border-right"></span>
@@ -57,7 +57,8 @@
           </span>
         </div>
       
-        <div class="w-full h-fit mt-3 rounded-md bg-white shadow-lg sm:w-[80%] mx-auto sm:py-4 sm:px-8 py-3 px-2 ">
+        <div class="w-full px-[16px]  mt-[4%] sm:px-[40px]">
+          <div class="w-full h-fit mt-3 rounded-md bg-white shadow-lg  sm:py-4 sm:px-8 py-3 px-2 ">
             <div class="font-semibold text-[15px] sm:text-xl py-2">My Applications</div>
             <div v-for="({jobadvert, status}, index) in appliedJobs" :key="index">
                 <div class="py-3 px-2 myjob-border flex flex-col">
@@ -81,6 +82,8 @@
             </div>
 
         </div>
+        </div>
+      
       </div>
     </section>
     <!-- content -->

@@ -33,7 +33,7 @@
             <span>Post Job</span>
           </button>
           <NuxtLink to="/advert/myjobs">
-          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] text-white">
+          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] sm:left-[43px] text-white">
             <div v-if="currentPath === '/advert/myjobs'" class="relative bg-white p-1 text-[#184391] rounded-t-md font-semibold">
               My Applications
               <span class="active-border-right"></span>
@@ -45,7 +45,6 @@
         </div>
         </NuxtLink>
         </div>
-  
       
         <JobadvertJobPosting :togglePost="togglePost" :isPost="isPost" />
         <div @click="goback" class="pl-2 cursor-pointer absolute top-1 left-2">
@@ -57,10 +56,9 @@
             />
           </span>
         </div>
-        <div class="w-full space-y-3  mx-auto">
-         
-
-        <div class="w-[95%] sm:w-[70%] p-3 sm:p-6 shadow-lg mx-auto mt-3 border rounded-lg ">
+        <div class="w-full space-y-3  mt-[4%]  px-[16px] sm:px-[40px]  mx-auto">
+        
+        <div class="w-full p-3 sm:p-6 shadow-lg mx-auto mt-3 border rounded-lg ">
         <div class="sm:pl-[40px] w-full relative h-full">
      
         <div class="w-full flex flex-col justify-start">
@@ -224,7 +222,10 @@ export default {
             return path
         }
     },
-  mounted() {},
+  mounted() {
+    const { authUser } = useAuthStore();
+      this.accountType = authUser.account.account_type;
+  },
 
   methods: {
     goback() {
@@ -257,8 +258,7 @@ export default {
         }
       }
       this.isLoading = true
-      const { authUser } = useAuthStore();
-      this.accountType = authUser.account.account_type;
+     
       const formData = new FormData();
      formData.append("job_advert_id", this.$route.params.id);
       formData.append("user_id", authUser.id);

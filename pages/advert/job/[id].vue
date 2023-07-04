@@ -34,7 +34,7 @@
             <span>Post Job</span>
           </button>
           <NuxtLink to="/advert/myjobs">
-          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] text-white">
+          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] sm:left-[43px] text-white">
             <div v-if="currentPath === '/advert/myjobs'" class="relative bg-white p-1 text-[#184391] rounded-t-md font-semibold">
               My Applications
               <span class="active-border-right"></span>
@@ -58,10 +58,10 @@
             />
           </span>
         </div>
-        <div  v-if="!isLoading" class="w-full space-y-3  mx-auto">
+        <div  v-if="!isLoading" class="w-full  mt-[4%]  space-y-3 px-[16px] sm:px-[40px]">
         
       
-        <div class="w-[95%] h-fit bg-white shadow-lg p-3 sm:p-6 mx-auto mt-3 border rounded-lg sm:w-[70%]">
+        <div class=" h-fit bg-white relative shadow-lg p-3 sm:p-6 mx-auto mt-3 border rounded-lg">
                
       <div  class="sm:pl-[40px] w-full relative h-full">
      
@@ -151,7 +151,8 @@
             <span> {{ formatDate(jobDetail.timeline) }}</span>
           </div>
 
-          <div v-if="accountType === 1" class="w-full h-fit flex justify-end">
+          <div class="absolute right-3 top-0 ">
+            <div v-if="accountType === 1" class="w-full h-fit flex justify-end">
             <NuxtLink
               :to="`/advert/applicants/${id}`"
               class="
@@ -184,6 +185,8 @@
             >
               Apply Now
             </NuxtLink>
+          </div>
+
           </div>
         </div>
       </div>
