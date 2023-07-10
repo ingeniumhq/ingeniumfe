@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="w-full h-[100vh] text-zinc-800">
+    <div class="w-full h-[100vh] text-[#3E3F5E]">
       <div class="h-[185px] inset-x-0 w-full relative">
           <img
             src="/images/resources/linkedinheaders-desktop.jpg"
@@ -8,7 +8,7 @@
             class="w-full h-full object-cover"
           />
           <span
-            class="absolute w-full h-full inset-0 bg-blue-950 bg-opacity-70"
+            class="absolute w-full h-full inset-0 bg-[#172554] bg-opacity-70"
           ></span>
           <button
             @click="togglePost"
@@ -56,7 +56,7 @@
             />
           </span>
         </div>
-        <div class="w-full space-y-3  mt-[4%]  px-[16px] sm:px-[40px]  mx-auto">
+        <div class="w-full space-y-3 max-[990px]:py-[40px] py-[80px]  px-[16px] sm:px-[40px]  mx-auto">
         
         <div class="w-full p-3 sm:p-6 shadow-lg mx-auto mt-3 border rounded-lg ">
         <div class="sm:pl-[40px] w-full relative h-full">
@@ -108,17 +108,9 @@
             >
             <textarea
               v-model.trim="letter"
-              minlength="0"
-              maxlength="100"
+             
               class="
-                bg-white
-                text-zinc-700
-                border-zinc-700
-                rounded-lg
-
-                focus:outline-none
-                w-full
-                p-2
+               cat-field
                 h-[160px]
               "
             ></textarea>
@@ -257,8 +249,9 @@ export default {
           return
         }
       }
+      const { authUser } = useAuthStore();
       this.isLoading = true
-     
+     console.log(this.accountType)
       const formData = new FormData();
      formData.append("job_advert_id", this.$route.params.id);
       formData.append("user_id", authUser.id);
@@ -282,3 +275,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.cat-field {
+  @apply border bg-white text-[#3E3F5E] border-zinc-700 rounded-lg focus:outline-none w-full;
+}
+</style>

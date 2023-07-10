@@ -8,7 +8,7 @@
           class="w-full h-full object-cover"
         />
         <span
-          class="absolute w-full h-full inset-0 bg-blue-950 bg-opacity-70"
+          class="absolute w-full h-full inset-0 bg-[#172554] bg-opacity-70"
         ></span>
         <button
           @click="togglePost"
@@ -17,9 +17,9 @@
             absolute
             border-2
             bottom-4
-            text-blue-950
+            text-[#172554]
             right-5
-            border-blue-950
+            border-[#172554]
             w-fit
             px-3
             py-2
@@ -48,9 +48,11 @@
 
       </div>
 
-  
+     
       <JobadvertJobPosting :togglePost="togglePost" :isPost="isPost" />
       <JobadvertAllJobs :data="availableJobs" :isLoading="isLoading" />
+      <MessagingChat  :showChat="showChat" />
+      <MessagingMessagesList :showChat="showChat" />
     </div>
   </section>
   <!-- content -->
@@ -80,6 +82,7 @@ export default {
       isLoading: true,
       accountType: '',
       issidebar: false,
+      isChat:false,
     };
   },
   computed: {
@@ -126,6 +129,9 @@ export default {
   methods: {
     togglePost() {
       this.isPost = !this.isPost;
+    },
+    showChat() {
+      this.isChat = !this.isChat;
     },
     toggleSidebar() {
       this.issidebar = !this.issidebar;

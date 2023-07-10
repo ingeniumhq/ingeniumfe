@@ -3,7 +3,7 @@
     @click.self="togglePost"
     :class="
       isPost
-        ? 'text-zinc-700 w-full z-[300] fixed inset-0 bg-black bg-opacity-70 h-full'
+        ? 'text-[#3E3F5E] w-full z-[300] fixed inset-0 bg-black bg-opacity-70 h-full'
         : 'hidden'
     "
   >
@@ -73,46 +73,56 @@
               >Description</label
             >
             <textarea
-            
               v-model.trim="description"
-              class="
-                bg-white
-                text-zinc-700
-                border-zinc-700
-                rounded-lg
-                focus:outline-none
-                w-full
-                p-2
-                h-[130px]
-              "
+              class="textarea-field"
             ></textarea>
           </div>
           <div class="form-group space-y-3">
             <label class="block form__label text-sm sm:text-[15px]" for=""
               >Contract</label
             >
-            <div
-              class="
-                grid grid-cols-2
-                sm:grid-cols-3
-                gap-2
-                items-center
-                justify-center
-              "
-            >
-              <label
-                v-for="(cat, index) in types"
-                :key="index"
-                class="container text-sm mr-1"
+            <div class="cat-field relative">
+              <input
+              @click="setDrop"
+                type="text"
+                class="px-2 w-full rounded-md h-8 sm:h-11 cursor-pointer"
+                :value="`${selectedtype || '- select type -'}`"
+                readonly
+              />
+              <div
+              :class="isdrop ?  'block': 'hidden'"
+                class="
+                  absolute
+                  bg-blue-900
+                  shadow-sm
+                  text-white
+                  rounded-md
+                  top-8
+                  sm:top-11
+                  inset-x-0
+                  w-full
+                  h-fit
+                  font-light
+                  overflow-hidden
+                "
               >
-                {{ cat }}
-                <input
-                  type="checkbox"
-                  :checked="selectedtype === cat"
-                  @change="selectedFn(cat)"
-                />
-                <span class="checkmark"></span>
-              </label>
+                <div class="overflow-y-auto w-full h-full">
+                  <div class="w-full flex flex-col py-2">
+                    <div
+                    
+                      v-for="(cat, index) in types"
+                      :key="index"
+                      class=" w-full"
+                    
+                      >
+                     <div
+                     @click="selectedFn(cat)"
+                     class="w-full cursor-pointer px-2 py-2 hover:bg-gray-200 hover:text-zinc-800 border-b border-gray-100"
+                     >{{cat}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="form-group space-y-3">
@@ -164,7 +174,7 @@
               w-full
               font-medium
               bg-blue-900
-              hover:bg-blue-950
+              hover:bg-[#172554]
               border-0
             "
           >
@@ -208,6 +218,7 @@ export default {
   data() {
     return {
       isSubmit: false,
+      isdrop:false,
       title: "",
       description: "",
       company: "",
@@ -223,7 +234,12 @@ export default {
   methods: {
     selectedFn(cat) {
       this.selectedtype = cat;
-      console.log(cat);
+      this.isdrop = false
+      
+      //console.log(cat);
+    },
+    setDrop() {
+        this.isdrop = !this.isdrop
     },
     getUserInfo() {
       this.isSubmit = true;
@@ -255,7 +271,13 @@ export default {
 
 <style scoped>
 .input-field {
-  @apply border bg-white text-zinc-700 border-zinc-700 rounded-lg focus:outline-none w-full h-8 sm:h-11 px-2;
+  @apply border bg-white text-[#3E3F5E] border-zinc-700 rounded-lg focus:outline-none w-full h-8 sm:h-11 px-2;
+}
+.textarea-field {
+  @apply bg-white text-[#3E3F5E] resize-none border-zinc-700 border rounded-lg focus:outline-none w-full p-2 h-[130px];
+}
+.cat-field {
+  @apply border bg-white text-[#3E3F5E] border-zinc-700 rounded-lg focus:outline-none w-full h-fit;
 }
 
 label.label input[type="file"] {
@@ -306,7 +328,7 @@ label.label input[type="file"] {
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  @apply bg-blue-950;
+  @apply bg-[#172554];
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

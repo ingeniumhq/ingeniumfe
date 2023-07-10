@@ -258,6 +258,9 @@ section {
   width: 100%;
   z-index: -2;
 }
+.bluish-bg {
+  background: rgba(5, 10, 40, 0.7) none repeat scroll 0 0;
+}
 .blackish:before,
 .whitish:before,
 .bluesh:before,
@@ -558,7 +561,7 @@ iframe {
   padding: 5px 15px;
   position: relative;
   width: 100%;
-  z-index: 9999999;
+  z-index:99;
 }
 .right-compact .sidemenu {
   float: right;
@@ -1160,7 +1163,7 @@ a.date {
 header {
   display: inline-block;
   width: 100%;
-  z-index: 999;
+  z-index: 100;
   position: relative;
 }
 header.transparent .topbar {
@@ -13973,4 +13976,112 @@ color: #b88801 !important;
 .userbadge-ico{
   width: 15px;
   margin: auto 4px
+}
+
+.scroll::-webkit-scrollbar {
+  width:8px;
+  height:5px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scroll::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: rgba(244, 245, 234, 0.3);
+}
+
+.loader {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.small-loader {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.myjob-border {
+  border-top:1px solid grey;
+}
+
+.let {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.swipeIn {
+  animation-name: swipeIn;
+  -webkit-animation-name: swipeIn;
+}
+
+@keyframes swipeIn {
+  0% {
+    transform: translateX(200%);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes swipeIn {
+  0% {
+    -webkit-transform: translateX(200%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0px);
+  }
+}
+
+.swipeDown {
+  animation-name: swipeDown;
+  -webkit-animation-name: swipeDown;
+}
+
+@keyframes swipeDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes swipeDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+
+.active-border-right {
+  border-left: 12px solid #ffffff;
+  border-top: 23px solid rgba(0, 0, 0, 0);
+  height: 0;
+  position: absolute;
+  right: -12px;
+  top: 5px;
+  width: 0;
+}
+.active-border-left {
+  
+  border-bottom: 25px solid #ffffff;
+  border-left: 13px solid rgba(0, 0, 0, 0);
+  border-top: 15px solid rgba(0, 0, 0, 0);
+  height: 0;
+  left: -13px;
+  position: absolute;
+  top: -11px;
+  width: 0;
+
 }

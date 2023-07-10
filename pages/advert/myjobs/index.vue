@@ -1,6 +1,6 @@
 <template>
     <section>
-      <div class="text-zinc-800 w-full bg-white h-full">
+      <div class="text-[#3E3F5E] w-full bg-white h-full">
         <div class="h-[185px] inset-x-0 w-full relative">
           <img
             src="/images/resources/linkedinheaders-desktop.jpg"
@@ -8,7 +8,7 @@
             class="w-full h-full object-cover"
           />
           <span
-            class="absolute w-full h-full inset-0 bg-blue-950 bg-opacity-70"
+            class="absolute w-full h-full inset-0 bg-[#172554] bg-opacity-70"
           ></span>
           <button
             @click="togglePost"
@@ -57,9 +57,12 @@
           </span>
         </div>
       
-        <div class="w-full px-[16px]  mt-[4%] sm:px-[40px]">
-          <div class="w-full h-fit mt-3 rounded-md bg-white shadow-lg  sm:py-4 sm:px-8 py-3 px-2 ">
-            <div class="font-semibold text-[15px] sm:text-xl py-2">My Applications</div>
+        <div class="w-full px-[16px] max-[990px]:py-[40px] py-[80px] sm:px-[40px]">
+          <div class="w-full h-fit mt-3 rounded-md bg-white shadow-lg  sm:py-4 py-3 ">
+            <div class="text-[#3E3F5E] relative font-semibold w-[95%] text-sm sm:text-lg border-gray-300 mx-[23px] py-2 border-b">
+       <span class="absolute w-[3px] h-[20px] bg-[#184391] left-[-23px] top-[13px]"></span>
+        <span><span class="mr-1">My Applications</span> <span class="text-gray-400">{{ `(${appliedJobs?.length || 0})` }}</span></span></div>
+          
             <div v-for="({jobadvert, status}, index) in appliedJobs" :key="index">
                 <div class="py-3 px-2 myjob-border flex flex-col">
                    

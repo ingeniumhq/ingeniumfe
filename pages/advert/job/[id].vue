@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="w-full h-[100vh]  text-zinc-800">
+    <div class="w-full h-[100vh]  text-[#3E3F5E]">
       <div class="h-[185px] inset-x-0 w-full relative">
           <img
             src="/images/resources/linkedinheaders-desktop.jpg"
@@ -8,7 +8,7 @@
             class="w-full h-full object-cover"
           />
           <span
-            class="absolute w-full h-full inset-0 bg-blue-950 bg-opacity-70"
+            class="absolute w-full h-full inset-0 bg-[#172554] bg-opacity-70"
           ></span>
           <button
           v-if="accountType === 1"
@@ -58,7 +58,7 @@
             />
           </span>
         </div>
-        <div  v-if="!isLoading" class="w-full  mt-[4%]  space-y-3 px-[16px] sm:px-[40px]">
+        <div  v-if="!isLoading" class="w-full max-[990px]:py-[40px] py-[80px] space-y-3 px-[16px] sm:px-[40px]">
         
       
         <div class=" h-fit bg-white relative shadow-lg p-3 sm:p-6 mx-auto mt-3 border rounded-lg">
@@ -141,7 +141,7 @@
             <div class="text-[13px] sm:text-[15px] font-medium underline">
               Description
             </div>
-            <div class="text-[13px] sm:text-[15px]">
+            <div class="text-[13px] flex flex-wrap leading-6 sm:text-[15px]">
               {{ jobDetail.description || "--" }}
             </div>
           </div>

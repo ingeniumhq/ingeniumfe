@@ -3,7 +3,7 @@
     @click.self="toggleSidebar"
     :class="
       issidebar
-        ? 'text-zinc-700 w-full z-[200] fixed inset-0 bg-black bg-opacity-50 h-full'
+        ? 'text-[#3E3F5E] w-full z-[200] fixed inset-0 bg-black bg-opacity-50 h-full'
         : 'hidden'
     "
   >

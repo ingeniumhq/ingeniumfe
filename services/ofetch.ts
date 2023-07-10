@@ -3,7 +3,7 @@ import { useAuthStore } from '../store/auth';
 
 
 let options = {
-    baseURL : 'http://ingeniumbe.test/api/v1',
+    baseURL : 'https://s.theingeniumapp.com/api/v1',
     headers: {
         Accept: 'application/json',
         'Cache-Control': 'no-cache'
@@ -24,6 +24,7 @@ let options = {
 
     onResponse: ({ request, options, response }: any) => {
         // console.log(request, options, response);
+        // apiRequest('/test') // Same as ofetch('/test', { baseURL: '/api' })
     },
 
     onResponseError: ({ request, options, response }: any) =>{
@@ -31,6 +32,7 @@ let options = {
         console.log(request, options, response); 
     },
 }
+
 
 
 
@@ -42,7 +44,7 @@ if(process.client){
 
 
 
+
 const apiRequest = ofetch.create(options)
 
 export {apiRequest}
-// apiRequest('/test') // Same as ofetch('/test', { baseURL: '/api' })

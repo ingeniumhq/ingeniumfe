@@ -3,7 +3,7 @@
       @click.self="togglePost"
       :class="
         isPost
-          ? 'text-zinc-700 w-full z-[300] fixed inset-0 bg-black bg-opacity-70 h-full'
+          ? 'text-[#3E3F5E] w-full z-[300] fixed inset-0 bg-black bg-opacity-70 h-full'
           : 'hidden'
       "
     >
@@ -76,7 +76,7 @@
                 v-model.trim="skills"
                 class="
                   bg-white
-                  text-zinc-700
+                  text-[#3E3F5E]
                   border-zinc-700
                   rounded-lg
                   focus:outline-none
@@ -163,7 +163,7 @@
                 w-full
                 font-medium
                 bg-blue-900
-                hover:bg-blue-950
+                hover:bg-[#172554]
                 border-0
               "
             >
@@ -253,7 +253,7 @@
   
   <style scoped>
   .input-field {
-    @apply border bg-white text-zinc-700 border-zinc-700 rounded-lg focus:outline-none w-full h-8 sm:h-11 px-2;
+    @apply border bg-white text-[#3E3F5E] border-zinc-700 rounded-lg focus:outline-none w-full h-8 sm:h-11 px-2;
   }
   
   label.label input[type="file"] {
@@ -304,7 +304,7 @@
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    @apply bg-blue-950;
+    @apply bg-[#172554];
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
