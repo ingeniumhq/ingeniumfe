@@ -15,7 +15,7 @@
     "
   >
     <div
-    @click.self="setOut"
+      @click.self="setOut"
       class="
         bg-[#172554]
         rounded-t-lg
@@ -42,130 +42,96 @@
 
       <div class="flex items-center space-x-3">
         <div
-      
-        class="cursor-pointer p-1 rounded-full  bg-[#fec42d] h-[25px] w-[25px]"
-      >
-        <img
-          src="/images/enlarge.svg"
-          alt="val"
-          class="w-full h-full object-cover"
-         
-        />
-      </div>
+          class="cursor-pointer p-1 rounded-full bg-[#fec42d] h-[25px] w-[25px]"
+        >
+          <img
+            src="/images/enlarge.svg"
+            alt="val"
+            class="w-full h-full object-cover"
+          />
+        </div>
         <div
-        @click="setOut"
-        class="cursor-pointer p-1 rounded-full  bg-[#fec42d] h-[28px] w-[28px]"
-      >
-        <img
-          src="/images/expand.svg"
-          alt="val"
-          class="w-full h-full object-cover"
-          :class="isOut ? 'rotate-180': ''"
-        />
+          @click="setOut"
+          class="cursor-pointer p-1 rounded-full bg-[#fec42d] h-[28px] w-[28px]"
+        >
+          <img
+            src="/images/expand.svg"
+            alt="val"
+            class="w-full h-full object-cover"
+            :class="isOut ? 'rotate-180' : ''"
+          />
+        </div>
       </div>
-      
-
+    </div>
+    <div
+      class="
+        bg-white
+        flex
+        text-sm
+        font-medium
+        justify-around
+        border-b
+        items-center
+        px-2
+      "
+    >
+      <div
+        :class="isactive === 0 ? 'border-b-2 border-[172532]' : ''"
+        @click="setActive(0)"
+        class="py-2 cursor-pointer"
+      >
+        Conversations
+      </div>
+      <div
+        @click="setActive(1)"
+        :class="isactive === 1 ? 'border-b-2 border-[172532]' : ''"
+        class="py-2 cursor-pointer"
+      >
+        Connections
       </div>
     </div>
 
     <div class="w-[280px] h-full bg-white pt-2 overflow-hidden">
-      <div class="w-full h-full overflow-y-auto">
-        <div class="flex flex-col justify-start w-full">
-          <div
-            v-if="chatList !== null"
-            v-for="({ heading, recent_message, id }, index) in chatList"
-            :key="index"
-            class="w-full"
-            @click="showDetail(id)"
-          >
-            <MessagingListWidget :heading="heading" :recent="recent_message" />
-          </div>
-          <div
-            v-else
-            class="
-              flex
-              justify-center
-              text-zinc-700
-              items-center
-              h-[100px]
-              w-full
-            "
-          >
-            - no conversation yet -
-          </div>
+      <div class="w-full h-full overflow-y-auto pb-20">
+        <div
+          :class="isactive === 0 ? 'block' : 'hidden'"
+          class="flex flex-col justify-start w-full"
+        >
+          <MessagingChatlistWidget />
+        </div>
+        <div
+          :class="isactive === 1 ? 'block' : 'hidden'"
+          class="flex flex-col justify-start w-full"
+        >
+          <MessagingConnectWidget />
         </div>
       </div>
     </div>
   </div>
 
-  <MessagingChat
-    :showChat="showChat"
-    :isChat="isChat"
-    :chats="chatDetail"
-    :userId="userId"
-    :name="receiverName"
-    :picture="receiverPics"
-    :senderName="senderName"
-    :senderPics="senderPics"
-  />
   <!-- content -->
 </template>
 
 <script>
 import { ChatService } from "~/services";
-
+//import { chatStore } from '~/store/chats';
 export default {
   setup() {},
   data() {
     return {
       isOut: false,
-      chatList: null,
-      isChat: false,
-      receiverName: "",
-      receiverPics: "",
-      senderName: "",
-      senderPics: "",
-      chatDetail: null,
+      isactive: 0,
     };
   },
-  mounted() {
-    ChatService.getConversations()
-      .then((res) => {
-        console.log(res.data[0].heading);
-
-        this.chatList = res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
+  mounted() {},
   methods: {
     setOut() {
       this.isOut = !this.isOut;
       //console.log('yeah')
     },
-    showDetail(id) {
-        this.isChat = true
 
-      // const setchatStore = chatStore()
-      ChatService.getConversationDetail(id)
-        .then((res) => {
-          console.log("list widget....", res.data.data);
-          const { data } = res.data;
-          this.chatDetail = data.reverse();
-          //setchatStore.setChats(data);
-          const { to_user, from_user } = data[0];
-          this.receiverName = to_user?.name;
-          this.receiverPics = to_user?.profile_pic;
-          this.senderName = from_user?.name;
-          this.senderPics = from_user?.profile_pic;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    showChat() {
-      this.isChat = !this.isChat;
+    setActive(num) {
+      this.isactive = num;
     },
   },
 };

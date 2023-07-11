@@ -6,7 +6,7 @@
       border-b
       cursor-pointer
       hover:bg-gray-100
-      py-3
+      py-2
       px-2
       space-x-2
     "

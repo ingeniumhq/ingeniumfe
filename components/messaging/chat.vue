@@ -179,7 +179,7 @@
 
 <script>
 import { ChatService } from "~/services";
-import { chatStore } from "~/store/chats";
+
 export default {
   props: [
     "name",
@@ -190,8 +190,8 @@ export default {
     "showChat",
     "userId",
     "chats",
+    "deleteFn"
   ],
-
   data() {
     return {
       text: "",
@@ -200,17 +200,6 @@ export default {
       fileName: "",
       createdAt: "",
     };
-  },
-  mounted() {
-    console.log("this is chat", this.chats);
-    if (this.chats !== null) {
-      //console.log(this.chats[0])
-      // const {to_user} = this.chats[0]
-      //   this.name = to_user?.name;
-      //this.picture = to_user?.profile_pic
-    }
-
-   
   },
   methods: {
     handleFile(event) {
@@ -248,6 +237,7 @@ export default {
       await ChatService.deleteMessage(id)
         .then((res) => {
           console.log(res);
+          this.deleteFn(id)
         })
         .catch((err) => {
           console.log(err);

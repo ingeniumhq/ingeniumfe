@@ -23,6 +23,13 @@ export default {
         headers: { Accept: "application/json" },
       });
     },
+     //get active connects- User
+     async getConnections() {
+      return await apiRequest(`/connect?status=active`, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+      });
+    },
   // Delete a message
   async deleteMessage() {
     return await apiRequest(`/messages/${id}`, {
