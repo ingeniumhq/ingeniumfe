@@ -57,7 +57,7 @@
           </span>
         </div>
       
-        <div class="w-full px-[16px] max-[990px]:py-[40px] py-[80px] sm:px-[40px]">
+        <div class="w-full max-[990px]:py-[40px] py-[20px] min-[990px]:py-[80px] px-[8px] sm:px-[40px]">
           <div class="w-full h-fit mt-3 rounded-md bg-white shadow-lg  sm:py-4 py-3 ">
             <div class="text-[#3E3F5E] relative font-semibold w-[95%] text-sm sm:text-lg border-gray-300 mx-[23px] py-2 border-b">
        <span class="absolute w-[3px] h-[20px] bg-[#184391] left-[-23px] top-[13px]"></span>
@@ -89,6 +89,7 @@
       
       </div>
     </section>
+   
     <!-- content -->
   </template>
   

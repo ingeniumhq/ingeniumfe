@@ -51,8 +51,8 @@
      
       <JobadvertJobPosting :togglePost="togglePost" :isPost="isPost" />
       <JobadvertAllJobs :data="availableJobs" :isLoading="isLoading" />
-      <MessagingChat  :showChat="showChat" />
-      <MessagingMessagesList :showChat="showChat" />
+   
+     
     </div>
   </section>
   <!-- content -->

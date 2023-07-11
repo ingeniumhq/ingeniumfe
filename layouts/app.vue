@@ -46,10 +46,12 @@
             <PartialsAppSidebar></PartialsAppSidebar>
             <!-- nav sidebar -->
             
+            
             <PartialsAppMenubar></PartialsAppMenubar>
             <!-- nav carousel menubar -->
 
-
+            <PartialsMessagesList></PartialsMessagesList>
+          
             <slot />
 
             <PartialsAppFooter></PartialsAppFooter>
@@ -57,12 +59,14 @@
             
             <ModalsInviteColleagueModal></ModalsInviteColleagueModal>
             <!-- invite colleague popup -->
-            
+          
             <!-- send message popup -->
             
             <!-- side slide message & popup -->
             
             <ModalsNewTimelinePostModal></ModalsNewTimelinePostModal>
+
+           
             <!-- New post popup -->
             
             <!-- ask question -->
@@ -93,6 +97,7 @@
           </main>
         </ClientOnly>
         
+      
       </div>
 </template>
 

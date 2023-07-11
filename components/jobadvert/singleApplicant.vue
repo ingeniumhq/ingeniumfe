@@ -115,7 +115,7 @@
 </template>
 
 <script>
-import { UserService } from "~/services";
+import { UserService,ChatService } from "~/services";
 export default {
   props: [
     "media",
@@ -144,6 +144,7 @@ export default {
       .catch((err) => {
         console.log(err);
       });
+   
   },
   methods: {
     goback() {

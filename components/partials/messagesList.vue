@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="isOut ? 'bottom-[56px]' : 'bottom-[-360px]'"
+    :class="isOut ? 'bottom-[50px]' : 'bottom-[-350px]'"
     class="
       fixed
       h-[400px]
@@ -43,7 +43,7 @@
       <div class="flex items-center space-x-3">
         <div
       
-        class="cursor-pointer p-1 rounded-full bg-red-500 h-[25px] w-[25px]"
+        class="cursor-pointer p-1 rounded-full  bg-[#fec42d] h-[25px] w-[25px]"
       >
         <img
           src="/images/enlarge.svg"
@@ -54,7 +54,7 @@
       </div>
         <div
         @click="setOut"
-        class="cursor-pointer p-1 rounded-full bg-red-500 h-[28px] w-[28px]"
+        class="cursor-pointer p-1 rounded-full  bg-[#fec42d] h-[28px] w-[28px]"
       >
         <img
           src="/images/expand.svg"

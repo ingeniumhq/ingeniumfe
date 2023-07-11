@@ -56,7 +56,7 @@
             />
           </span>
         </div>
-        <div class="w-full space-y-3 max-[990px]:py-[40px] py-[80px]  px-[16px] sm:px-[40px]  mx-auto">
+        <div class="w-full space-y-3 max-[990px]:py-[40px] py-[20px] min-[990px]:py-[80px] px-[8px] sm:px-[40px]  mx-auto">
         
         <div class="w-full p-3 sm:p-6 shadow-lg mx-auto mt-3 border rounded-lg ">
         <div class="sm:pl-[40px] w-full relative h-full">
@@ -173,7 +173,10 @@
 
       </div>
     </div>
+
+   
   </section>
+ 
   <!-- content -->
 </template>
 

@@ -138,7 +138,7 @@
 						<NuxtLink to="/usr/me" title="">
 							<img alt="" :src="authUser?.profile_pic">
 							<div class="name">
-								<h4>{{ authUser.name }}</h4>
+								<h4>{{ authUser?.name }}</h4>
 							</div>
 						</NuxtLink>
 					</div>
@@ -231,10 +231,12 @@
 		</div>
 
 	</header>
+	<MessagingMessageList/>
 </template>
 
 <script setup lang="ts">
 import { useAuthStore } from '~/store/auth';
+	const  isOut = ref(false)
 
 const authStore = useAuthStore();
 const {authUser} = useAuthStore();
@@ -242,6 +244,11 @@ const {authUser} = useAuthStore();
 function logout() {
 	authStore.logoutUser()
 }
+
+function setOut() {
+	
+}
+
 
 console.log(authUser)
 </script>

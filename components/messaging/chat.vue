@@ -28,8 +28,12 @@
     >
       <!--Sth is wrong with the profile pics #profilepics -->
       <div class="flex items-center space-x-1">
-        <div v-if="picture" class="h-[22px] w-[22px]">
-          <img :src="picure" alt="val" class="w-full h-full object-cover" />
+        <div v-if="picture" class="h-[22px] w-[22px] rounded-full">
+          <img
+            :src="picture"
+            alt="val"
+            class="w-full h-full rounded-full object-cover"
+          />
         </div>
         <div v-else class="h-[22px] w-[22px]">
           <img
@@ -44,7 +48,7 @@
 
       <div
         @click="showChat"
-        class="h-[25px] w-[25px] p-1 bg-red-500 rounded-full"
+        class="h-[25px] w-[25px] p-1 bg-[#fec42d] rounded-full"
       >
         <img
           src="/images/closes.svg"
@@ -56,28 +60,67 @@
 
     <div class="w-[450px] h-[250px] bg-white pt-2 overflow-hidden">
       <div class="w-full h-full overflow-y-auto">
-        <div class="flex px-2 flex-col justify-start w-full">
+        <div class="flex flex-col justify-start w-full">
           <div
-            v-for="val in [1, 2, 3, 4]"
-            class="flex flex-col w-full py-3 space-x-2"
+            v-if="chats !== null"
+            v-for="({ from_user, text, created_at, id }, index) in chats"
+            :key="index"
+            class="
+              flex
+              group
+              relative
+              px-2
+              hover:bg-gray-100
+              flex-col
+              w-full
+              py-3
+              space-x-2
+            "
           >
-            <div class="flex space-x-1 items-center">
-              <div class="w-[25px] h-[25px]">
+            <div
+            @click="deleteSingleMessage(id)"
+              class="
+                group-hover:flex
+                items-center
+                rounded-full
+                justify-center
+                w-[25px]
+                cursor-pointer
+                h-[25px]
+                absolute
+                hidden
+                top-2
+                right-2
+                bg-[#fec42d]
+                p-1
+              "
+            >
+              <img
+                src="/images/deletes.svg"
+                alt=""
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="flex space-x-2 items-center">
+              <div class="w-[40px] rounded-full h-[40px]">
                 <img
-                  src="/images/company.svg"
+                  :src="from_user?.profile_pic"
                   alt="val"
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover rounded-full"
                 />
               </div>
-              <div class="font-medium">Olascom Company</div>
-              <div class="font-light text-[12px]">June, 2023</div>
+              <div class="font-medium capitalize">{{ from_user?.name }}</div>
+              <div class="font-light text-[12px]">{{ created_at }}</div>
             </div>
 
-            <div class="flex flex-wrap leading-6 font-light">
-              Dear Adeoye, Your application was successfully received, we will
-              get back to you after your files has been reviewed. Kindly note,
-              this message does not determine your employment. Thanks.
+            <div
+              class="pl-[40px] flex text-[13px] flex-wrap leading-6 font-light"
+            >
+              {{ text }}
             </div>
+          </div>
+          <div v-else class="w-full h-[100px] flex items-center justify-center">
+            - no message yet -
           </div>
         </div>
       </div>
@@ -89,17 +132,21 @@
         class="textarea-field"
       ></textarea>
       <div class="p-2 w-full flex justify-between items-center">
-        <label for="upload" class="bg-gray-200 h-[40px] w-[40px] px-2 rounded-lg py-1">
+        <label
+          for="upload"
+          class="bg-gray-200 h-[40px] w-[40px] px-2 rounded-lg py-1"
+        >
           <img
             src="/images/attach.svg"
             alt="val"
             class="w-full h-full object-fill"
           />
-          <input type="file"
-          accept=".pdf,.doc"
-          hidden
-          id="upload"
-        @change="handleFile($event)"
+          <input
+            type="file"
+            accept=".pdf,.doc"
+            hidden
+            id="upload"
+            @change="handleFile($event)"
           />
         </label>
 
@@ -111,19 +158,18 @@
           "
           class="rounded-xl flex w-16 h-8 items-center justify-center"
         >
-         
-            <span
+          <span
             v-if="isloading"
-              class="
-                animate-spin
-                rounded-full
-                h-3
-                w-3
-                border-l border-b border-white
-              "
-            ></span>
-        
-          <div  v-else>Send</div>
+            class="
+              animate-spin
+              rounded-full
+              h-3
+              w-3
+              border-l border-b border-white
+            "
+          ></span>
+
+          <div v-else>Send</div>
         </button>
       </div>
     </div>
@@ -133,43 +179,75 @@
 
 <script>
 import { ChatService } from "~/services";
+import { chatStore } from "~/store/chats";
 export default {
-  props: ["isChat", "showChat", "name", "picture", "userId"],
-  setup() {},
+  props: [
+    "name",
+    "picture",
+    "isChat",
+    "senderPics",
+    "senderName",
+    "showChat",
+    "userId",
+    "chats",
+  ],
 
   data() {
     return {
       text: "",
       isloading: false,
-      attachement:""
+      attachement: "",
+      fileName: "",
+      createdAt: "",
     };
+  },
+  mounted() {
+    console.log("this is chat", this.chats);
+    if (this.chats !== null) {
+      //console.log(this.chats[0])
+      // const {to_user} = this.chats[0]
+      //   this.name = to_user?.name;
+      //this.picture = to_user?.profile_pic
+    }
+
+   
   },
   methods: {
     handleFile(event) {
-        if (event.target.files[0]) {
-        console.log( event.target.files[0]?.name)
+      if (event.target.files[0]) {
+        console.log(event.target.files[0]?.name);
         this.attachment = event.target.files[0];
-        //this.fileName = event.target.files[0]?.name;
-    }
-},
-    sendMessage() {
-        this.isloading = true
-        const formData = new FormData();
-        formData.append("text", this.text);
-        formData.append("to_user_id", this.userId);
-        formData.append("attachment", this.attachment);
-      
-        /**
-       const payload = {
-        to_user_id: this.userId,
-        text: this.text,
-      };
-       */
-      ChatService.startConversation(formData)
+        this.fileName = event.target.files[0]?.name;
+      }
+    },
+    async sendMessage() {
+      this.isloading = true;
+      const formData = new FormData();
+      formData.append("text", this.text);
+      formData.append("to_user_id", this.userId);
+      formData.append("attachment", this.attachment);
+
+      await ChatService.startConversation(formData)
         .then((res) => {
           console.log(res);
           this.isloading = false;
+          this.createAt = "now";
+          this.chats.push({
+            from_user: { name: this.name, profile_pic: this.senderPics },
+            text: this.text,
+            created_at: "now",
+          });
           this.text = "";
+        })
+
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    async deleteSingleMessage(id) {
+      await ChatService.deleteMessage(id)
+        .then((res) => {
+          console.log(res);
         })
         .catch((err) => {
           console.log(err);

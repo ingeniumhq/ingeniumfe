@@ -9,10 +9,24 @@ export default {
       headers: { Accept: "application/json" },
     });
   },
-  // View all Jobs- Applicants
-  async allJobs() {
-    return await apiRequest("/hiring/jobs", {
+   //get messages- HR/Applicant
+   async getConversations() {
+    return await apiRequest("/messaging/conversations", {
       method: "GET",
+      headers: { Accept: "application/json" },
+    });
+  },
+    //get message detail- HR/Applicant
+    async getConversationDetail(id) {
+      return await apiRequest(`/messaging/conversations/${id}/messages`, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+      });
+    },
+  // Delete a message
+  async deleteMessage() {
+    return await apiRequest(`/messages/${id}`, {
+      method: "DELETE",
       headers: { Accept: "application/json" },
     });
   },

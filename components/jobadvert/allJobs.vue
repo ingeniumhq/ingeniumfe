@@ -1,5 +1,5 @@
 <template>
-  <div class=" w-full max-[990px]:py-[40px] py-[80px] px-[16px] sm:px-[40px]">
+  <div class=" w-full max-[990px]:py-[40px] py-[20px] min-[990px]:py-[80px] px-[8px] sm:px-[40px]">
     <div class="w-full h-full py-2 rounded-md shadow-lg bg-white relative">
      
       <div class="text-[#3E3F5E] relative font-semibold w-[95%] text-sm sm:text-lg border-gray-300 mx-[23px] py-2 border-b">
