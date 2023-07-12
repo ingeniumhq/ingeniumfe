@@ -6,7 +6,7 @@
       class="w-full"
       @click="showDetail(id)"
     >
-      <MessagingConnectlistWidget :data="to_user"  />
+      <MessagepageConnectlistWidget :data="to_user"  />
     </div>
     <div
       v-else
@@ -15,17 +15,7 @@
       - no connection -
     </div>
   
-    <MessagingChat
-      :showChat="showChat"
-      :isChat="isChat"
-      :chats="chatDetail"
-      :name="receiverName"
-      :picture="receiverPics"
-      :senderName="senderName"
-      :senderPics="senderPics"
-      :deleteFn="deleteFn"
-      :chatloaded="chatloaded"
-    />
+   
     <!-- content -->
   </template>
   
@@ -33,18 +23,17 @@
   import { ChatService } from "~/services";
   //import { chatStore } from '~/store/chats';
   export default {
-    setup() {},
+    props:['showDetail', 'connectList'],
     data() {
       return {
         isOut: false,
-        connectList: null,
+       // connectList: null,
         isChat: false,
         receiverName: "",
         receiverPics: "",
         senderName: "",
         senderPics: "",
-        chatDetail: null,
-        chatloaded:false,
+      //  chatDetail: null,
       };
     },
     mounted() {
@@ -52,23 +41,23 @@
         .then((res) => {
          console.log(res.data)
         const {data} = res.data
-        this.connectList = data;
+       // this.connectList = data;
         })
         .catch((err) => {
           console.log(err);
         });
     },
     methods: {
-      showDetail(id) {
+     /**
+     showDetail(id) {
         this.isChat = true;
-        this.chatloaded = false
+  
         //  const setchatStore = chatStore()
         ChatService.getConversationDetail(id)
           .then((res) => {
             console.log("list widget....", res.data.data);
             const { data } = res.data;
             this.chatDetail = data.reverse();
-            this.chatloaded = true
             //  setchatStore.setChats(data);
             const { to_user, from_user } = data[0];
             this.receiverName = to_user?.name;
@@ -86,6 +75,7 @@
       showChat() {
         this.isChat = !this.isChat;
       },
+      */
     },
   };
   </script>

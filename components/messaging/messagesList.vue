@@ -41,17 +41,22 @@
       </div>
 
       <div class="flex items-center space-x-3">
-        <div
-      
+        <NuxtLink to="/messages" 
         class="cursor-pointer p-1 rounded-full bg-red-500 h-[25px] w-[25px]"
-      >
-        <img
-          src="/images/enlarge.svg"
-          alt="val"
-          class="w-full h-full object-cover"
-         
-        />
-      </div>
+        >
+        
+      
+     
+    
+      <img
+        src="/images/enlarge.svg"
+        alt="val"
+        class="w-full h-full object-cover"
+       
+      />
+  
+        </NuxtLink>
+       
         <div
         @click="setOut"
         class="cursor-pointer p-1 rounded-full bg-red-500 h-[28px] w-[28px]"
@@ -102,11 +107,12 @@
     :showChat="showChat"
     :isChat="isChat"
     :chats="chatDetail"
-    :userId="userId"
+    :userId="receiverId"
     :name="receiverName"
     :picture="receiverPics"
     :senderName="senderName"
     :senderPics="senderPics"
+    :messageId="messageId"
   />
   <!-- content -->
 </template>
@@ -126,6 +132,8 @@ export default {
       senderName: "",
       senderPics: "",
       chatDetail: null,
+      messageId:0,
+      receiverId:"",
     };
   },
   mounted() {
@@ -146,6 +154,7 @@ export default {
     },
     showDetail(id) {
         this.isChat = true
+        this.messageId = id;
 
       // const setchatStore = chatStore()
       ChatService.getConversationDetail(id)
@@ -159,6 +168,7 @@ export default {
           this.receiverPics = to_user?.profile_pic;
           this.senderName = from_user?.name;
           this.senderPics = from_user?.profile_pic;
+          this.receiverId = to_user_id;
         })
         .catch((err) => {
           console.log(err);

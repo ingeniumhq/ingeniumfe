@@ -1,25 +1,20 @@
 <template>
   <div
-    :class="isOut ? 'bottom-[50px]' : 'bottom-[-350px]'"
+    :class="isChat ? 'min-[800px]:block hidden' : 'min-[800px]:block block'"
     class="
-      fixed
-      h-[400px]
+      h-full
       text-[#3E3F5E]
       shadow-lg
-      right-10
-      transition-all
-      duartion-300
-      rounded-lg
-      w-[280px]
-      z-[300]
+      rounded-md
+      min-[800px]:w-[300px]
+      w-full
     "
   >
     <div
-      @click.self="setOut"
       class="
-        bg-[#172554]
-        rounded-t-lg
-        text-white
+        bg-white
+        rounded-t-md
+        text-[#172352]
         w-full
         py-3
         px-2
@@ -37,22 +32,22 @@
           />
         </div>
 
-        <span>Messages</span>
+        <span class="text-sm sm:text-lg font-semibold">Messages</span>
       </div>
 
-      <div class="flex items-center space-x-3">
-        <NuxtLink to="/messages"
-          class="cursor-pointer p-1 rounded-full bg-[#fec42d] h-[25px] w-[25px]"
+      <div class="hidden  items-center space-x-3">
+        <div
+          class="cursor-pointer p-1 rounded-full bg-[#172352] h-[25px] w-[25px]"
         >
           <img
             src="/images/enlarge.svg"
             alt="val"
             class="w-full h-full object-cover"
           />
-      </NuxtLink>
+        </div>
         <div
           @click="setOut"
-          class="cursor-pointer p-1 rounded-full bg-[#fec42d] h-[28px] w-[28px]"
+          class="cursor-pointer p-1 rounded-full bg-[#172352] h-[28px] w-[28px]"
         >
           <img
             src="/images/expand.svg"
@@ -91,19 +86,27 @@
       </div>
     </div>
 
-    <div class="w-[280px] h-full bg-white overflow-hidden">
+    <div class="w-full h-full bg-white pt-2 overflow-hidden">
       <div class="w-full h-full overflow-y-auto pb-20">
         <div
           :class="isactive === 0 ? 'block' : 'hidden'"
           class="flex flex-col justify-start w-full"
         >
-          <MessagingChatlistWidget />
+          <MessagepageChatlistWidget
+            :showDetail="showDetail"
+            :chatList="chatList"
+           
+          />
         </div>
         <div
           :class="isactive === 1 ? 'block' : 'hidden'"
           class="flex flex-col justify-start w-full"
         >
-          <MessagingConnectWidget />
+          <MessagepageConnectWidget
+            :connectList="connectList"
+            :showDetail="showDetail"
+          
+          />
         </div>
       </div>
     </div>
@@ -116,7 +119,7 @@
 //import { ChatService } from "~/services";
 //import { chatStore } from '~/store/chats';
 export default {
-  setup() {},
+  props: ["showDetail", "chatList", "connectList", "showChat", "isChat"],
   data() {
     return {
       isOut: false,

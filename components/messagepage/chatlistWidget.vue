@@ -6,7 +6,7 @@
     class="w-full"
     @click="showDetail(id)"
   >
-    <MessagingListWidget :heading="heading" :recent="recent_message" />
+    <MessagepageListWidget :heading="heading" :recent="recent_message" />
   </div>
   <div
     v-else
@@ -15,17 +15,7 @@
     - no conversation yet -
   </div>
 
-  <MessagingChat
-    :showChat="showChat"
-    :isChat="isChat"
-    :chats="chatDetail"
-    :name="receiverName"
-    :picture="receiverPics"
-    :senderName="senderName"
-    :senderPics="senderPics"
-    :deleteFn="deleteFn"
-    :chatloaded="chatloaded"
-  />
+  
   <!-- content -->
 </template>
 
@@ -33,18 +23,17 @@
 import { ChatService } from "~/services";
 //import { chatStore } from '~/store/chats';
 export default {
-  setup() {},
+  props:['showDetail','chatList'],
   data() {
     return {
       isOut: false,
-      chatList: null,
+      //chatList: null,
       isChat: false,
       receiverName: "",
       receiverPics: "",
       senderName: "",
       senderPics: "",
-      chatDetail: null,
-      chatloaded:false,
+      //chatDetail: null,
     };
   },
   mounted() {
@@ -52,16 +41,16 @@ export default {
       .then((res) => {
         console.log(res.data[0].heading);
 
-        this.chatList = res.data;
+       // this.chatList = res.data;
       })
       .catch((err) => {
         console.log(err);
       });
   },
   methods: {
-    showDetail(id) {
+  /**
+     showDetail(id) {
       this.isChat = true;
-      this.chatloaded = false;
 
       //  const setchatStore = chatStore()
       ChatService.getConversationDetail(id)
@@ -69,7 +58,6 @@ export default {
           console.log("list widget....", res.data.data);
           const { data } = res.data;
           this.chatDetail = data.reverse();
-          this.chatloaded = true;
           //  setchatStore.setChats(data);
           const { to_user, from_user } = data[0];
           this.receiverName = to_user?.name;
@@ -87,6 +75,7 @@ export default {
     showChat() {
       this.isChat = !this.isChat;
     },
+   */
   },
 };
 </script>

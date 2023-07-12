@@ -16,6 +16,15 @@ export default {
       headers: { Accept: "application/json" },
     });
   },
+  //send conversation ... 
+  async sendConversation(id, payload) {
+    return await apiRequest(`/messaging/conversations/${id}/messages`, {
+      method: "POST",
+      body: payload,
+      headers: { Accept: "application/json" },
+  
+    })
+  },
     //get message detail- HR/Applicant
     async getConversationDetail(id) {
       return await apiRequest(`/messaging/conversations/${id}/messages`, {
@@ -31,7 +40,7 @@ export default {
       });
     },
   // Delete a message
-  async deleteMessage() {
+  async deleteMessage(id) {
     return await apiRequest(`/messages/${id}`, {
       method: "DELETE",
       headers: { Accept: "application/json" },

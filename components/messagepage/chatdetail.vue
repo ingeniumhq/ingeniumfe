@@ -1,34 +1,41 @@
 <template>
   <div
-    :class="isChat ? 'block' : 'hidden'"
+    :class="isChat ? 'min-[800px]:block block' : 'min-[800px]:block hidden'"
     class="
-      fixed
-      bottom-[10px]
-      h-[450px]
+      h-full
       text-[#3E3F5E]
       shadow-lg
-      right-[342px]
-      rounded-lg
-      w-[450px]
-      z-[300]
+      rounded-md
+      w-full
+      min-[800px]:w-[70%]
     "
   >
     <div
       class="
-        bg-[#172554]
-        rounded-t-lg
-        text-white
+        bg-white
+        rounded-t-md
+        text-[#172352]
+        font-semibold
+        text-sm
+        sm:text-lg
         w-full
         py-3
         px-2
         flex
         items-center
-        justify-between
+        max-[800px]:space-x-3
       "
     >
-      <!--Sth is wrong with the profile pics #profilepics -->
+      <div @click="showChat" class="min-[800px]:hidden h-[22px] w-[22px]">
+        <img
+          src="/images/arrow.svg"
+          alt="val"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <!--done -- Sth is wrong with the profile pics #profilepics -->
       <div class="flex items-center space-x-1">
-        <div v-if="picture" class="h-[22px] w-[22px] rounded-full">
+        <div v-if="picture" class="h-[25px] w-[25px] rounded-full">
           <img
             :src="picture"
             alt="val"
@@ -45,22 +52,11 @@
 
         <span>{{ name || "" }}</span>
       </div>
-
-      <div
-        @click="showChat"
-        class="h-[25px] w-[25px] p-1 bg-[#fec42d] rounded-full"
-      >
-        <img
-          src="/images/closes.svg"
-          alt="val"
-          class="w-full h-full object-cover"
-        />
-      </div>
     </div>
 
-    <div class="w-[450px] h-[250px] bg-white pt-2 overflow-hidden">
+    <div class="w-full h-[80%] bg-white shadow-lg overflow-hidden">
       <div class="w-full h-full overflow-y-auto">
-        <div class="flex flex-col justify-start w-full">
+        <div class="flex flex-col h-full justify-start w-full">
           <div
             v-if="chats !== null"
             v-for="({ from_user, text, created_at, id }, index) in chats"
@@ -119,7 +115,7 @@
               {{ text }}
             </div>
           </div>
-          <div v-else class="w-full h-[100px] flex items-center justify-center">
+          <div v-else class="w-full font-semibold text-sm sm:text-lg  h-[50%] flex items-center justify-center">
             - no message yet -
           </div>
         </div>
@@ -192,7 +188,7 @@ export default {
     "chats",
     "deleteFn",
     "messageId",
-    "chatloaded",
+    "chatloaded"
   ],
   data() {
     return {
@@ -266,6 +262,7 @@ export default {
           }));
     },
     async deleteSingleMessage(id) {
+      // console.log(id)
       await ChatService.deleteMessage(id)
         .then((res) => {
           console.log(res);
