@@ -78,7 +78,8 @@ export default {
   mounted() {
     ChatService.getConversations()
       .then((res) => {
-        console.log(res.data[0].heading);
+        console.log(res.data[0]);
+       // const {recent_message} = res.data[0]
 
         this.chatList = res.data;
       })
@@ -88,7 +89,7 @@ export default {
 
       ChatService.getConnections()
         .then((res) => {
-         console.log(res.data)
+         console.log('connects',res.data)
         const {data} = res.data
         this.connectList = data;
         })
