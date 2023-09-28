@@ -6,6 +6,8 @@
 !.yarn/releases
 !.yarn/plugins
 nuxt.d.ts
+localhost.crt
+localhost.key
 
 # compiled output
 /dist
