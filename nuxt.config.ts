@@ -1,5 +1,17 @@
+
+
+
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+  devServer: {
+    https: {
+      key: './localhost.key',
+      cert: './localhost.crt',
+    },
+    // port: 443
+    // url: 'https://127.0.0.1:3000'
+  },
+
   app: {
     head: {
       title: 'Nuxt 3 starter',
@@ -53,7 +65,16 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       NUXT_API_BASE_URL: process.env.NUXT_API_BASE_URL,
+      NUXT_FIREBASE_API_KEY: process.env.NUXT_FIREBASE_API_KEY,
+      NUXT_FIREBASE_AUTH_DOMAIN: process.env.NUXT_FIREBASE_AUTH_DOMAIN,
+      NUXT_FIREBASE_PROJECT_ID: process.env.NUXT_FIREBASE_PROJECT_ID,
+      NUXT_FIREBASE_STORAGE_BUCKET: process.env.NUXT_FIREBASE_STORAGE_BUCKET,
+      NUXT_FIREBASE_MESSAGING_SENDER_ID: process.env.NUXT_FIREBASE_MESSAGING_SENDER_ID,
+      NUXT_FIREBASE_APPID_KEY: process.env.NUXT_FIREBASE_APPID_KEY,
+      NUXT_FIREBASE_MEASUREMENT_ID: process.env.NUXT_FIREBASE_MEASUREMENT_ID,
+      NUXT_FIREBASE_DATABASE_URL: process.env.NUXT_FIREBASE_DATABASE_URL,
     }
-  }
+  },
+
 
 });

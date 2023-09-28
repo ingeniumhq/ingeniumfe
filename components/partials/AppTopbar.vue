@@ -1,16 +1,16 @@
 <template>
 
 	<!-- Mobile responsive header -->
-	<div class="responsive-header">
+	<div class="responsive-header" style="position: fixed; top: 0;">
 		<div class="logo res"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
 		<div class=" user-avatar mobile">
 			<NuxtLink to="/usr/me" title="View Profile"><img alt="" :src="authUser?.profile_pic"></NuxtLink>
 			<div class="name">
-				<h4>{{ authUser.name }}</h4>
+				<!-- <h4>{{ authUser.name }}</h4> -->
 			</div>
 		</div>
 		<div class="right-compact">
-			<div class="topbar topbarmobile stick">
+			<div class="topbar topbarmobile ">
 			<ul class="web-elements">
 				
 				<li>
@@ -82,7 +82,7 @@
 
 	<!-- large screen header -->
 	<header class="">
-		<div class="topbar stick">
+		<div class="topbar " style="position: fixed; top: 0;">
 			<div class="logo"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
 			<div class="searches">
 				<form method="post">
@@ -137,9 +137,9 @@
 					<div class=" user-dp">
 						<NuxtLink to="/usr/me" title="">
 							<img alt="" :src="authUser?.profile_pic">
-							<div class="name">
+							<!-- <div class="name">
 								<h4>{{ authUser?.name }}</h4>
-							</div>
+							</div> -->
 						</NuxtLink>
 					</div>
 				</li>

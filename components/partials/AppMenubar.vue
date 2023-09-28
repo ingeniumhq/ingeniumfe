@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section style=" margin-top: 50px;">
 				<div class="white-bg">
 					<div class="container-fluid">
 						<div class="menu-caro">

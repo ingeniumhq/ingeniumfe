@@ -235,6 +235,7 @@
 
         </div>
     </section>
+    <LoadScript></LoadScript>
 </template>
 
 <script lang="ts">
@@ -264,16 +265,7 @@ export default {
             username: this.$route.params.username
         }
     },
-    beforeRouteEnter(to, from, next) {
-        next((vm) => {
-            const script = document.createElement('script')
-            script.onload = () => { }
-            script.src = '/js/script.js'
-            document.head.appendChild(script)
-
-        })
-    },
-
+    
     mounted() {
         this.authUser = useAuthStore().authUser
         this.getUser(this.username)

@@ -6,7 +6,10 @@ let options = {
     baseURL : 'https://s.theingeniumapp.com/api/v1',
     headers: {
         Accept: 'application/json',
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-cache',
+        'Content-Type': 'application/json',
+        credentials: "include"
+       
     },
     onRequest: ({request, response, options, error}: any) => {
         // console.log(request, response, options, error);

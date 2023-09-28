@@ -37,10 +37,8 @@ export default {
     beforeCreate() {
         ConnectService.getSuggestions({exclude: 'connected'}).then((res) => {
             this.people = res.data
-            const script = document.createElement('script')
-            script.onload = () => { }
-            script.src = '/js/script.js'
-            document.body.appendChild(script)
+            const { $event } = useNuxtApp()
+		    $event('dom-updated', {})
         }).catch((err) => { })
     },
 
@@ -52,10 +50,9 @@ export default {
                 //    this.$refs.suggessted.$el.classList.add('suggested-caro')
                 this.$refs['suggessted'].classList.add('suggested-caro')
 
-                const script = document.createElement('script')
-                script.onload = () => { }
-                script.src = '/js/script.js'
-                document.body.appendChild(script)
+                const { $event } = useNuxtApp()
+		        $event('dom-updated', {})
+
             }).catch((err) => { })
         },
 

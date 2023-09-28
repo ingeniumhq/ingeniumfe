@@ -335,6 +335,7 @@ jQuery(document).ready(function ($) {
       parent: "body",
       offset_top: 0,
     });
+    
   }
 
   // chat attachments

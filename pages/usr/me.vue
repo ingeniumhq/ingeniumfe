@@ -447,15 +447,13 @@ export default {
 			recentJobApplications: []
 		}
 	},
-	beforeRouteEnter(to, from, next) {
-		next((vm) => {
-			const { $event } = useNuxtApp()
-			$event('dom-updated', {})
-
-		})
-	},
+	
 
 	mounted() {
+
+		const { $event } = useNuxtApp()
+		$event('dom-updated', {})
+
 		this.authUser = useAuthStore().authUser
 		this.getMe()
 		this.getPendingPost()

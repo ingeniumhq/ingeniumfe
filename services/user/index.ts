@@ -7,6 +7,12 @@ export default  {
         return await apiRequest('users/me', { method: 'PATCH', body: payload })
     },
 
+
+    async updateAFCMToken(payload: any) {
+        return await apiRequest('users/fcm-token', { method: 'PATCH', body: payload })
+    },
+
+
     async getTimeline(username: any) {
         return await apiRequest(`users/timeline?username=${username}`, { method: 'GET' })
     },

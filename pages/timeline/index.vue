@@ -67,7 +67,8 @@
 	</section>
 	<!-- content -->
 			
-			
+		
+	<LoadScript></LoadScript>
 </template>
   
   
@@ -88,20 +89,9 @@ import { useAuthStore } from '~/store/auth';
 
 <script lang="ts">
 	export default {
-		beforeRouteEnter(to, from, next) {
-			next((vm) => {
-				const script = document.createElement('script')
-				script.onload = () => {}
-				script.src = '/js/script.js'
-				document.body.appendChild(script)
-			})
-		},
-
+		
 		mounted() {
-			const script = document.createElement('script')
-			script.onload = () => {}
-			script.src = '/js/script.js'
-			document.body.appendChild(script)
+
 		},
 	}
 </script>
