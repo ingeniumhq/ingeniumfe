@@ -4,10 +4,10 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   devServer: {
-    https: {
-      key: './localhost.key',
-      cert: './localhost.crt',
-    },
+    // https: {
+    //   key: './localhost.key',
+    //   cert: './localhost.crt',
+    // },
     // port: 443
     // url: 'https://127.0.0.1:3000'
   },
