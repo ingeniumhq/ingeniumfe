@@ -4,7 +4,7 @@
       v-for="({ to_user, id }, index) in connectList"
       :key="index"
       class="w-full"
-      @click="showDetail(id)"
+      @click="showDetail(to_user.username)"
     >
       <MessagingConnectlistWidget :data="to_user"  />
     </div>
@@ -25,6 +25,8 @@
       :senderPics="senderPics"
       :deleteFn="deleteFn"
       :chatloaded="chatloaded"
+      :messageId="messageId"
+      
     />
     <!-- content -->
   </template>
@@ -45,6 +47,7 @@
         senderPics: "",
         chatDetail: null,
         chatloaded:false,
+        messageId: 0,
       };
     },
     mounted() {
@@ -62,6 +65,7 @@
       showDetail(id) {
         this.isChat = true;
         this.chatloaded = false
+        this.messageId = id;
         //  const setchatStore = chatStore()
         ChatService.getConversationDetail(id)
           .then((res) => {

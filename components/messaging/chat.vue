@@ -217,6 +217,7 @@ export default {
       formData.append("to_user_id", this.userId);
       formData.append("attachment", this.attachment);
 
+
       //if no chat.. initiate chat
       this.chats === null &&
         (await ChatService.startConversation(formData)

@@ -4,7 +4,7 @@
     v-for="({ heading, recent_message, id }, index) in chatList"
     :key="index"
     class="w-full"
-    @click="showDetail(id)"
+    @click="showDetail(id)"  
   >
     <MessagingListWidget :heading="heading" :recent="recent_message" />
   </div>
@@ -25,6 +25,7 @@
     :senderPics="senderPics"
     :deleteFn="deleteFn"
     :chatloaded="chatloaded"
+    :messageId="messageId"
   />
   <!-- content -->
 </template>
@@ -45,6 +46,7 @@ export default {
       senderPics: "",
       chatDetail: null,
       chatloaded:false,
+      messageId: 0,
     };
   },
   mounted() {
@@ -62,7 +64,9 @@ export default {
     showDetail(id) {
       this.isChat = true;
       this.chatloaded = false;
+      this.messageId = id;
 
+      
       //  const setchatStore = chatStore()
       ChatService.getConversationDetail(id)
         .then((res) => {
