@@ -4,7 +4,7 @@
       v-for="({ to_user, id }, index) in connectList"
       :key="index"
       class="w-full"
-      @click="showDetail(id)"
+      @click="showDetail(to_user.username)"
     >
       <MessagepageConnectlistWidget :data="to_user"  />
     </div>

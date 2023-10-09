@@ -4,11 +4,11 @@
         <div class="col-lg-3 col-md-3 col-sm-6" v-for="person in people">
             <NuxtLink :to=" '/usr/' + person.username  " class="members">
                 <figure><img alt="" :src="person.profile_pic"></figure>
-                <span>{{ person.name }}</span>
-                <img class="userbadge-ico" :src="person.badge" alt="">
+                <span>{{ person.name }}  <img class="userbadge-ico" style="display: inline-flex;" :src="person.badge" alt=""></span>
+               
                 <ins>{{ person.headline }}</ins>
                 <div>
-                    <a @click.prevent="followUser(person)" class="action_btn" data-ripple="" title="" href="#"> Follow</a>
+                    <!-- <a @click.prevent="followUser(person)" class="action_btn" data-ripple="" title="" href="#"> Follow</a> -->
                     <a @click.prevent="sendConnectRequest(person)" class="action_btn" data-ripple="" title="" href="#"> Connect</a>
                 </div>
             </NuxtLink>

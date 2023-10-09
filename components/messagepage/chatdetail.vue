@@ -4,7 +4,7 @@
     class="
       h-full
       text-[#3E3F5E]
-      shadow-lg
+      
       rounded-md
       w-full
       min-[800px]:w-[70%]
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <div class="w-full h-[80%] bg-white shadow-lg overflow-hidden">
+    <div class="w-full h-full bg-white  overflow-hidden">
       <div class="w-full h-full overflow-y-auto">
         <div class="flex flex-col h-full justify-start w-full">
           <div
@@ -121,7 +121,7 @@
         </div>
       </div>
     </div>
-    <div v-if="chatloaded" class="w-full h-fit shadow-lg rounded-b-lg px-2 bg-white py-2">
+    <div v-if="chatloaded" class="w-full h-fit  rounded-b-lg px-2 bg-white py-2">
       <textarea
         v-model.trim="text"
         placeholder="Write a message ..."

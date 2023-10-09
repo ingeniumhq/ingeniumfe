@@ -6,7 +6,6 @@
       bottom-[10px]
       h-[450px]
       text-[#3E3F5E]
-      shadow-lg
       right-[342px]
       rounded-lg
       w-[450px]
@@ -125,7 +124,7 @@
         </div>
       </div>
     </div>
-    <div v-if="chatloaded" class="w-full h-fit shadow-lg rounded-b-lg px-2 bg-white py-2">
+    <div v-if="chatloaded" class="w-full h-fit  rounded-b-lg px-2 bg-white py-2">
       <textarea
         v-model.trim="text"
         placeholder="Write a message ..."

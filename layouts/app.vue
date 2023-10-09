@@ -57,9 +57,7 @@
           <div class="content">
             <div class="text">
               Want to get notification from us?
-            </div>
-            <div class="buttons-more">
-              <button @click="requestNotificationsPermissions()" type="button" class="ok-button button-1"
+              <button @click="requestNotificationsPermissions()" type="button" class="ok-button mx-2   button-1"
                 id="allow-push-notification">
                 Yes
               </button>
@@ -67,6 +65,7 @@
                 No
               </button>
             </div>
+           
           </div>
         </div>
 

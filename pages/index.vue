@@ -5,55 +5,12 @@
     <header class="transparent">
       <div class="topbar">
         <div class="logo"><img src="/images/logo.png" alt=""><span>Ingenium</span></div>
-        <div class="searches">
-          <form method="post">
-            <input type="text" placeholder="Search...">
-            <button type="submit"><i class="icofont-search"></i></button>
-            <span class="cancel-search"><i class="icofont-close"></i></span>
-            <div class="recent-search">
-              <h4 class="recent-searches">Your's Recent Search</h4>
-              <ul class="so-history">
-                <li>
-                  <div class="searched-user">
-                    <figure><img src="/images/resources/user1.jpg" alt=""></figure>
-                    <span>Oladeji Stephen</span>
-                  </div>
-                  <span class="trash"><i class="icofont-close-circled"></i></span>
-                </li>
-                <li>
-                  <div class="searched-user">
-                    <figure><img src="/images/resources/user2.jpg" alt=""></figure>
-                    <span>Maria K</span>
-                  </div>
-                  <span class="trash"><i class="icofont-close-circled"></i></span>
-                </li>
-                <li>
-                  <div class="searched-user">
-                    <figure><img src="/images/resources/user3.jpg" alt=""></figure>
-                    <span>Fawad Khan</span>
-                  </div>
-                  <span class="trash"><i class="icofont-close-circled"></i></span>
-                </li>
-                <li>
-                  <div class="searched-user">
-                    <figure><img src="/images/resources/user4.jpg" alt=""></figure>
-                    <span>Danial Sandos</span>
-                  </div>
-                  <span class="trash"><i class="icofont-close-circled"></i></span>
-                </li>
-                <li>
-                  <div class="searched-user">
-                    <figure><img src="/images/resources/user5.jpg" alt=""></figure>
-                    <span>Jack Carter</span>
-                  </div>
-                  <span class="trash"><i class="icofont-close-circled"></i></span>
-                </li>
-              </ul>
-            </div>
-          </form>
-        </div>
+       
         <ul>
-          <li><a class="join-butn" href="/timeline" title="">Get Started</a></li>
+          <li>
+            <a v-if="isLoggedIn"  class="join-butn" href="/timeline" title="">My Profile</a>
+            <a v-else  class="join-butn" href="/timeline" title="">Get Started</a>
+          </li>
           <!-- <li><a href="#" title="">help</a></li> -->
           <!-- <li><a href="#" title=""><img src="/images/flags/US.png" alt=""></a></li> -->
           <!-- <li><a href="/auth/signin" title="">Login / Register</a></li> -->
@@ -273,7 +230,9 @@
           
           <h1 style="font-size:40px">You’ve Got The Dream, <span>We’ve Got The Team!</span> </h1>
           <h3><span>Hire the best talents. Discover the perfect job</span><span class="typed-cursor"></span></h3>
-          <a href="/timeline" title="" class="main-btn" data-ripple="">Join Free</a>
+       
+          <a v-if="isLoggedIn"  title="Goto App" class="main-btn" data-ripple="" href="/timeline" >Goto App</a>
+          <a v-else  title="Join Now" class="main-btn" data-ripple="" href="/timeline" >Join Now</a>
         </div>
       </div>
     </section>
@@ -572,9 +531,11 @@
                     it is a long established fact that a reader will be distracted by.
                   </p>
                   <h5>Download App</h5>
-                  <a href="#" title=""><img src="/images/android.png" alt=""></a>
-                  <a href="#" title=""><img src="/images/apple.png" alt=""></a>
-                  <a href="#" title=""><img src="/images/windows.png" alt=""></a>
+                  <div class="flex">
+                    <a href="#" title=""><img src="/images/android.png" alt=""></a>
+                    <a href="#"  class="mx-2" title=""><img src="/images/apple.png" alt=""></a>
+                    <a href="#" title=""><img src="/images/windows.png" alt=""></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -606,6 +567,7 @@ definePageMeta({
 
 
 <script >
+import { useAuthStore } from '~/store';
 export default {
   beforeRouteEnter(to, from, next) {
     next((vm) => {
@@ -614,6 +576,20 @@ export default {
       script.src = '/js/script.js'
       document.head.appendChild(script)
     })
+  },
+
+  data() {
+		return {
+			authUser: {},
+			isLoggedIn: false
+		}
+	},
+	
+
+
+  mounted() {
+    this.authUser = useAuthStore().authUser
+    this.isLoggedIn = useAuthStore().isLoggedIn
   },
 }
 </script>
