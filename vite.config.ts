@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vitest/config';
-import svgLoader from 'vite-svg-loader';
+// import svgLoader from 'vite-svg-loader';
 
 export default defineConfig({
   resolve: {
@@ -8,7 +8,9 @@ export default defineConfig({
       '~': fileURLToPath(new URL('./', import.meta.url)),
     },
   },
-  plugins: [svgLoader()],
+  plugins: [
+    // svgLoader()
+  ],
   test: {
     include: ['tests/*.test.ts'],
   },
