@@ -13,46 +13,30 @@
         <button
           @click="togglePost"
           v-if="accountType === 1"
-          class="
-            absolute
-            border-2
-            bottom-4
-            text-[#172554]
-            right-5
-            border-[#172554]
-            w-fit
-            px-3
-            py-2
-            rounded-3xl
-            bg-white
-            flex
-            items-center
-            justify-center
-          "
+          class="absolute border-2 bottom-4 text-[#172554] right-5 border-[#172554] w-fit px-3 py-2 rounded-3xl bg-white flex items-center justify-center"
         >
           <span>Post Job</span>
         </button>
         <NuxtLink to="/advert/myjobs">
-          <div v-if="accountType === 2" class="absolute bottom-0  sm:text-sm left-[20px] sm:left-[43px] text-white">
-            <div v-if="currentPath === '/advert/myjobs'" class="relative bg-white p-1 text-[#184391] rounded-t-md font-semibold">
+          <div
+            v-if="accountType === 2"
+            class="absolute bottom-0 sm:text-sm left-[20px] sm:left-[43px] text-white"
+          >
+            <div
+              v-if="currentPath === '/advert/myjobs'"
+              class="relative bg-white p-1 text-[#184391] rounded-t-md font-semibold"
+            >
               My Applications
               <span class="active-border-right"></span>
               <span class="active-border-left"></span>
             </div>
-            <div v-else  class=" p-1 text-white font-medium">
-                My applications
-            </div>
-        </div>
+            <div v-else class="p-1 text-white font-medium">My applications</div>
+          </div>
         </NuxtLink>
-       
-
       </div>
 
-     
       <JobadvertJobPosting :togglePost="togglePost" :isPost="isPost" />
       <JobadvertAllJobs :data="availableJobs" :isLoading="isLoading" />
-   
-     
     </div>
   </section>
   <!-- content -->
@@ -80,51 +64,52 @@ export default {
       isPost: false,
       availableJobs: [],
       isLoading: true,
-      accountType: '',
+      accountType: "",
       issidebar: false,
-      isChat:false,
+      isChat: false,
     };
   },
   computed: {
-        currentPath () {
-            const {path} = useRoute()
-            return path
-        }
+    currentPath() {
+      const { path } = useRoute();
+      return path;
     },
+  },
   mounted() {
-    
     const { authUser } = useAuthStore();
     //console.log(authUser.account.account_type)
     this.accountType = authUser.account.account_type;
-   this.accountType === 1 && HiringService.allPostedJobs()
-      .then((res) => {
-        console.log(res);
-        const { data } = res.data;
-       
+    this.accountType === 1 &&
+      HiringService.allPostedJobs()
+        .then(({ data }) => {
+          // const { data } = res.data;
+          // console.log("jobadvert", data);
+
           this.availableJobs = data.filter(
             (item) => item.user_id === authUser.id
           );
-      
 
-        this.isLoading = false;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+          this.isLoading = false;
 
-      this.accountType === 2 && HiringService.allJobs()
-      .then((res) => {
-        console.log(res);
-        const { data } = res.data;
-       
-          this.availableJobs = data
-      
+          console.log("availableJobs", this.availableJobs, this.isLoading);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
-        this.isLoading = false;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this.accountType === 2 &&
+      HiringService.allJobs()
+        .then((res) => {
+          console.log(res);
+          const { data } = res.data;
+
+          this.availableJobs = data;
+
+          this.isLoading = false;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
   },
   methods: {
     togglePost() {

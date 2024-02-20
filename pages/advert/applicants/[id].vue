@@ -13,22 +13,7 @@
         <button
           v-if="accountType === 1"
           @click="togglePost"
-          class="
-            absolute
-            border-2
-            bottom-4
-            text-blue-950
-            right-5
-            border-blue-950
-            w-fit
-            px-3
-            py-2
-            rounded-3xl
-            bg-white
-            flex
-            items-center
-            justify-center
-          "
+          class="absolute border-2 bottom-4 text-blue-950 right-5 border-blue-950 w-fit px-3 py-2 rounded-3xl bg-white flex items-center justify-center"
         >
           <span>Post Job</span>
         </button>
@@ -39,14 +24,7 @@
           >
             <div
               v-if="currentPath === '/advert/myjobs'"
-              class="
-                relative
-                bg-white
-                p-1
-                text-[#184391]
-                rounded-t-md
-                font-semibold
-              "
+              class="relative bg-white p-1 text-[#184391] rounded-t-md font-semibold"
             >
               My Applications
               <span class="active-border-right"></span>
@@ -57,7 +35,7 @@
         </NuxtLink>
       </div>
 
-       <!--  <MessagingChat :showChat="showChat" :isChat="isChat" />-->
+      <!--  <MessagingChat :showChat="showChat" :isChat="isChat" />-->
       <MessagingMessagesList :showChat="showChat" :isChat="isChat" />
       <JobadvertJobPosting :togglePost="togglePost" :isPost="isPost" />
       <div @click="goback" class="pl-2 cursor-pointer absolute top-1 left-2">
@@ -111,7 +89,7 @@ export default {
       issidebar: false,
       isSubmit: false,
       isStatus: false,
-      isChat:false,
+      isChat: false,
     };
   },
   computed: {
@@ -126,9 +104,7 @@ export default {
     this.accountType = authUser.account.account_type;
     this.accountType === 1 &&
       HiringService.jobApplicants(this.$route.params.id)
-        .then((res) => {
-          console.log(res);
-          const { data } = res.data;
+        .then(({ data }) => {
           this.applicants = data;
           this.isLoading = false;
         })
