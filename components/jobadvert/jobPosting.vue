@@ -228,7 +228,8 @@ export default {
       duedate: "",
       salary: "",
       selectedtype: "",
-      types: ["Full time", "Remote", "Part time", "Projec based", "Freelance"],
+      // types: ["Full time", "Remote", "Part time", "Projec based", "Freelance"],
+      types: ["full_time","remote","part_time","project_basis","freelance"],
     };
   },
   methods: {
@@ -254,7 +255,7 @@ export default {
       formData.append("experience", this.expericence);
       formData.append("timeline", this.duedate);
       formData.append("location", this.location);
-      //console.log(payload);
+     // console.log(payload);
       HiringService.postJob(formData)
         .then((res) => {
           console.log(res);

@@ -10,7 +10,7 @@
                     <div class="more">
                         <div class="more-post-optns">
                             <i class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="feather feather-more-horizontal">
                                     <circle cx="12" cy="12" r="1"></circle>
@@ -47,7 +47,7 @@
 
                     <div  @click.prevent="openPost(content)" >
                         <a href="#" class="post-title">{{ content.title }}</a>
-                        <div class="mb-4" style="max-height: 200px; overflow-y: hidden;" v-html="content.content"></div>
+                        <div class="mb-4" style="max-height: 100px; overflow-y: hidden;" v-html="content.content"></div>
 
                         <div class="gallery" :id="index">
                             <img v-for="media in content.media" :src="media.url" alt="">

@@ -50,7 +50,7 @@
           id="allow-push-notification-bar"
           class="allow-push-notification-bar"
         >
-          <div class="content">
+          <!-- <div class="content">
             <div class="text">
               Want to get notification from us?
               <button
@@ -69,7 +69,7 @@
                 No
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <slot />
