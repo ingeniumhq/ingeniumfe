@@ -64,8 +64,8 @@
 
 						<div class="socialbutton-container col-md-12">
 								<a @click.prevent="googleAuth()" class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline"><img style="width: 30px" src="/images/google-48.png">Google</a>
-								<a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
-								<a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a>
+								<!-- <a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/facebook-48.png">Facebook</a>
+								<a class=" btn btn-lg btn-socialauth btn-block text-sm btn-outline" href="#"><img style="width: 30px" src="/images/linkedin-2-50.png">Linkedin</a> -->
 						</div>
 
 					</div>
