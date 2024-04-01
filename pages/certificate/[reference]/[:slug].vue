@@ -38,9 +38,15 @@
           height="100"
         />
         <div class="text-center">
+<<<<<<< HEAD
           <i class="sign">Jennifer Orode</i>
           <hr />
           <div class="text trainer">Jennifer Orode</div>
+=======
+          <i class="sign">{{ "Jennifer Orode" }}</i>
+          <hr />
+          <div class="text trainer">{{ "Jennifer Orode" }}</div>
+>>>>>>> 40e5865cfc1fbb1ed77e9f48fc7fe1b2647866b1
         </div>
       </div>
     </div>
