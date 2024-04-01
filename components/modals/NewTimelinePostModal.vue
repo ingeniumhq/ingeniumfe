@@ -10,12 +10,12 @@
 							<div class="post-newmetxa">
 								<form @submit.prevent="storePost()" enctype="application/x-www-form-urlencoded" method="post" class="c-form" style="width: 100%">
 								<textarea ref="contentarea" id="emojionearea1" placeholder="What's On Your Mind?"></textarea>
-								
-									<select v-model="newpost.visibility" class="custom-select my-5" required  name="visibility" id="visibility">
+								<br/>
+									<!-- <select v-model="newpost.visibility" class="custom-select my-5" required  name="visibility" id="visibility">
 										<option  class="select-box__option" value="" >Choose visibility</option>
 										<option  class="select-box__option"  value="Public">Public</option>
-										<!-- <option class="select-box__option" value="Network">Network</option> -->
-									</select>   
+										<option class="select-box__option" value="Network">Network</option>
+									</select>    -->
 								
 								<div class="fallback">
 									<input @change="onFileChange($event)"  name="file" type="file" multiple />

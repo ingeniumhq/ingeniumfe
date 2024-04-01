@@ -14,7 +14,7 @@
         <img src="~/assets/images/certified.png" alt="" class="img-fluid" />
       </div>
       <div class="banner text-uppercase text-white h1">
-        Certificate of Excellence
+        Certificate of Completion
       </div>
     </div>
     <div class="content">
@@ -38,9 +38,9 @@
           height="100"
         />
         <div class="text-center">
-          <i class="sign">{{ certificate.user.firstname }}</i>
+          <i class="sign">Jennifer Orode</i>
           <hr />
-          <div class="text trainer">{{ certificate.user.firstname }}</div>
+          <div class="text trainer">Jennifer Orode</div>
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@ CertificateService.getCertificate(reference).then((data) => {
 }
 .banner {
   height: 120px;
-  background-color: #0043c6;
+  background-color: #000000;
   padding: 35px 100px !important;
   text-transform: uppercase;
   color: white;
@@ -132,7 +132,7 @@ CertificateService.getCertificate(reference).then((data) => {
 }
 .signature .sign {
   font-family: "Best Signature Font", sans-serif;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
   font-size: x-large;
 }
 .signature hr {
