@@ -38,9 +38,9 @@
           height="100"
         />
         <div class="text-center">
-          <i class="sign">{{ certificate.user.firstname }}</i>
+          <i class="sign">{{ "Jennifer Orode" }}</i>
           <hr />
-          <div class="text trainer">{{ certificate.user.firstname }}</div>
+          <div class="text trainer">{{ "Jennifer Orode" }}</div>
         </div>
       </div>
     </div>
