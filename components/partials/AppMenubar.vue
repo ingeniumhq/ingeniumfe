@@ -148,7 +148,7 @@
                   </NuxtLink>
                 </div>
                 <div class="link-item">
-                  <a href="#" title="">
+                  <!-- <a href="#" title="">
                     <i class="">
                       <svg
                         class="feather feather-users"
@@ -169,7 +169,7 @@
                       </svg>
                     </i>
                     <p>Groups</p>
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>

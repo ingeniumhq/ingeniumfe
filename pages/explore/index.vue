@@ -19,7 +19,7 @@
 
 							<ul class="nav nav-tabs post-detail-btn">
 								<li class="nav-item"><a class="active" href="#people" data-toggle="tab">People</a></li>
-								<li class="nav-item"><a class="" href="#groups" data-toggle="tab">Groups</a></li>
+								<!-- <li class="nav-item"><a class="" href="#groups" data-toggle="tab">Groups</a></li> -->
 								<li class="nav-item"><a class="" href="#events" data-toggle="tab">Events</a></li>
 							</ul>
 						</div>

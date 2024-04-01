@@ -1,7 +1,7 @@
 <template>
     <h4 class="main-title">Members <span>( {{ people.length }} )</span> <a href="#" title=""></a></h4>
     <div class="row col-xs-6 merged-10">
-        <div class="col-lg-3 col-md-3 col-sm-6" v-for="person in people">
+        <div class="col-lg-2 col-md-2 col-sm-6" v-for="person in people">
             <NuxtLink :to=" '/usr/' + person.username  " class="members">
                 <figure><img alt="" :src="person.profile_pic"></figure>
                 <span>{{ person.name }}  <img class="userbadge-ico" style="display: inline-flex;" :src="person.badge" alt=""></span>

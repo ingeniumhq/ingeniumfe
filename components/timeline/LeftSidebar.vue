@@ -19,9 +19,9 @@
 				<div class="progress__inner">82%</div>
 			</div> -->
 			<ul class="prof-complete">
-				<li><i class="icofont-plus-square"></i> <a href="#" title="">Upload Your Picture</a><em>10%</em></li>
-				<li><i class="icofont-plus-square"></i> <a href="#" title="">Your University?</a><em>20%</em></li>
-				<li><i class="icofont-plus-square"></i> <a href="#" title="">Add Payment Method</a><em>20%</em></li>
+				<li><i class="icofont-plus-square"></i> <a href="#" title="">Upload Your Picture</a><em>%</em></li>
+				<li><i class="icofont-plus-square"></i> <a href="#" title="">Your Academics?</a><em>%</em></li>
+				<li><i class="icofont-plus-square"></i> <a href="#" title="">Professional Experience</a><em>%</em></li>
 				<NuxtLink to="/usr/settings" class="main-btn full-width text-center accent_color" title="" data-ripple="">Setup Profile</NuxtLink>
 			</ul>
 		</div><!-- complete profile widget -->
