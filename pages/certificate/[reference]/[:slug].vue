@@ -1,4 +1,5 @@
 <template>
+  <button class="btn-print" @click="onPrint()">Print</button>
   <div v-if="certificate" id="printarea" class="certificate">
     <div class="header">
       <div class="certified">
@@ -57,17 +58,32 @@ import { CertificateService } from "~/services";
 CertificateService.getCertificate(reference).then((data) => {
   certificate.value = data.data;
 });
+
+const onPrint = () => window.print();
 </script>
 
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/best-signature-font");
+.btn-print {
+  position: fixed;
+  top: 10px;
+  right: calc(50% - 30px);
+  padding: 5px 20px !important;
+  background-color: #487be0;
+  color: white;
+  border-radius: 5px;
+}
+
 @media print {
-  body * {
+  /* body * {
     display: none;
-  }
+  } */
   #printarea,
   #printarea * {
     display: block;
+  }
+  .btn-print {
+    display: none !important;
   }
 }
 
