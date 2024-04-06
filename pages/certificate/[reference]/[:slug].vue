@@ -15,7 +15,7 @@
         <img src="~/assets/images/certified.png" alt="" class="img-fluid" />
       </div>
       <div class="banner text-uppercase text-white h1">
-        Certificate of Completion
+        Certificate of Excellence
       </div>
     </div>
     <div class="content">
@@ -39,9 +39,9 @@
           height="100"
         />
         <div class="text-center">
-          <i class="sign">Jennifer Orode</i>
+          <i class="sign">{{ "Jennifer Orode" }}</i>
           <hr />
-          <div class="text trainer">Jennifer Orode</div>
+          <div class="text trainer">{{ "Jennifer Orode" }}</div>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@ const onPrint = () => window.print();
 }
 .banner {
   height: 120px;
-  background-color: #000000;
+  background-color: #0043c6;
   padding: 35px 100px !important;
   text-transform: uppercase;
   color: white;
@@ -148,7 +148,7 @@ const onPrint = () => window.print();
 }
 .signature .sign {
   font-family: "Best Signature Font", sans-serif;
-  /* text-decoration: line-through; */
+  text-decoration: line-through;
   font-size: x-large;
 }
 .signature hr {
