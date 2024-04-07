@@ -15,7 +15,7 @@
         <img src="~/assets/images/certified.png" alt="" class="img-fluid" />
       </div>
       <div class="banner text-uppercase text-white h1">
-        Certificate of Excellence
+        Certificate of Completion
       </div>
     </div>
     <div class="content">
@@ -97,7 +97,7 @@ const onPrint = () => window.print();
 }
 .banner {
   height: 120px;
-  background-color: #0043c6;
+  background-color: #050607;
   padding: 35px 100px !important;
   text-transform: uppercase;
   color: white;
