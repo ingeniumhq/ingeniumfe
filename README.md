@@ -15,7 +15,7 @@ Get ready to level up your Nuxt game with this fully configured Nuxt 3 instance!
 
 ## 🕵️ Included Dependencies
 
-This Nuxt 3 starter kit comes equipped with pre-configured libraries that are commonly used in real-world projects. They are all optional, and you can add or remove libraries as needed. I will periodically check for updates and make necessary adjustments. If you think this starter kit is missing something or could be improved, please let me know. 😊
+This Ingenium Academy kit comes equipped with pre-configured libraries that are commonly used in real-world projects. They are all optional, and you can add or remove libraries as needed. I will periodically check for updates and make necessary adjustments. If you think this starter kit is missing something or could be improved, please let me know. 😊
 
 ### Vite
 

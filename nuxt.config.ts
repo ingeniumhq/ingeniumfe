@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Nuxt 3 starter',
+      title: 'Ingenium Academy',
       link: [
         {
           rel: 'icon',
