@@ -44,9 +44,9 @@
                     <span><i class="icofont-globe"></i> published: {{ content.date }}</span>
                 </div>
                 <div class="post-meta">
-
+<!-- Where the TIMELINE TEXT IS  -->
                     <div  @click.prevent="openPost(content)" >
-                        <a href="#" class="post-title">{{ content.title }}</a>
+                        <!-- <a href="#" class="post-title">{{ content.title }}</a> -->
                         <div class="mb-4" style="max-height: 100px; overflow-y: hidden;" v-html="content.content"></div>
 
                         <div class="gallery" :id="index">
