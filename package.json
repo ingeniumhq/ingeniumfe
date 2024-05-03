@@ -42,6 +42,7 @@
     "@nuxtjs/dayjs": "^1.4.1",
     "@pinia/nuxt": "^0.4.6",
     "cookie": "^0.5.0",
+    "dayjs-nuxt": "^2.1.9",
     "fb-sdk-wrapper": "^1.1.0",
     "firebase": "^10.4.0",
     "jquery": "^3.6.4",
