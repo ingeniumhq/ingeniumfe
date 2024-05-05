@@ -5,6 +5,7 @@
     <template v-if="certificate.course.type != null">
       <div class="template">
         <div class="cert_name">{{ certificate.user.name }}</div>
+        <div class="cert_ref">{{ certificate.reference }}</div>
         <div class="cert_date">
           {{ $dayjs(certificate.created_at).format("YYYY-MM-DD") }}
         </div>
@@ -57,6 +58,7 @@
               <div class="text trainer">{{ "Jennifer Orode" }}</div>
             </div>
           </div>
+          <div class="text"> Ref. No: {{ certificate.reference }}</div>
         </div>
       </div>
     </template>
@@ -90,7 +92,8 @@ const onPrint = () => window.print();
 }
 
 .template > .cert_name,
-.template > .cert_date {
+.template > .cert_date,
+.template > .cert_ref {
   display: none;
 }
 
@@ -107,7 +110,8 @@ const onPrint = () => window.print();
   }
 
   .template > .cert_name,
-  .template > .cert_date {
+  .template > .cert_date,
+  .template > .cert_ref {
     display: inline;
   }
 
@@ -124,6 +128,13 @@ const onPrint = () => window.print();
     font-size: large;
     left: 20%;
     bottom: 19%;
+  }
+  
+  .template > .cert_ref {
+    position: absolute;
+    font-size: large;
+    left: 20%;
+    bottom: 17%;
   }
 }
 
