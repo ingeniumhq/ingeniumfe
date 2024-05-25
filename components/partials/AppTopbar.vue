@@ -186,18 +186,21 @@
 							</svg></i>
 					</a>
 					<span></span>
+					<ul class="dropdown">
+						<li><NuxtLink to="/explore/event" title=""><i class="icofont-price"></i> New Event</NuxtLink></li>
+						<li><NuxtLink to="/explore/blog"  title=""><i class="icofont-brand-slideshare"></i>View New Blog</NuxtLink></li>
+						<li><NuxtLink to="/advert"  title=""><i class="icofont-gear"></i> New Jobs</NuxtLink></li>
+						<!-- <li><a href="#" title=""><i class="icofont-price"></i> Payout</a></li> -->
+						<!-- <li><a href="#" title=""><i class="icofont-flash"></i> Upgrade</a></li> -->
+						<!-- <li><a href="#" title=""><i class="icofont-question-circle"></i> Help</a></li> -->
+						<!-- <li><NuxtLink to="/usr/settings" title=""><i class="icofont-gear"></i> Setting</NuxtLink></li> -->
+						<!-- <li><a href="#" title=""><i class="icofont-notepad"></i> Privacy</a></li> -->
+						<!-- <li><a class="dark-mod" href="#" title=""><i class="icofont-moon"></i> Dark Mode</a></li> -->
+						<!-- <li class="logout"><a href="#" @click="logout" title=""><i class="icofont-power"></i> Logout</a>
+						</li> -->
+					</ul>
 				</li>
-				<!-- <li>
-					<a class="create" href="#" title="Add New" data-toggle="tooltip">
-						<i>
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-								class="feather feather-plus">
-								<line x1="12" y1="5" x2="12" y2="19"></line>
-								<line x1="5" y1="12" x2="19" y2="12"></line>
-							</svg></i>
-					</a>
-				</li> -->
+				
 				<li>
 					<a href="#" title="">
 						<i>

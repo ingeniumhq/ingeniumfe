@@ -76,6 +76,10 @@ export default  {
         query = new URLSearchParams (query)
         return await apiRequest(`contents/events?${query}`, { method: 'GET' })
     },
+
+    async getSingleEvents(slug: any) {
+        return await apiRequest(`contents/events/${slug}`, { method: 'GET' })
+    },
    
 
 

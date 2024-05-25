@@ -3,14 +3,16 @@
         <div v-for="event in events" class="col-lg-4 col-md-4 col-sm-6">
             <div class="event-post mb-3">
                 <figure>
-                    <a href="#" title=""><img :src="event.image" alt="" /></a>
+                    <a href="" title=""><img :src="event.image" alt="" /></a>
                 </figure>
                 <div class="event-meta">
-                    <span>{{ event.start_date }}</span>
                     <h6><NuxtLink :to="event.url" :title="event.title">{{ event.title }}</NuxtLink></h6>
-                    <div v-html="event.description"></div>
                     <p>{{ event.type?.toUpperCase() }}</p>
-                    <a class="classic-btn" target="_blank" blank :href="event.link" >Browse</a>
+                    <span>{{ event.start_date }}</span>
+                    
+                    <div v-html="event.description"></div>
+                  
+                    <a class="classic-btn" target="_blank" blank :href="event.link" >Register/Join Now</a>
                     <!-- <div class="more">
                         <div class="more-post-optns">
                             <i class="">
@@ -64,12 +66,20 @@ export default {
         };
     },
 
+    // beforeCreate() {
+    //     ContentService.getEvents()
+    //         .then((res) => {
+    //             this.events = res.data;
+    //         })
+    //         .catch((err) => { });
+    // },
+
     beforeCreate() {
-        ContentService.getEvents()
-            .then((res) => {
-                this.events = res.data;
-            })
-            .catch((err) => { });
+        ContentService.getEvents({paginate: 50}).then((res) => {
+            this.events = res.data.data
+            const { $event } = useNuxtApp()
+            $event('dom-updated', {})
+        }).catch((err) => { })
     },
 
     methods: {},

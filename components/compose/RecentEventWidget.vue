@@ -6,7 +6,7 @@
         <li v-for="event in events" class="my-3">
             <figure><img alt="" :src="event.image"></figure>
             <div class="re-links-meta">
-                <h6><NuxtLink :to=" '/explore/blog/' + event.slug "  href="#">{{ event.title }}</NuxtLink></h6>
+                <h6><NuxtLink :to=" '/explore/events/' + event.id "  href="#">{{ event.title }}</NuxtLink></h6>
                 <span>{{ event.date }}</span>
                
                 <div style="max-height: 100px; overflow-y: hidden;" v-html="event.description">
