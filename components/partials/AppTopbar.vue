@@ -187,7 +187,7 @@
 					</a>
 					<span></span>
 					<ul class="dropdown">
-						<li><NuxtLink to="/explore/event" title=""><i class="icofont-price"></i> New Event</NuxtLink></li>
+						<li><NuxtLink to="/explore/events" title=""><i class="icofont-price"></i> New Event</NuxtLink></li>
 						<li><NuxtLink to="/explore/blog"  title=""><i class="icofont-brand-slideshare"></i>View New Blog</NuxtLink></li>
 						<li><NuxtLink to="/advert"  title=""><i class="icofont-gear"></i> New Jobs</NuxtLink></li>
 						<!-- <li><a href="#" title=""><i class="icofont-price"></i> Payout</a></li> -->
