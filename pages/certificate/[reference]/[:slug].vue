@@ -2,7 +2,17 @@
   <button class="btn-print" @click="onPrint()">Print</button>
   <div v-if="certificate">
     <!-- {{ certificate.course && certificate.course.type }} -->
-    <template v-if="certificate.course.type != null">
+    <template v-if="certificate.course.type == 2">
+      <div class="template">
+        <div class="cert_name">{{ certificate.user.name }}</div>
+        <div class="cert_ref">{{ certificate.reference }}</div>
+        <div class="cert_date">
+          {{ $dayjs(certificate.created_at).format("YYYY-MM-DD") }}
+        </div>
+        <img src="./a2ct.png" />
+      </div>
+    </template>
+    <template v-else-if="certificate.course.type == 10">
       <div class="template">
         <div class="cert_name">{{ certificate.user.name }}</div>
         <div class="cert_ref">{{ certificate.reference }}</div>
@@ -118,9 +128,11 @@ const onPrint = () => window.print();
   .template > .cert_name {
     width: 100%;
     position: absolute;
-    font-size: 40px;
+    font-size: 3.5em;
     top: 40%;
     text-align: center;
+    color: #0043c6;
+  
   }
 
   .template > .cert_date {
