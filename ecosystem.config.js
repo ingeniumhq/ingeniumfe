@@ -6,6 +6,7 @@ module.exports = {
         script: 'npm run start',
         args: 'start',
         cwd: './',
+        watch: true,
         env: {
           NODE_ENV: 'development'
         },
